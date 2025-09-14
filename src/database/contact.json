@@ -1,0 +1,81 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Innerve Coordinator",
+      "sub": "",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "2",
+      "title": "Student Coordinator",
+      "sub": "",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "3",
+      "title": "Finance Coordinator",
+      "sub": "",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "4",
+      "title": "Sponsorship Coordinator",
+      "sub": "",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "5",
+      "title": "Cultural Event Manager",
+      "sub": "",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "6",
+      "title": "Technical Event Manager",
+      "sub": "",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "7",
+      "title": "Exhibition Coordinator",
+      "sub": "Civil Engineering",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "8",
+      "title": "Exhibition Coordinator",
+      "sub": "Computer Science",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "9",
+      "title": "Exhibition Coordinator",
+      "sub": "Electronics & Communication",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "10",
+      "title": "Exhibition Coordinator",
+      "sub": "Electrical & Electronics",
+      "name": "Unknown",
+      "ph": "1234567890"
+    },
+    {
+      "id": "11",
+      "title": "Public Relations & Enquiry",
+      "sub": "",
+      "name": "Unknown",
+      "ph": "1234567890"
+    }
+  ]
+}

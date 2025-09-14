@@ -1,0 +1,117 @@
+{
+  "names": [
+    "CULTURAL",
+    "TECHNICAL",
+    "GAMES",
+    "CSE DEPT",
+    "CE DEPT",
+    "EEE DEPT",
+    "ECE DEPT",
+    "MECH DEPT",
+    "WORKSHOP"
+  ],
+  "posts": [
+    [
+      {
+        "id": "euphoria",
+        "title": "Euphoria",
+        "img": "/cultural/Euphoria.png",
+        "content": "Alone in Motion: A Solo Dance Performance",
+        "description": "Alone in Motion: A Solo Dance Performance is a captivating display of an individual's movement and expression. Through fluid choreography and emotive gestures, the performer takes the audience on a journey of self-discovery and introspection.",
+        "c1name": "Pooja",
+        "c2name": "Firos",
+        "c1no": "9207311282",
+        "c2no": "9544495458",
+        "pricepool": "5000",
+        "regfee": "150",
+        "enddate": "2023-04-25",
+        "reglink": "https://makemypass.com/event/innerve",
+        "reg": "Register",
+        "ruleheader": "Rules and regulations ",
+        "rules": {
+          "rule1": "1. The competition will be conducted in two rounds 1.Preliminary Round 2. Spot choreography",
+          "rule2": "2. In the preliminary round, the participant must dance on a song of their choice which should not exceed 5 minutes.",
+          "rule3": "3. In the second round,spot choreography participant should dance on the song given to them .",
+          "rule4": "4. Classical dance is not permitted.",
+          "rule5": "5. The song selection can be from any language.",
+          "rule6": "6. The participants exceeding the assigned time will be disqualified. ",
+          "rule7": "7. The performance will be evaluated based on the choreography, presentation,rhythm,expressions and costume.",
+          "rule8": "8. Properties ,if any ,should be arranged by themselves and if any special arrangements are required the coordinators should be informed prior to the competition. ",
+          "rule9": "9. The decisions of the judges will be final.",
+          "rule10": "",
+          "rule11": "",
+          "rule12": "",
+          "rule13": ""
+        }
+      }
+    ],
+    [
+      {
+        "id": "speedTyping",
+        "title": "Speed Typing",
+        "img": "/cultural/Euphoria.png",
+        "content": "Speed Typing",
+        "description": "Your Way to Victory: Join Our Speed Typing Competition Today!⌨⌨ Look no further than the upcoming competition SPEED TYPING organized by Innerve'23 at the COLLEGE OF ENGINEERING Muttathara 🤩. In this exhilarating competition, participants will compete head-to-head to see who can type the most words accurately in the shortest amount of time.",
+        "c1name": "Albin",
+        "c2name": "Noufiya",
+        "c1no": "7510903774",
+        "c2no": "8590302241",
+        "pricepool": "1500",
+        "regfee": "50",
+        "enddate": "2023-04-25",
+        "reglink": "https://makemypass.com/event/innerve",
+        "reg": "Register Closed",
+        "ruleheader": "RULES",
+        "rules": {
+          "rule1": "1. Contestants can use their personal laptops otherwise one shall be provided by the college",
+          "rule2": "2. Should have a strong internet connection as the competition was taken on a speed typing website",
+          "rule3": "3. You will be given a copy of the content to be typed",
+          "rule4": "4. All the rules are based on the number of participating participants and can be changed if participants are less",
+          "rule5": "5. The time, content and threshold for the first round will be revealed during the event",
+          "rule6": "",
+          "rule7": "",
+          "rule8": "",
+          "rule9": "",
+          "rule10": "",
+          "rule11": "",
+          "rule12": "",
+          "rule13": ""
+        }
+      }
+    ],
+    [
+      {
+        "id": "Arduino Workshop",
+        "title": "ARDUINO 💻Workshop",
+        "img": "/cultural/Euphoria.png",
+        "content": "Hands-On Learning with Arduino Microcontrollers 🗄",
+        "description": "Innerve'23, the National level Technocultural fest hosted by COLLEGE OF ENGINEERING Muttathara, brings you an edifying 💻 ARDUINO 💻Workshop to upskill youon how to build and program your own electronics projects using the popular Arduino platform.",
+        "c1name": "Philip",
+        "c2name": "Akhil",
+        "c1no": "9744754670",
+        "c2no": "9605984093",
+        "pricepool": false,
+        "regfee": "150",
+        "enddate": "2023-04-26",
+        "reglink": "https://makemypass.com/event/innerve",
+        "reg": "Register Closed",
+        "ruleheader": "Guildelines",
+        "rules": {
+          "rule1": "📌 We strongly encourage participants to bring their own laptops to the event. However, if you are unable to bring your own laptop, our coordinators will be happy to provide you with one. Additionally, spot registration will be available for those who wish to register on the day of the event.❕",
+          "rule2": "📌 Seize the opportunity to enhance your skills and earn 30 KTU activity points by attending our event. Don't miss out on this chance to take your abilities to the next level! 🫱🏼‍🫲🏼",
+          "rule3": "",
+          "rule4": "",
+          "rule5": "",
+          "rule6": "",
+          "rule7": "",
+          "rule8": "",
+          "rule9": "",
+          "rule10": "",
+          "rule11": "",
+          "rule12": "",
+          "rule13": ""
+        }
+      }
+    ]
+  ]
+}
