@@ -1,98 +1,52 @@
-import { useEffect, useRef } from 'react'
-import Image from 'next/image'
-import { gsap } from 'gsap'
+import { motion } from 'framer-motion'
 
-function Hero() {
-  const title = useRef(null)
-  const subtitle = useRef(null)
-  const subtitle2 = useRef(null)
-  const date = useRef(null)
-  const render = useRef(null)
-
-  useEffect(() => {
-    //loop the video from 0:03 to 0:06
-    render.current.currentTime = 0.5
-    render.current.addEventListener('timeupdate', function () {
-      if (this.currentTime > 9) {
-        this.currentTime = 0.5
-      }
-    })
-    gsap.fromTo(
-      title.current,
-      { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1.5, delay: 0.5 }
-    )
-    gsap.fromTo(
-      subtitle.current,
-      { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1.5, delay: 1 }
-    )
-    gsap.fromTo(
-      subtitle2.current,
-      { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1.5, delay: 2.5 }
-    )
-    gsap.fromTo(
-      date.current,
-      { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1.5, delay: 3 }
-    )
-  }, [])
-
+export default function Hero() {
   return (
-    <div className="hero relative xl:hidden py-8 h-fit flex flex-col uppercase justify-center">
-      <video
-        ref={render}
-        src="/newpreloader.mp4"
-        loop
-        autoPlay
-        muted
-        className="absolute top-0 left-0 w-full h-full object-cover bg-slate-300 opacity-50"
-      ></video>
+    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden text-center z-10">
+      {/* Background Effects */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-ragam_orange/20 rounded-full blur-[100px] z-0 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-ragam_yellow/10 rounded-full blur-[80px] z-0 pointer-events-none mix-blend-screen" />
 
-      <div className="text-white flex flex-col pt-[8rem] uppercase font-extrabold md:ml-[1rem] lg:ml-[2rem] px-5 ">
-        <h1 ref={title} className="font-chakra sm:text-2xl opacity-0">
-          College of Engineering MUTTATHARA Presents
-        </h1>
-        <div ref={subtitle} className="font-clash flex flex-wrap opacity-0">
-          <span className="text-[4.5rem] sm:text-[6.5rem] md:text-[9rem] lg:text-[9rem]">
-            INNERVE
-          </span>
-          <span className="text-main_primary relative top-[-3rem] font-chakra text-stroke-black text-[7rem] md:text-[9rem]">
-            2025
-          </span>
-        </div>
-        <span
-          ref={subtitle2}
-          className="opacity-0 relative top-[-5rem] text-[3.5rem] sm:text-[5rem] md:text-[7rem] font-clash"
+      {/* Main Content */}
+      <div className="z-10 flex flex-col items-center">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-ragam_yellow font-medium tracking-[0.2em] mb-4 text-sm md:text-base uppercase"
         >
-          TECH FEST
-        </span>
-      </div>
+          The Flame Still Burns
+        </motion.p>
 
-      <div
-        ref={date}
-        className="relative md:ml-10 opacity-0 flex flex-col font-bold bg-white w-fit text-xl rounded-md text-black p-2 pr-8 ml-[1.5rem] md:text-3xl  z-10"
-      >
-        <span className="font-chakra">
-          2023 <span className="font-clash">April</span>
-        </span>
-        <span className="flex gap-2 text-[2rem] font-chakra font-bold">
-          26
-          <b className="text-[16px]">TH</b>
-          27
-          <b className="text-[16px]">TH</b>
-        </span>
-        <Image
-          // src="/edgeTriangle.png"
-          width={30}
-          height={30}
-          alt="edgetriangle"
-          className="absolute bottom-[-1px] right-[-1px]"
-        />
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="text-8xl md:text-[12rem] font-oswald font-bold leading-none text-white tracking-tighter"
+        >
+          RAGAM <span className="text-ragam_orange">'23</span>
+        </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mt-8 flex flex-col md:flex-row items-center gap-6"
+        >
+          <div className="flex flex-col items-center">
+            <span className="text-2xl md:text-3xl font-bold text-white">MARCH</span>
+            <span className="text-xl md:text-2xl text-gray-300">10 / 11 / 12</span>
+          </div>
+        </motion.div>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="mt-12 px-8 py-3 border-2 border-ragam_orange text-ragam_orange font-bold uppercase tracking-widest hover:bg-ragam_orange hover:text-black transition-all duration-300 rounded-sm"
+        >
+          Explore Events
+        </motion.button>
       </div>
-    </div>
+    </section>
   )
 }
-
-export default Hero

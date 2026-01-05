@@ -1,84 +1,34 @@
-import { useRef, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import Video from '@/components/Video'
-import About from '@/components/About'
-import Marque2 from '@/components/Marque2'
+import Marquee from '@/components/Marquee'
 import Footer from '@/components/Footer'
-import Faq from '@/components/Faq'
-import Clock from '@/components/Clock'
-import Map from '@/components/Map'
-import gsap from 'gsap'
-import fsPromises from 'fs/promises'
-import path from 'path'
-import RitModel from '@/components/RitModel'
-import EventSlider from '@/components/EventSlider'
-import Partical from '@/components/Partical'
 
-const Home = () => {
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    setIsLoaded(true)
-
-    gsap.fromTo(
-      stagger.current,
-      { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1.5 }
-    )
-  }, [])
-
-  const stagger = useRef(null)
-
+export default function Home() {
   return (
-    <div className="bg-black h-fit">
+    <div className="bg-ragam_black min-h-screen text-white overflow-x-hidden font-sans selection:bg-ragam_orange selection:text-black">
       <Head>
-        <title>Innerve</title>
+        <title>Ragam '23 | The Flame Still Burns</title>
+        <meta name="description" content="Recreated Ragam 2023 website" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header id="navbar" />
-      <section id="hero">
-        <div
-          ref={stagger}
-          className="hidden xl:block italic relative w-full text-center top-[7rem] z-[10]"
-        >
-          <p className="text-white pl-[1.5rem] top-[6rem] uppercase font-clash font-bold text-[2.5rem] tracking-wide">
-            COLLEGE OF ENGINEERING MUTTATHARA
+
+      <Header />
+
+      <main>
+        <Hero />
+        <Marquee />
+
+        {/* Placeholder for other sections */}
+        <section className="py-24 px-6 container mx-auto text-center">
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            Experience the grandeur of Ragam. With over 50+ events, workshops, and pro-shows,
+            witness the campus comes alive with art, culture, and technology.
           </p>
-          <p className="text-white font-clash text-xl">PRESENTS</p>
-        </div>
-        <div>
-          <Hero />
-          <Video />
-        </div>
-      </section>
-      {isLoaded && <Clock />}
-      <EventSlider />
-      <Partical />
-      <div className="bg-gradient-to-b from-primary to-transparent">
-        <RitModel />
-        <section id="about">
-          <About />
         </section>
-      </div>
-      <Marque2 />
-      <section id="faq">
-        <Faq />
-      </section>
-      <Map />
+      </main>
+
       <Footer />
     </div>
   )
-}
-
-export default Home
-
-export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), '/src/database/data.json')
-  const jsonData = await fsPromises.readFile(filePath)
-  const objectData = JSON.parse(jsonData)
-
-  return {
-    props: objectData,
-  }
 }
