@@ -1,9 +1,10 @@
 import StaggeredMenu from "@/components/StaggeredMenu";
+import CountdownSection from "@/components/CountdownSection";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full bg-[#fdfaf1] overflow-hidden">
+    <div className="relative min-h-screen w-full bg-[#fdfaf1] overflow-x-hidden">
       {/* Marble Background Texture */}
       <div
         className="fixed inset-0 opacity-100 pointer-events-none z-0"
@@ -18,12 +19,11 @@ export default function Home() {
       <StaggeredMenu
         items={[
           { label: "Home", ariaLabel: "Home", link: "/" },
-          { label: "Tracks", ariaLabel: "Tracks", link: "/tracks" },
+          { label: "Events", ariaLabel: "Events", link: "/events" },
           { label: "Contact", ariaLabel: "Contact", link: "/contact" },
         ]}
         socialItems={[
-          { label: "Instagram", link: "https://instagram.com" },
-          { label: "Twitter", link: "https://twitter.com" },
+          { label: "Instagram", link: "https://instagram.com/sathwa_cem" },
         ]}
       />
 
@@ -70,12 +70,6 @@ export default function Home() {
                 </svg>
                 <span>College of Engineering, Muttathara</span>
               </div>
-              {/* <div className="flex flex-col items-center">
-                <div className="w-2 h-2 rounded-full bg-[#C40404] mb-3" />
-                <div className="w-2 h-2 rounded-full border border-black/30 mb-3" />
-                <div className="w-2 h-2 rounded-full border border-black/30 mb-3" />
-                <div className="w-2 h-2 rounded-full border border-black/30" />
-              </div> */}
             </div>
 
             <div className="relative mb-6 animate-fade-up delay-2">
@@ -135,10 +129,12 @@ export default function Home() {
               </span>
             </div>
           </div>
+
+          <CountdownSection />
         </div>
 
         {/* Desktop View Layout */}
-        <div className="hidden lg:flex flex-col items-center px-12 h-screen relative">
+        <div className="hidden lg:flex flex-col items-center px-12 min-h-screen relative">
           <div className="w-full flex justify-end pt-24 pr-12 z-20">
             <p className="max-w-[350px] text-right text-xs text-black/70 leading-relaxed font-sans uppercase tracking-wider">
               A three-day techno-cultural fest celebrating innovation,
@@ -151,12 +147,6 @@ export default function Home() {
           <div className="w-full flex-grow flex items-center justify-center">
             {/* Left Section: Hero Circle and Text */}
             <div className="relative w-1/2 flex items-center justify-center">
-              <div className="absolute left-10 top-1/2 -translate-y-1/2 z-0">
-                {/* <h2 className="text-[120px] lg:text-[150px] font-sans font-black text-black opacity-90 tracking-[-0.05em] leading-none select-none">
-                  2026
-                </h2> */}
-              </div>
-
               <div className="relative w-[320px] h-[320px] lg:w-[450px] lg:h-[450px] bg-[#C40404] rounded-full z-10">
                 <div className="absolute inset-0 -top-24 scale-125 z-20">
                   <Image
@@ -216,6 +206,11 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Countdown Section - Desktop placement */}
+        <div className="hidden lg:block w-full z-10">
+          <CountdownSection />
         </div>
       </main>
     </div>
