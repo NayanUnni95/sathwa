@@ -32,7 +32,7 @@ const Countdown = ({ targetDate = "2026-02-26T00:00:00" }: CountdownProps) => {
               height: 210,
               fontSize: 130,
               color: "#E3DDC1",
-              backgroundColor: "transparent",
+              backgroundColor: "#2d1812",
               fontFamily: "Plus Jakarta Sans",
               fontWeight: 600,
             }}
@@ -54,7 +54,7 @@ const Countdown = ({ targetDate = "2026-02-26T00:00:00" }: CountdownProps) => {
               height: 210,
               fontSize: 130,
               color: "#E3DDC1",
-              backgroundColor: "transparent",
+              backgroundColor: "#2d1812",
               fontFamily: "Plus Jakarta Sans",
               fontWeight: 600,
             }}
@@ -76,7 +76,7 @@ const Countdown = ({ targetDate = "2026-02-26T00:00:00" }: CountdownProps) => {
               height: 210,
               fontSize: 130,
               color: "#E3DDC1",
-              backgroundColor: "transparent",
+              backgroundColor: "#2d1812",
               fontFamily: "Plus Jakarta Sans",
               fontWeight: 600,
             }}
