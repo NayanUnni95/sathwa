@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-
-import StaggeredMenu from "@/components/StaggeredMenu";
-import { Noto_Serif } from "next/font/google";
-
-import "./globals.css";
 import Script from "next/script";
+import { Geist, Geist_Mono } from "next/font/google";
+import StaggeredMenu from "@/components/StaggeredMenu";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +15,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sathwa",
-  description: null,
+  title: "Sathwa'26 - Where Tradition Meets Technology",
+  description:
+    "Sathwa is a three-day techno-cultural fest at College of Engineering, Muttathara, celebrating innovation, creativity, and engineering—blending tradition with modern technology through workshops, competitions, and cultural experiences.",
+  keywords: [
+    "Sathwa",
+    "Sathwa fest",
+    "Techno cultural fest",
+    "College of Engineering Muttathara",
+    "Engineering fest Kerala",
+    "College fest Kerala",
+    "Tech fest",
+    "Cultural fest",
+    "Workshops competitions fest",
+    "Student fest India",
+    "Technology and tradition fest",
+  ],
+  authors: [{ name: "Sathwa Team" }],
+  creator: "College of Engineering, Muttathara",
+  openGraph: {
+    title: "Sathwa 2026 | Where Tradition Meets Technology",
+    description:
+      "A three-day techno-cultural fest celebrating innovation, creativity, and engineering at College of Engineering, Muttathara.",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 export default function RootLayout({
@@ -34,9 +54,9 @@ export default function RootLayout({
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           strategy="afterInteractive"
-        >
-          <Script id="ga-script" strategy="afterInteractive">
-            {`
+        />
+        <Script id="ga-script" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -44,7 +64,6 @@ export default function RootLayout({
               page_path: window.location.pathname,
             });
           `}
-          </Script>
         </Script>
       </head>
       <body
