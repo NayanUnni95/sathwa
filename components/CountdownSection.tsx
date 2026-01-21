@@ -5,7 +5,7 @@ import Countdown from "./Countdown";
 
 const CountdownSection = () => {
   return (
-    <section className="relative z-10 w-full min-h-screen lg:min-h-[80vh] flex flex-col items-center justify-center py-20 overflow-hidden bg-[#F5F5F5] lg:bg-transparent">
+    <section className="relative z-10 w-full min-h-fit lg:min-h-[80vh] flex flex-col items-center justify-center pt-0 pb-20 lg:py-20 overflow-hidden bg-[#F5F5F5] lg:bg-transparent">
       {/* Decorative Branches */}
 
       {/* Left Branch - Desktop */}
