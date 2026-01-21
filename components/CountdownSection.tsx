@@ -10,7 +10,7 @@ const CountdownSection = () => {
       className="relative z-10 w-full h-screen lg:min-h-[80vh] flex flex-col items-center justify-center pt-0 pb-20 lg:py-20 overflow-hidden bg-[#F5F5F5] lg:bg-transparent"
     >
       {/* Section-only Marble Background */}
-      <div
+      {/* <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage: 'url("/assets/marble.png")',
@@ -20,7 +20,7 @@ const CountdownSection = () => {
           opacity: 0.8,
           mixBlendMode: "multiply",
         }}
-      />
+      /> */}
 
       {/* Left Branch - Desktop */}
       {/* <div className="hidden lg:block absolute -left-15 -top-28 w-[950px] h-[850px] z-50 pointer-events-none rotate-15">
