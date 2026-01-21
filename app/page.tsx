@@ -22,8 +22,8 @@ export default function Home() {
 
           {/* Hero Section (Circle + Image) - Fixed Background */}
           <div className="fixed inset-0 h-screen flex flex-col items-center w-full px-1 z-0 animate-fade-up delay-1">
-            <div className="relative w-full aspect-square bg-[#C40404] rounded-full z-10 overflow-visible mt-30 sm:mt36">
-              <div className="absolute inset-0 -top-10 sm:-top-16 scale-125 z-20">
+            <div className="relative w-full aspect-square bg-[#C40404] rounded-full z-10 overflow-visible mt-24 sm:mt36">
+              <div className="absolute inset-0 -top-10 sm:-top-16 scale-125 z-20 reveal reveal-1">
                 <Image
                   src="/assets/hero-image.png"
                   alt="Sathwa Hero"
@@ -39,7 +39,7 @@ export default function Home() {
           {/* <div className="h-screen w-full pointer-events-none" /> */}
 
           {/* Info Card Section - Scrolls Over Hero */}
-          <div className="relative z-10 bg-[#F5F5F5] rounded-t-[40px] px-7 pt-7 pb-3 flex flex-col shadow-[0_-10px_30px_rgba(0,0,0,0.1)] mt-[60vh] animate-fade-up">
+          <div className="relative z-10 bg-[#F5F5F5] rounded-t-[40px] px-7 pt-7 pb-3 flex flex-col shadow-[0_-10px_30px_rgba(0,0,0,0.1)] mt-[60vh] reveal reveal-2">
             <div className="flex justify-between items-start mb-3">
               <div className="flex items-center space-x-2 text-[10px] font-sans font-bold text-black uppercase tracking-wider">
                 <svg
@@ -60,7 +60,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative mb-6 animate-fade-up delay-2">
+            <div className="relative mb-6 reveal reveal-3">
               <div className="absolute -top-6 right-4 sm:right-3 scale-75 origin-right">
                 <span className="text-[#BC002D] font-['JapanRamen'] font-bold text-4xl tracking-[1px]">
                   26
@@ -74,14 +74,18 @@ export default function Home() {
               </p>
             </div>
 
-            <p className="text-[13px] text-black leading-relaxed font-sans mb-6 animate-fade-up delay-3">
+            <p className="text-[13px] text-black leading-relaxed font-sans mb-4 reveal reveal-4">
               A three-day techno-cultural fest celebrating innovation,
               creativity, and engineering—where tradition meets modern
               technology through workshops, competitions, and cultural
               experiences.
             </p>
 
-            <button className="w-[80%] bg-[#D90404] hover:bg-[#A00303] shadow-[0_0_12px_rgba(217,4,4,0.45)] text-white rounded-full py-3 px-4 flex items-center space-x-3 transition-colors mb-4 active:scale-95 duration-200">
+            {/* view countdown section */}
+            {/* <a
+              href="#CountdownSection"
+              className="w-[80%] bg-[#D90404] hover:bg-[#A00303] shadow-[0_0_12px_rgba(217,4,4,0.45)] text-white rounded-full py-3 px-4 flex items-center space-x-3 transition-colors mb-4 active:scale-95 duration-200 reveal reveal-5"
+            >
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
                 <svg
                   width="14"
@@ -99,22 +103,67 @@ export default function Home() {
                   <polyline points="19 12 12 19 5 12"></polyline>
                 </svg>
               </div>
-              <span className="text-xs font-bold font-sans tracking-wide flex items-center justify-center animate-fade-up delay-4">
+
+              <span className="text-xs font-bold font-sans tracking-wide flex items-center justify-center">
                 View Event Countdown
               </span>
-            </button>
+            </a> */}
 
-            <div
+            {/* <div
               className="mt-auto w-full rounded-2xl py-6 px-4 flex items-center justify-center 
                 bg-[#F5F5F5] 
                 border border-black/20 
                 border-l-4 border-l-[#D90404]
-                shadow-sm"
+                shadow-sm reveal reveal-5"
             >
-              <span className="text-[14px] text-black/80 font-sans font-medium tracking-wide animate-fade-up delay-4">
+              <span className="text-[14px] text-black/80 font-sans font-medium tracking-wide ">
                 Event Dates: February{" "}
                 <span className="font-bold text-black">26, 27, 28</span>
               </span>
+            </div> */}
+            <div
+              className="mt-auto w-full rounded-2xl px-6 py-3
+             relative overflow-hidden
+             bg-[#F6F6F6]
+             border border-black/15
+             border-l-[5px] border-l-[#D90404]
+             shadow-[0_8px_26px_rgba(0,0,0,0.10)]
+             reveal reveal-5"
+            >
+              {/* Background year mark */}
+              <div
+                className="absolute right-4 top-1/2 -translate-y-1/2
+               text-[75px] font-serif font-black
+               text-black/5 tracking-wider select-none"
+              >
+                2026
+              </div>
+
+              {/* Content */}
+              <div className="relative flex flex-col">
+                <span
+                  className="text-[11px] uppercase tracking-[0.3em]
+                 text-black/50 font-sans"
+                >
+                  Event Dates
+                </span>
+
+                <div className="flex items-baseline">
+                  <span
+                    className="text-[26px] font-serif font-bold
+                   text-black tracking-[1px]"
+                  >
+                    February
+                  </span>
+
+                  <span
+                    className="pl-3 text-[32px] font-serif font-black
+                   text-[#D90404] tracking-[0.1em]"
+                  >
+                    26–28
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -122,7 +171,7 @@ export default function Home() {
         </div>
 
         {/* Desktop View Layout */}
-        <div className="hidden lg:flex flex-col items-center px-12 min-h-screen relative">
+        <div className="hidden lg:flex flex-col items-center px-12 h-screen relative reveal reveal-1">
           <div className="w-full flex justify-end pt-24 pr-12 z-20">
             <p className="max-w-[350px] text-right text-xs text-black/70 leading-relaxed font-sans uppercase tracking-wider">
               A three-day techno-cultural fest celebrating innovation,

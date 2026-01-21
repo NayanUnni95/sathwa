@@ -90,7 +90,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       let preLayers: HTMLElement[] = [];
       if (preContainer) {
         preLayers = Array.from(
-          preContainer.querySelectorAll(".sm-prelayer"),
+          preContainer.querySelectorAll(".sm-prelayer")
         ) as HTMLElement[];
       }
       preLayerElsRef.current = preLayers;
@@ -124,16 +124,16 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     itemEntranceTweenRef.current?.kill();
 
     const itemEls = Array.from(
-      panel.querySelectorAll(".sm-panel-itemLabel"),
+      panel.querySelectorAll(".sm-panel-itemLabel")
     ) as HTMLElement[];
     const numberEls = Array.from(
-      panel.querySelectorAll(".sm-panel-list[data-numbering] .sm-panel-item"),
+      panel.querySelectorAll(".sm-panel-list[data-numbering] .sm-panel-item")
     ) as HTMLElement[];
     const socialTitle = panel.querySelector(
-      ".sm-socials-title",
+      ".sm-socials-title"
     ) as HTMLElement | null;
     const socialLinks = Array.from(
-      panel.querySelectorAll(".sm-socials-link"),
+      panel.querySelectorAll(".sm-socials-link")
     ) as HTMLElement[];
 
     const layerStates = layers.map((el) => ({
@@ -155,7 +155,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         ls.el,
         { xPercent: ls.start },
         { xPercent: 0, duration: 0.5, ease: "power4.out" },
-        i * 0.07,
+        i * 0.07
       );
     });
 
@@ -167,7 +167,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       panel,
       { xPercent: panelStart },
       { xPercent: 0, duration: panelDuration, ease: "power4.out" },
-      panelInsertTime,
+      panelInsertTime
     );
 
     if (itemEls.length) {
@@ -183,7 +183,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           ease: "power4.out",
           stagger: { each: 0.1, from: "start" },
         },
-        itemsStart,
+        itemsStart
       );
 
       if (numberEls.length) {
@@ -195,7 +195,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             ["--sm-num-opacity" as any]: 1,
             stagger: { each: 0.08, from: "start" },
           },
-          itemsStart + 0.1,
+          itemsStart + 0.1
         );
       }
     }
@@ -207,7 +207,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         tl.to(
           socialTitle,
           { opacity: 1, duration: 0.5, ease: "power2.out" },
-          socialsStart,
+          socialsStart
         );
       if (socialLinks.length) {
         tl.to(
@@ -222,7 +222,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               gsap.set(socialLinks, { clearProps: "opacity" });
             },
           },
-          socialsStart + 0.04,
+          socialsStart + 0.04
         );
       }
     }
@@ -266,23 +266,23 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       overwrite: "auto",
       onComplete: () => {
         const itemEls = Array.from(
-          panel.querySelectorAll(".sm-panel-itemLabel"),
+          panel.querySelectorAll(".sm-panel-itemLabel")
         ) as HTMLElement[];
         if (itemEls.length) gsap.set(itemEls, { yPercent: 140, rotate: 10 });
 
         const numberEls = Array.from(
           panel.querySelectorAll(
-            ".sm-panel-list[data-numbering] .sm-panel-item",
-          ),
+            ".sm-panel-list[data-numbering] .sm-panel-item"
+          )
         ) as HTMLElement[];
         if (numberEls.length)
           gsap.set(numberEls, { ["--sm-num-opacity" as any]: 0 });
 
         const socialTitle = panel.querySelector(
-          ".sm-socials-title",
+          ".sm-socials-title"
         ) as HTMLElement | null;
         const socialLinks = Array.from(
-          panel.querySelectorAll(".sm-socials-link"),
+          panel.querySelectorAll(".sm-socials-link")
         ) as HTMLElement[];
         if (socialTitle) gsap.set(socialTitle, { opacity: 0 });
         if (socialLinks.length) gsap.set(socialLinks, { y: 25, opacity: 0 });
@@ -333,7 +333,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         gsap.set(btn, { color: menuButtonColor });
       }
     },
-    [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen],
+    [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen]
   );
 
   React.useEffect(() => {
@@ -441,7 +441,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   return (
     <div
-      className={`sm-scope z-40 ${isFixed ? "fixed top-0 left-0 w-screen h-screen overflow-hidden" : "w-full h-full"}`}
+      className={`sm-scope z-40${
+        isFixed
+          ? "fixed top-0 left-0 w-screen h-screen overflow-hidden"
+          : "w-full h-full"
+      }`}
     >
       <div
         className={
