@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 
@@ -13,9 +14,11 @@ const Countdown = ({ targetDate = "2026-02-26T00:00:00" }: CountdownProps) => {
   return (
     <div className="scale-[0.35] min-[375px]:scale-[0.40] sm:scale-[0.55] md:scale-[0.65] lg:scale-[0.7] transition-transform duration-300 origin-center flex items-center justify-center">
       <div className="relative inline-block shrink-0">
-        <img
+        <Image
           src="/assets/countdown.png"
           alt="countdown background"
+          width={900}
+          height={450}
           className="w-[900px] h-auto"
         />
 

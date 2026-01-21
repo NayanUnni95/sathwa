@@ -1,5 +1,3 @@
-import StaggeredMenu from "@/components/StaggeredMenu";
-
 export default function ContactPage() {
   return (
     <div className="relative min-h-screen w-full bg-[#fdfaf1] overflow-hidden flex flex-col">
@@ -12,17 +10,6 @@ export default function ContactPage() {
           backgroundPosition: "center",
           mixBlendMode: "multiply",
         }}
-      />
-
-      <StaggeredMenu
-        items={[
-          { label: "Home", ariaLabel: "Home", link: "/" },
-          { label: "Events", ariaLabel: "Events", link: "/events" },
-          { label: "Contact", ariaLabel: "Contact", link: "/contact" },
-        ]}
-        socialItems={[
-          { label: "Instagram", link: "https://instagram.com/sathwa_cem" },
-        ]}
       />
 
       <main className="relative z-10 flex-grow flex flex-col items-center justify-center px-6 pt-20">
@@ -41,18 +28,7 @@ export default function ContactPage() {
             {/* Aesthetic circle in background */}
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#C40404]/5 rounded-full blur-3xl transition-transform group-hover:scale-110 duration-700" />
 
-            <div className="relative z-10 space-y-12">
-              {/* <div className="flex flex-col items-center text-center">
-                                <h3 className="text-xs font-bold font-sans text-black/40 uppercase tracking-[0.4em] mb-4">
-                                    For Inquiries
-                                </h3>
-                                <p className="text-2xl sm:text-3xl font-['JapanRamen'] text-black tracking-wider hover:text-[#C40404] transition-colors cursor-pointer">
-                                    hello@sathwa.com
-                                </p>
-                            </div> */}
-
-              {/* <div className="w-full h-px bg-black/10" /> */}
-
+            <div className="relative z-100 space-y-12">
               <div className="flex flex-col items-center text-center">
                 <h3 className="text-xs font-bold font-sans text-black/40 uppercase tracking-[0.4em] mb-4">
                   Follow Our Journey

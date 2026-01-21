@@ -1,5 +1,4 @@
 import Link from "next/link";
-import StaggeredMenu from "@/components/StaggeredMenu";
 
 export default function NotFound() {
   return (
@@ -13,17 +12,6 @@ export default function NotFound() {
           backgroundPosition: "center",
           mixBlendMode: "multiply",
         }}
-      />
-
-      <StaggeredMenu
-        items={[
-          { label: "Home", ariaLabel: "Home", link: "/" },
-          { label: "Events", ariaLabel: "Events", link: "/events" },
-          { label: "Contact", ariaLabel: "Contact", link: "/contact" },
-        ]}
-        socialItems={[
-          { label: "Instagram", link: "https://instagram.com/sathwa_cem" },
-        ]}
       />
 
       <main className="relative z-50 flex flex-col items-center text-center px-6">

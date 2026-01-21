@@ -1,5 +1,3 @@
-import StaggeredMenu from "@/components/StaggeredMenu";
-
 export default function EventsPage() {
   return (
     <div className="relative min-h-screen w-full bg-[#fdfaf1] overflow-hidden flex flex-col">
@@ -11,17 +9,6 @@ export default function EventsPage() {
           backgroundPosition: "center",
           mixBlendMode: "multiply",
         }}
-      />
-
-      <StaggeredMenu
-        items={[
-          { label: "Home", ariaLabel: "Home", link: "/" },
-          { label: "Events", ariaLabel: "Events", link: "/events" },
-          { label: "Contact", ariaLabel: "Contact", link: "/contact" },
-        ]}
-        socialItems={[
-          { label: "Instagram", link: "https://instagram.com/sathwa_cem" },
-        ]}
       />
 
       <main className="relative z-10 flex-grow flex flex-col items-center justify-center px-6 pt-20">

@@ -1,4 +1,3 @@
-import StaggeredMenu from "@/components/StaggeredMenu";
 import CountdownSection from "@/components/CountdownSection";
 import Image from "next/image";
 
@@ -14,17 +13,6 @@ export default function Home() {
           backgroundPosition: "center",
           mixBlendMode: "multiply",
         }}
-      />
-
-      <StaggeredMenu
-        items={[
-          { label: "Home", ariaLabel: "Home", link: "/" },
-          { label: "Events", ariaLabel: "Events", link: "/events" },
-          { label: "Contact", ariaLabel: "Contact", link: "/contact" },
-        ]}
-        socialItems={[
-          { label: "Instagram", link: "https://instagram.com/sathwa_cem" },
-        ]}
       />
 
       <main className="relative z-10 w-full min-h-screen flex flex-col">
