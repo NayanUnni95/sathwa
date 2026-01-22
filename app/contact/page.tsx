@@ -54,6 +54,7 @@ export default function ContactPage() {
                       strokeLinejoin="round"
                       className="text-black group-hover/link:text-white transition-colors"
                     >
+                      <title>Redirect</title>
                       <line x1="7" y1="17" x2="17" y2="7"></line>
                       <polyline points="7 7 17 7 17 17"></polyline>
                     </svg>

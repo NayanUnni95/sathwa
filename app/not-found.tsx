@@ -42,6 +42,7 @@ export default function NotFound() {
               strokeLinejoin="round"
               className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             >
+              <title>Redirect</title>
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>

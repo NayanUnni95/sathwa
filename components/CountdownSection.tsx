@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Countdown from "./Countdown";
+import Countdown from "@/components/Countdown";
 
 const CountdownSection = () => {
   return (

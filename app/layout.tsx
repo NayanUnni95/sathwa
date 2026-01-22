@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import StaggeredMenu from "@/components/StaggeredMenu";
+import { menuConfig } from "@/config/navigation";
 import "./globals.css";
+import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sathwa'26 - Where Tradition Meets Technology",
+  metadataBase: new URL("https://sathwa.live"),
+  title: {
+    default: "Sathwa'26 - Where Tradition Meets Technology",
+    template: "%s | Sathwa'26",
+  },
   description:
     "Sathwa is a three-day techno-cultural fest at College of Engineering, Muttathara, celebrating innovation, creativity, and engineering—blending tradition with modern technology through workshops, competitions, and cultural experiences.",
   keywords: [
@@ -39,6 +44,23 @@ export const metadata: Metadata = {
       "A three-day techno-cultural fest celebrating innovation, creativity, and engineering at College of Engineering, Muttathara.",
     type: "website",
     locale: "en_IN",
+    siteName: "Sathwa'26",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sathwa 2026",
+    description: "Where Tradition Meets Technology",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -49,36 +71,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-script" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <StaggeredMenu
-          items={[
-            { label: "Home", ariaLabel: "Home", link: "/" },
-            { label: "Events", ariaLabel: "Events", link: "/events" },
-            { label: "Contact", ariaLabel: "Contact", link: "/contact" },
-          ]}
-          socialItems={[
-            { label: "Instagram", link: "https://instagram.com/sathwa_cem" },
-          ]}
-        />
+        <AnalyticsProvider />
+        <StaggeredMenu {...menuConfig} />
         {children}
       </body>
     </html>
