@@ -1,6 +1,6 @@
 export default function DatePanel() {
   return (
-    <div className="w-full flex items-center justify-between pb-12 z-50">
+    <div className="w-full flex items-center justify-between pb-20 z-50">
       <div className="flex-grow" /> {/* Spacer */}
       <div className="flex items-center space-x-12">
         <div className="flex items-center bg-[#512222] rounded-full p-2 pr-10 lg:pr-14 shadow-2xl transition-transform hover:scale-105 duration-300">
@@ -8,7 +8,7 @@ export default function DatePanel() {
             <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-white border-b-[6px] border-b-transparent ml-1 group-hover:scale-110 transition-transform" />
           </div>
           <div className="flex flex-col">
-            <span className="text-[10px] text-white/60 font-sans tracking-[0.3em] font-bold uppercase mb-1 font-japan-ramen">
+            <span className="text-[10px] text-white/60 tracking-[0.3em] font-bold uppercase mb-1 font-japan-ramen">
               February
             </span>
             <span className="text-3xl lg:text-4xl text-white font-['JapanRamen'] font-bold tracking-wider">

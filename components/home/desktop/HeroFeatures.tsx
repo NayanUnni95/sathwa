@@ -13,9 +13,9 @@ export default function HeroFeatures() {
 
       <div className="w-full flex-grow flex items-center justify-center">
         {/* Left Section: Hero Circle and Text */}
-        <div className="relative w-1/2 flex items-center justify-center">
-          <div className="relative w-[320px] h-[320px] lg:w-[450px] lg:h-[450px] bg-[#C40404] rounded-full z-10">
-            <div className="absolute inset-0 -top-24 scale-125 z-20">
+        <div className="relative w-1/2 flex items-center justify-start reveal reveal-1">
+          <div className="relative w-[320px] h-[320px] lg:w-[480px] lg:h-[450px] bg-[#C40404] rounded-full z-10">
+            <div className="absolute inset-0 -top-23  scale-125 z-20">
               <Image
                 src="/assets/hero-image.png"
                 alt="Sathwa Hero"

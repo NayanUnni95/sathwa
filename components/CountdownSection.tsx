@@ -32,12 +32,12 @@ const CountdownSection = () => {
         />
       </div> */}
       <div
-        className="hidden lg:block absolute -left-15 -top-28 
-             w-[950px] h-[850px] z-50 pointer-events-none
+        className="hidden lg:block absolute -left-37 -top-55
+             w-[925px] h-[820px] z-50 pointer-events-none
              rotate-15 wind"
         style={{
-          animation: "wind-sway-strong 18s infinite",
-          transformOrigin: "8% 88%",
+          animation: "wind-sway-strong-reverse 20s infinite",
+          transformOrigin: "8% 80%",
         }}
       >
         <Image
@@ -88,7 +88,7 @@ const CountdownSection = () => {
              w-[950px] h-[950px] z-50 pointer-events-none
              wind"
         style={{
-          animation: "wind-sway-strong-reverse 20s infinite",
+          animation: "wind-sway-strong-reverse 16s infinite",
           transformOrigin: "92% 12%",
         }}
       >
@@ -115,7 +115,7 @@ const CountdownSection = () => {
              w-[450px] h-[250px] z-50 pointer-events-none wind"
         style={{
           animation: `
-      wind-sway-strong-reverse 22s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+      wind-sway-strong-reverse 20s cubic-bezier(0.4, 0, 0.2, 1) infinite,
       wind-breath 14s ease-in-out infinite
     `,
           transformOrigin: "88% 20%",

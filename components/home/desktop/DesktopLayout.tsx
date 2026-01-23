@@ -5,7 +5,7 @@ import HeroFeatures from "./HeroFeatures";
 export default function DesktopLayout() {
   return (
     <>
-      <div className="hidden lg:flex flex-col items-center px-12 h-screen relative reveal reveal-1">
+      <div className="hidden lg:flex flex-col items-center px-12 h-screen relative reveal reveal-3">
         <HeroFeatures />
         <DatePanel />
       </div>

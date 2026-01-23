@@ -92,19 +92,19 @@ body {
 
 /* Stagger delays */
 .reveal-1 {
-  animation-delay: 0.5s;
+  animation-delay: 0.65s;
 }
 .reveal-2 {
-  animation-delay: 0.8s;
+  animation-delay: 0.9s;
 }
 .reveal-3 {
-  animation-delay: 1.15s;
-}
-.reveal-4 {
   animation-delay: 1.5s;
 }
+.reveal-4 {
+  animation-delay: 2s;
+}
 .reveal-5 {
-  animation-delay: 1.8s;
+  animation-delay: 2.4s;
 }
 
 /* Respect accessibility */
@@ -202,10 +202,7 @@ body {
     transform: rotate(-2.5deg) translateX(-4px);
   }
   35% {
-    transform: rotate(3deg) translateX(6px);
-  }
-  55% {
-    transform: rotate(-3.8deg) translateX(-5px);
+    transform: rotate(3deg) translateX(5px);
   }
   75% {
     transform: rotate(2deg) translateX(3px);
@@ -216,7 +213,7 @@ body {
 }
 
 .wind {
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.25, 0, 0.2, 1);
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   will-change: transform;
