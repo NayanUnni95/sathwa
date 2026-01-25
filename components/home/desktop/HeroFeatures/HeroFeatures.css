@@ -1,0 +1,134 @@
+.hf-scope-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 6rem; /* pt-24 */
+  padding-right: 3rem; /* pr-12 */
+  position: relative;
+}
+
+.hf-description {
+  max-width: 350px;
+  text-align: right;
+  font-size: 0.75rem; /* text-xs */
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.625;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* wider */
+}
+
+.hf-scope-main {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hf-left {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hf-circle {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  background-color: #c40404;
+  border-radius: 9999px;
+  z-index: 10;
+}
+@media (min-width: 1024px) {
+  .hf-circle {
+    width: 480px;
+    height: 450px;
+  }
+}
+
+.hf-img-wrapper {
+  position: absolute;
+  inset: 0;
+  top: -5.75rem; /* -top-23 */
+  transform: scale(1.25);
+  z-index: 20;
+}
+
+.hf-img {
+  object-fit: contain;
+}
+
+.hf-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 30;
+  margin-left: -50px;
+  gap: 1rem; /* space-y-4 default */
+}
+@media (min-width: 1024px) {
+  .hf-right {
+    gap: 1.5rem; /* lg:space-y-6 */
+  }
+}
+
+.hf-title-block {
+  position: relative;
+}
+
+.hf-year-wrapper {
+  position: absolute;
+  top: -3rem; /* -top-12 */
+  right: -1rem; /* -right-4 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hf-year {
+  color: #bc002d;
+  font-family: "JapanRamen", sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem; /* text-4xl */
+  letter-spacing: 2px;
+}
+@media (min-width: 1024px) {
+  .hf-year {
+    font-size: 3rem; /* lg:text-5xl */
+  }
+}
+
+.hf-play-title {
+  font-size: 90px;
+  font-family: "JapanRamen", sans-serif;
+  color: black;
+  letter-spacing: 0.1em;
+  line-height: 0.8;
+  margin-top: 0.75rem; /* mt-3 */
+}
+@media (min-width: 1024px) {
+  .hf-play-title {
+    font-size: 120px;
+  }
+}
+
+.hf-subtitle {
+  font-size: 1.25rem; /* text-xl */
+  font-family: sans-serif;
+  font-weight: 500;
+  color: #bc002d;
+  letter-spacing: 0.2em;
+  margin-top: 1.5rem; /* mt-6 */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  .hf-subtitle {
+    font-size: 1.5rem; /* lg:text-2xl */
+    margin-top: 2rem; /* lg:mt-8 */
+  }
+}

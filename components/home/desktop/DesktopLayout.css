@@ -1,0 +1,25 @@
+.dl-main-content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 3rem; /* px-12 */
+  padding-right: 3rem;
+  height: 100vh;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .dl-main-content {
+    display: flex;
+  }
+}
+
+.dl-countdown-section {
+  display: none;
+  width: 100%;
+  z-index: 10;
+}
+@media (min-width: 1024px) {
+  .dl-countdown-section {
+    display: block;
+  }
+}

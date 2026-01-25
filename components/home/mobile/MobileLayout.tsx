@@ -1,10 +1,11 @@
-import CountdownSection from "@/components/CountdownSection";
-import MobileHeroSection from "./HeroSection";
-import MobileInfoCard from "./InfoCard";
+import CountdownSection from "@/components/CountdownSection/CountdownSection";
+import MobileHeroSection from "./HeroSection/HeroSection";
+import MobileInfoCard from "./InfoCard/InfoCard";
+import "./MobileLayout.css";
 
 export default function MobileLayout() {
   return (
-    <div className="lg:hidden flex flex-col">
+    <div className="ml-scope">
       {/* Hero Section (Circle + Image) - Fixed Background */}
       <MobileHeroSection />
 

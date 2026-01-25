@@ -1,0 +1,86 @@
+.cd-scope {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* scale-[0.35] min-[375px]:scale-[0.40] sm:scale-[0.55] md:scale-[0.65] lg:scale-[0.7] */
+  transform: scale(0.35);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 375px) {
+  .cd-scope {
+    transform: scale(0.4);
+  }
+}
+@media (min-width: 640px) {
+  .cd-scope {
+    transform: scale(0.55);
+  }
+}
+@media (min-width: 768px) {
+  .cd-scope {
+    transform: scale(0.65);
+  }
+}
+@media (min-width: 1024px) {
+  .cd-scope {
+    transform: scale(0.7);
+  }
+}
+
+.cd-wrapper {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.cd-inner {
+  position: relative;
+}
+
+.cd-bg {
+  width: 900px;
+  height: auto;
+  display: block;
+}
+
+.cd-digit-group {
+  position: absolute;
+  top: 141px;
+}
+
+.cd-days {
+  left: 51px;
+}
+.cd-hours {
+  left: 255px;
+}
+.cd-minutes {
+  left: 465px;
+}
+.cd-seconds {
+  left: 671px;
+}
+
+.cd-label {
+  position: absolute;
+  top: 365px;
+  font-weight: 600;
+  color: #ded299;
+  font-size: 1.5rem; /* text-2xl is usually 1.5rem */
+  line-height: 2rem;
+}
+
+.cd-label-days {
+  left: 110px;
+}
+.cd-label-hours {
+  left: 310px;
+}
+.cd-label-minutes {
+  left: 520px;
+}
+.cd-label-seconds {
+  left: 710px;
+}

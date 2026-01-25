@@ -1,0 +1,45 @@
+.mhs-scope {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  z-index: 0;
+}
+
+.mhs-circle-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #c40404;
+  border-radius: 9999px;
+  z-index: 10;
+  overflow: visible;
+  margin-top: 6rem; /* mt-24 */
+}
+@media (min-width: 640px) {
+  .mhs-circle-wrapper {
+    margin-top: 9rem; /* sm:mt-36 */
+  }
+}
+
+.mhs-image-wrapper {
+  position: absolute;
+  inset: 0;
+  top: -2.5rem; /* -top-10 */
+  z-index: 20;
+  transform: scale(1.25);
+}
+@media (min-width: 640px) {
+  .mhs-image-wrapper {
+    top: -4rem; /* sm:-top-16 */
+  }
+}
+
+.mhs-image {
+  object-fit: contain;
+}

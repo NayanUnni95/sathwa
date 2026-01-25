@@ -1,0 +1,256 @@
+.contact-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fdfaf1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-bg {
+  position: fixed;
+  inset: 0;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("/assets/marble.png");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+}
+
+.contact-main {
+  position: relative;
+  z-index: 10;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 5rem;
+}
+
+.contact-content {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  /* 4xl */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-title {
+  font-size: 3.75rem;
+  /* 6xl */
+  font-family: "JapanRamen", serif;
+  color: black;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .contact-title {
+    font-size: 6rem;
+    /* 8xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-title {
+    font-size: 120px;
+  }
+}
+
+.contact-subtitle {
+  font-size: 0.875rem;
+  /* sm */
+  font-family: var(--font-geist-sans), sans-serif;
+  font-weight: 500;
+  color: #c40404;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  max-width: 36rem;
+  /* xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .contact-subtitle {
+    font-size: 1rem;
+    /* base */
+  }
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 42rem;
+  /* 2xl */
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 40px;
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .contact-card {
+    padding: 4rem;
+  }
+}
+
+.contact-card-circle {
+  position: absolute;
+  top: -5rem;
+  right: -5rem;
+  width: 16rem;
+  /* 64 */
+  height: 16rem;
+  background-color: rgba(196, 4, 4, 0.05);
+  /* #C40404 / 5 */
+  border-radius: 9999px;
+  filter: blur(64px);
+  /* blur-3xl approximate */
+  transition: transform 700ms;
+}
+
+.contact-card:hover .contact-card-circle {
+  transform: scale(1.1);
+}
+
+.contact-card-inner {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  /* space-y-12 */
+}
+
+.contact-follow-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-follow-title {
+  font-size: 0.75rem;
+  /* xs */
+  font-weight: 700;
+  font-family: var(--font-geist-sans), sans-serif;
+  color: rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  margin-bottom: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* space-x-4 */
+  text-decoration: none;
+}
+
+.contact-link-text {
+  font-size: 1.25rem;
+  /* xl */
+  font-family: var(--font-geist-sans), sans-serif;
+  font-weight: 500;
+  color: black;
+  transition: color 150ms;
+}
+
+@media (min-width: 640px) {
+  .contact-link-text {
+    font-size: 1.5rem;
+    /* 2xl */
+  }
+}
+
+.contact-link:hover .contact-link-text {
+  color: #c40404;
+}
+
+.contact-link-icon {
+  width: 2.5rem;
+  /* 10 */
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms;
+}
+
+.contact-link:hover .contact-link-icon {
+  background-color: #c40404;
+  border-color: #c40404;
+}
+
+.contact-icon-svg {
+  color: black;
+  transition: color 150ms;
+}
+
+.contact-link:hover .contact-icon-svg {
+  color: white;
+}
+
+.contact-footer {
+  margin-top: 4rem;
+  text-align: center;
+  max-width: 28rem;
+  /* md */
+}
+
+.contact-footer-text {
+  font-size: 11px;
+  font-family: var(--font-geist-sans), sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.625;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  /* tracking-widest usually 0.1em */
+}
+
+.contact-line-left,
+.contact-line-right {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+.contact-line-left {
+  left: 3rem;
+}
+
+.contact-line-right {
+  right: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-line-left,
+  .contact-line-right {
+    display: block;
+  }
+}

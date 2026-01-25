@@ -1,0 +1,109 @@
+.events-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fdfaf1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.events-bg {
+  position: fixed;
+  inset: 0;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("/assets/marble.png");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+}
+
+.events-main {
+  position: relative;
+  z-index: 10;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 5rem;
+}
+
+.events-content {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  /* 4xl */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.events-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.events-title {
+  font-size: 3.75rem;
+  /* 6xl */
+  font-family: "JapanRamen", serif;
+  color: black;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .events-title {
+    font-size: 6rem;
+    /* 8xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .events-title {
+    font-size: 120px;
+  }
+}
+
+.events-subtitle {
+  font-size: 0.875rem;
+  /* sm */
+  font-family: var(--font-geist-sans), sans-serif;
+  font-weight: 500;
+  color: #c40404;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  max-width: 36rem;
+  /* xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .events-subtitle {
+    font-size: 1rem;
+    /* base */
+  }
+}
+
+.events-footer {
+  margin-top: 4rem;
+  text-align: center;
+  max-width: 28rem;
+  /* md */
+}
+
+.events-footer-text {
+  font-size: 11px;
+  font-family: var(--font-geist-sans), sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.625;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

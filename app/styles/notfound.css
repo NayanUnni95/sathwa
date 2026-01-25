@@ -1,0 +1,121 @@
+.nf-scope {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fdfaf1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nf-bg {
+  position: fixed;
+  inset: 0;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("/assets/marble.png");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+}
+
+.nf-main {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+}
+
+.nf-header {
+  position: relative;
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.nf-404 {
+  font-size: 120px;
+  font-family: "JapanRamen", sans-serif;
+  color: #c40404;
+  line-height: 1;
+  opacity: 0.2;
+  user-select: none;
+}
+@media (min-width: 640px) {
+  .nf-404 {
+    font-size: 180px;
+  }
+}
+
+.nf-sub-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nf-sub {
+  font-size: 2.25rem; /* text-4xl */
+  font-family: "JapanRamen", sans-serif;
+  color: black;
+  letter-spacing: 0.1em; /* widest */
+}
+@media (min-width: 640px) {
+  .nf-sub {
+    font-size: 3.75rem; /* text-6xl */
+  }
+}
+
+.nf-btn {
+  display: flex;
+  align-items: center;
+  background-color: #c40404;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  padding-right: 3rem; /* pr-12 */
+  transition: all 0.3s ease;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+  text-decoration: none;
+}
+.nf-btn:hover {
+  background-color: #a00303;
+  box-shadow: 0 10px 15px -3px rgba(196, 4, 4, 0.4); /* shadow-[#C40404]/40 approx */
+}
+.nf-btn:active {
+  transform: scale(0.95);
+}
+
+.nf-icon-circle {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  border-radius: 9999px;
+  background-color: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem; /* mr-6 */
+  transition: transform 0.3s ease;
+}
+/* .group-hover:scale-105 handled by inline class or parent hover */
+
+.nf-arrow {
+  transition: transform 0.3s ease;
+}
+/* transform handled by inline class */
+
+.nf-btn-text {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}

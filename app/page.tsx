@@ -1,14 +1,17 @@
+"use client";
+
 import Background from "@/components/home/Background";
 import DesktopLayout from "@/components/home/desktop/DesktopLayout";
 import MobileLayout from "@/components/home/mobile/MobileLayout";
+import "@/app/styles/home.css";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full bg-[#fdfaf1] overflow-x-hidden">
+    <div className="home-scope">
       {/* Marble Background Texture */}
       <Background />
 
-      <main className="relative z-10 w-full min-h-screen flex flex-col">
+      <main className="home-main">
         {/* Mobile/Tablet View Layout */}
         <MobileLayout />
 

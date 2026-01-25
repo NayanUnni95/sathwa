@@ -1,0 +1,46 @@
+import Image from "next/image";
+import "./HeroFeatures.css";
+
+export default function HeroFeatures() {
+  return (
+    <>
+      <div className="hf-scope-top z-20">
+        <p className="hf-description">
+          A three-day techno-cultural fest celebrating innovation, creativity,
+          and engineering—where tradition meets modern technology through
+          workshops, competitions, and cultural experiences.
+        </p>
+      </div>
+
+      <div className="hf-scope-main">
+        {/* Left Section: Hero Circle and Text */}
+        <div className="hf-left reveal reveal-1">
+          <div className="hf-circle">
+            <div className="hf-img-wrapper">
+              <Image
+                src="/assets/hero-image.png"
+                alt="Sathwa Hero"
+                fill
+                className="hf-img"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Right Section: Title and Subtitle */}
+        <div className="hf-right">
+          <div className="hf-title-block">
+            <div className="hf-year-wrapper">
+              <span className="hf-year">' 26</span>
+            </div>
+
+            <h1 className="hf-play-title">SATHWA</h1>
+
+            <p className="hf-subtitle">where tradition meets technology</p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

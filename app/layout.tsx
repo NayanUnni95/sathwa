@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import StaggeredMenu from "@/components/StaggeredMenu";
+import StaggeredMenu from "@/components/StaggeredMenu/StaggeredMenu";
 import { menuConfig } from "@/config/navigation";
 import "./globals.css";
 import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
@@ -71,12 +71,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} root-body`}>
         <AnalyticsProvider />
         <StaggeredMenu {...menuConfig} />
         {children}
+
+        <style>{`
+            .root-body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        `}</style>
       </body>
     </html>
   );
