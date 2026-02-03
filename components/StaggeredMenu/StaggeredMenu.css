@@ -33,13 +33,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em;
-  background: transparent;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(3px) saturate(180%);
+  /* -webkit-backdrop-filter: blur(5px) saturate(180%); */
+  /* border-bottom: 1px solid rgba(197, 0, 0, 0.25); */
+  /* box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2); */
   pointer-events: none;
   z-index: 20;
 }
 
-.sm-scope .staggered-menu-header > * {
+.sm-scope .staggered-menu-header>* {
   pointer-events: auto;
 }
 
