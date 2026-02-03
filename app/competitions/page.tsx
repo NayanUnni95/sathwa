@@ -26,7 +26,7 @@ export default function CompetitionsPage() {
                 </div>
 
                 {/* Hero Content */}
-                <div className="relative z-10 text-center px-4 mt-30 md:mt-36">
+                <div className="relative z-10 text-center px-4 mt-42 md:mt-50">
                     <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-['KyivTypeTitling'] text-[#EAE0D5] tracking-widest uppercase drop-shadow-2xl ">
                         COMPETITIONS
                     </h1>

@@ -180,7 +180,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
                                     {compData.contact.map((c, i) => (
                                         <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
                                             <span className="font-medium text-zinc-300">{c.name}</span>
-                                            <a href={`tel:${c.no}`} className="text-[#a7a7a7] hover:text-white transition-colors font-mono text-sm">
+                                            <a href={`tel:${c.no}`} className="text-[#868384] hover:text-white transition-colors font-mono text-sm">
                                                 {c.no}
                                             </a>
                                         </div>

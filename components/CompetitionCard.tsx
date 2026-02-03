@@ -81,17 +81,17 @@ export default function CompetitionCard({ id, title, description, date, day, ima
                     )}
 
                     {/* Bottom Status Bar / CTA */}
-                    <div className="flex items-center justify-between border-t border-white/10 bg-[#080808] px-4 py-3 group-hover:bg-[#BC002D]/10 transition-colors duration-300">
+                    <Link href={`/competitions/${id}`} className="flex items-center justify-between border-t border-white/10 bg-[#080808] px-4 py-5 group-hover:bg-[#BC002D]/10 transition-colors duration-300">
                         <div className="flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                            <span className="text-[9px] uppercase tracking-widest text-zinc-400">Registrations Open</span>
+                            <span className="text-[10px] uppercase tracking-widest text-zinc-400">Registrations Open</span>
                         </div>
 
-                        <Link href={`/competitions/${id}`} className="flex items-center gap-1 group/btn cursor-pointer">
-                            <span className="text-[9px] uppercase tracking-widest text-zinc-300 group-hover:text-[#BC002D] transition-colors">Details</span>
+                        <div className="flex items-center gap-1 group/btn cursor-pointer">
+                            <span className="text-[10px] uppercase tracking-widest text-zinc-300 group-hover:text-[#BC002D] transition-colors">Details</span>
                             <svg className="w-3 h-3 text-zinc-300 group-hover:text-[#BC002D] transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

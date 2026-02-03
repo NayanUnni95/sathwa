@@ -10,7 +10,7 @@ export default function EsportsSection() {
         <section className="relative w-full pt-12 pb-16 bg-[#080808] overflow-hidden border-y border-white/5">
 
             {/* Tech Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:26px_26px] pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-[#080808] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -53,7 +53,7 @@ export default function EsportsSection() {
                     {/* Main Image with Clip Path */}
                     <div className="absolute inset-0 z-10 clip-path-polygon filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-out">
                         <Image
-                            src="/assets/esports/esports_home.jpeg"
+                            src="/assets/esports/esports_1080p.png"
                             alt="Esports"
                             fill
                             className="object-cover"

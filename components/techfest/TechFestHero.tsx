@@ -145,9 +145,9 @@ export default function TechFestHero() {
             <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay"></div>
 
             {/* 2. Top Typography (Behind Joystick potentially) */}
-            <div className="absolute top-[8%] z-10 w-full px-4 md:px-12 flex justify-between items-start pointer-events-none select-none">
+            <div className="absolute top-[12%] z-10 w-full px-4 md:px-12 flex justify-between items-start pointer-events-none select-none">
                 <h1 className="text-[15vw] leading-[0.8] font-bold tracking-tighter mix-blend-exclusion text-zinc-100 font-['var(--font-orbitron)']">
-                    SATHWA
+                    EXPO
                 </h1>
                 <h1 className="text-[15vw] leading-[0.8] font-light tracking-tighter mix-blend-exclusion text-zinc-100 font-['var(--font-orbitron)']">
                     26
@@ -156,21 +156,21 @@ export default function TechFestHero() {
 
             {/* 3. Scrolling Marquee (The "Element behind the image and below tathva") */}
             {/* Positioned slightly below the main title, z-index behind joystick */}
-            <div className="absolute top-[35%] w-full z-10 overflow-hidden bg-black/50 border-y border-white/10 backdrop-blur-[2px]">
-                <div className="flex animate-marquee whitespace-nowrap py-3">
+            <div className="absolute top-[20%] w-full z-10 overflow-hidden bg-black/50 border-y border-white/10 backdrop-blur-[2px]">
+                <div className="flex w-max animate-marquee whitespace-nowrap py-3">
                     {[...Array(4)].map((_, i) => (
-                        <div key={i} className="flex items-center gap-12 mx-6">
-                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Wheels</span>
+                        <div key={i} className="flex shrink-0 items-center gap-12 mx-6">
+                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Civil EXpo</span>
                             <span className="text-[#BC002D]">▸</span>
-                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Proshow</span>
+                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Robotics Expo</span>
                             <span className="text-[#BC002D]">▸</span>
-                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Competitions</span>
+                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">KSEB Expo</span>
                             <span className="text-[#BC002D]">▸</span>
-                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Workshops</span>
+                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Keltron Expo</span>
                             <span className="text-[#BC002D]">▸</span>
-                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Talks</span>
+                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Nail Expo</span>
                             <span className="text-[#BC002D]">▸</span>
-                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Events</span>
+                            <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">Hobby Circuit Expo</span>
                             <span className="text-[#BC002D]">▸</span>
                         </div>
                     ))}
@@ -247,9 +247,9 @@ export default function TechFestHero() {
                     </div>
 
                     <div className="flex flex-col">
-                        <span className="text-[10px] font-bold tracking-widest uppercase leading-tight">Biggest Techfest in</span>
+                        <span className="text-[15px] font-bold tracking-widest uppercase leading-tight">10+</span>
                         <div className="flex items-center gap-2">
-                            <span className="text-[10px] font-bold tracking-widest uppercase">South India</span>
+                            <span className="text-[15px] font-bold tracking-widest uppercase">Expos</span>
                             <div className="h-[1px] w-12 bg-black" />
                         </div>
                     </div>
@@ -259,10 +259,10 @@ export default function TechFestHero() {
             <style jsx global>{`
                 @keyframes marquee {
                     0% { transform: translateX(0%); }
-                    100% { transform: translateX(-50%); }
+                    100% { transform: translateX(-40%); }
                 }
                 .animate-marquee {
-                    animation: marquee 20s linear infinite;
+                    animation: marquee 60s linear infinite;
                 }
             `}</style>
         </section>
