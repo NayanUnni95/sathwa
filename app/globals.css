@@ -23,6 +23,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "KyivTypeTitling";
+  src: url("/fonts/KyivTypeTitling-Bold3.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;
@@ -43,6 +50,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -57,12 +65,15 @@ body {
 .delay-1 {
   animation-delay: 1s;
 }
+
 .delay-2 {
   animation-delay: 1.25s;
 }
+
 .delay-3 {
   animation-delay: 1.5s;
 }
+
 .delay-4 {
   animation-delay: 2s;
 }
@@ -74,6 +85,7 @@ body {
     transform: translateY(28px) scale(0.98);
     filter: blur(6px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -91,15 +103,19 @@ body {
 .reveal-1 {
   animation-delay: 0.65s;
 }
+
 .reveal-2 {
   animation-delay: 0.9s;
 }
+
 .reveal-3 {
   animation-delay: 1.5s;
 }
+
 .reveal-4 {
   animation-delay: 2s;
 }
+
 .reveal-5 {
   animation-delay: 2.4s;
 }
@@ -118,15 +134,19 @@ body {
   0% {
     opacity: 0;
   }
+
   35% {
     opacity: 0.5;
   }
+
   60% {
     opacity: 0.8;
   }
+
   75% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -141,12 +161,15 @@ body {
 .font-japan {
   font-family: "JapanRamen", serif;
 }
+
 .font-ml {
   font-family: "Noto Serif Malayalam", serif;
 }
+
 .font-hi {
   font-family: "Noto Serif Devanagari", serif;
 }
+
 .font-ja {
   font-family: "Noto Serif JP", serif;
 }
@@ -174,18 +197,23 @@ body {
   0% {
     transform: rotate(0deg) translateX(0);
   }
+
   15% {
     transform: rotate(2.5deg) translateX(4px);
   }
+
   35% {
     transform: rotate(-3deg) translateX(-6px);
   }
+
   55% {
     transform: rotate(3.8deg) translateX(5px);
   }
+
   75% {
     transform: rotate(-2deg) translateX(-3px);
   }
+
   100% {
     transform: rotate(0deg) translateX(0);
   }
@@ -195,15 +223,19 @@ body {
   0% {
     transform: rotate(0deg) translateX(0);
   }
+
   15% {
     transform: rotate(-2.5deg) translateX(-4px);
   }
+
   35% {
     transform: rotate(3deg) translateX(5px);
   }
+
   75% {
     transform: rotate(2deg) translateX(3px);
   }
+
   100% {
     transform: rotate(0deg) translateX(0);
   }
@@ -221,14 +253,17 @@ body {
     opacity: 0.35;
     transform: scale(1);
   }
+
   40% {
     opacity: 1;
     transform: scale(1.15);
   }
+
   80% {
     opacity: 0.35;
     transform: scale(1);
   }
+
   100% {
     opacity: 0.35;
     transform: scale(1);

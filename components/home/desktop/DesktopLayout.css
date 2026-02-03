@@ -2,11 +2,13 @@
   display: none;
   flex-direction: column;
   align-items: center;
-  padding-left: 3rem; /* px-12 */
+  padding-left: 3rem;
+  /* px-12 */
   padding-right: 3rem;
   height: 100vh;
   position: relative;
 }
+
 @media (min-width: 1024px) {
   .dl-main-content {
     display: flex;
@@ -18,8 +20,20 @@
   width: 100%;
   z-index: 10;
 }
+
 @media (min-width: 1024px) {
   .dl-countdown-section {
+    display: block;
+  }
+}
+
+.dl-esports-section {
+  display: none;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .dl-esports-section {
     display: block;
   }
 }
