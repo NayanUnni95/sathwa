@@ -1,59 +1,87 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+
+const MIN_LOADER_TIME = 4000;
+const HARD_TIMEOUT = 15000;
 
 export default function Loader() {
-    const [isLoading, setIsLoading] = useState(true);
-    const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const startTime = useRef(Date.now());
+  const closed = useRef(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-        // Force play on mount to bypass some browser restriction
-        if (videoRef.current) {
-            console.log("Attempting to play video...");
-            videoRef.current.play().then(() => {
-                console.log("Video playing successfully");
-            }).catch((err) => {
-                console.error("Video autoplay failed:", err);
-            });
-        }
-
-        const timeout = setTimeout(() => {
-            console.log("Loader timeout reached");
-            setIsLoading(false);
-        }, 3000);
-
-        return () => clearTimeout(timeout);
-    }, []);
-
-    const handleVideoEnd = () => {
-        console.log("Video ended");
-        setTimeout(() => setIsLoading(false), 500);
+  // Detect mobile properly (SSR safe)
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
     };
 
-    if (!isLoading) return null;
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-    return (
-        <div className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black transition-opacity duration-700 ${isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            {/* Optional: Loading Text in case video is slow to start */}
-            <div className="absolute text-white/20 font-mono text-sm tracking-widest animate-pulse z-0">
-                INITIALIZING...
-            </div>
+  const closeLoader = () => {
+    if (closed.current) return;
+    closed.current = true;
 
-            <video
-                ref={videoRef}
-                src="/assets/upscaled-video.mp4"
-                autoPlay
-                muted
-                playsInline
-                preload="auto"
-                onEnded={handleVideoEnd}
-                onLoadedData={() => console.log("Video loaded data")}
-                onError={(e) => {
-                    console.error("Video error:", e);
-                    setIsLoading(false);
-                }}
-                className="relative w-full h-full object-cover z-10"
-            />
-        </div>
-    );
+    const elapsed = Date.now() - startTime.current;
+    const remaining = Math.max(MIN_LOADER_TIME - elapsed, 0);
+
+    setTimeout(() => setIsLoading(false), remaining);
+  };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+
+      videoRef.current
+        .play()
+        .catch(() => {
+          // autoplay blocked → fallback
+          closeLoader();
+        });
+    }
+
+    const hardTimeout = setTimeout(closeLoader, HARD_TIMEOUT);
+    return () => clearTimeout(hardTimeout);
+  }, []);
+
+  if (!isLoading) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden"
+      style={{
+        width: '100vw',
+        height: '100dvh', // iOS safe viewport
+      }}
+    >
+      <video
+        ref={videoRef}
+        src="/assets/upscaled-video.mp4"
+        muted
+        autoPlay
+        playsInline
+        preload="auto"
+        poster="/assets/poster.jpg"
+        onEnded={closeLoader}
+        onError={closeLoader}
+        style={{
+          position: 'absolute',
+          inset: 0,
+
+          /* 🔥 responsive behavior */
+          width: '100%',
+          height: isMobile ? 'auto' : '100%',
+          maxHeight: isMobile ? '100dvh' : '100%',
+          objectFit: isMobile ? 'contain' : 'cover',
+
+          margin: 'auto',
+        }}
+      />
+    </div>
+  );
 }
