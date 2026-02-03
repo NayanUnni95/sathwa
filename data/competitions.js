@@ -7,7 +7,7 @@ export const competition = [
         about:
             '“Build the play. Break the defense. Rule the pitch.” Welcome to E-Football Showdown, the ultimate virtual football battle at SATHWA, the techno-cultural fest of College of Engineering Muttathara. No luck. No retries. Just precision passing, sharp tactics, and pure football IQ. Step onto the digital pitch and prove who truly owns the game.',
         url: '/assets/esports/efootball.jpeg',
-        regLink: 'https://forms.gle/bWVCYmyBsgmxqMv56r',
+        regLink: 'https://forms.gle/bWVCYmyBsgmxqMv56',
         isRegOpen: true,
         price: '50',
         pricePool: '1000',
