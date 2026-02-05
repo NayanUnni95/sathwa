@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const MIN_LOADER_TIME = 4000;
-const HARD_TIMEOUT = 15000;
+const HARD_TIMEOUT = 7000;
 
 export default function Loader() {
   const [isLoading, setIsLoading] = useState(true);

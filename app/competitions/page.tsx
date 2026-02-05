@@ -1,18 +1,13 @@
-// import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import CompetitionCard from "@/components/CompetitionCard";
-
-// Mock Data
 import { competition } from "@/data/competitions";
+
 
 export default function CompetitionsPage() {
     return (
         <main className="min-h-screen bg-black text-[#EAE0D5] font-sans">
-            {/* <Navbar /> */}
-
             {/* Hero Section */}
             <section className="relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
-                {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/assets/dummy4.png"
@@ -43,8 +38,8 @@ export default function CompetitionsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-22 justify-items-center">
                         {competition.map((comp) => (
                             <CompetitionCard
-                                key={comp.categoryId}
-                                id={comp.categoryId}
+                                key={comp.searchKey}
+                                id={comp.searchKey}
                                 title={comp.name}
                                 description={comp.about}
                                 // Default date/day as not in data schema yet

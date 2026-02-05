@@ -1,30 +1,12 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { FiArrowUpRight, FiShare2, FiUsers, FiClock, FiMapPin, FiAward, FiDollarSign } from 'react-icons/fi';
+import { FiArrowUpRight, FiShare2, FiUsers, FiClock, FiAward } from 'react-icons/fi';
 import { BiRupee } from 'react-icons/bi';
 import gsap from 'gsap';
+import type { IndividualCompProps } from '@/types/types';
 
-interface CompetitionData {
-    categoryId: number;
-    name: string;
-    type: string;
-    about: string;
-    url: string;
-    regLink: string;
-    isRegOpen: boolean;
-    price: string;
-    pricePool: string;
-    guidelines: string;
-    note: string;
-    contact: { name: string; no: string }[];
-    searchKey: string;
-}
-
-interface IndividualCompProps {
-    compData: CompetitionData;
-}
 
 export default function IndividualComp({ compData }: IndividualCompProps) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -193,6 +175,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
                                 <button
                                     onClick={() => compData.isRegOpen && navigate(compData.regLink)}
                                     disabled={!compData.isRegOpen}
+                                    type="button"
                                     className={`flex-1 h-full min-h-[60px] rounded-xl flex items-center justify-center gap-3 text-lg font-bold uppercase tracking-widest transition-all duration-300 ${compData.isRegOpen
                                         ? 'bg-[#BC002D] hover:bg-[#a00026] text-white shadow-lg shadow-[#BC002D]/20 hover:shadow-[#BC002D]/40 translate-y-0 hover:-translate-y-1'
                                         : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
@@ -204,6 +187,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
 
                                 <button
                                     onClick={shareItem}
+                                    type="button"
                                     className="h-[60px] rounded-xl border border-white/10 hover:border-white/30 hover:bg-white/5 flex items-center justify-center gap-3 text-zinc-300 hover:text-white transition-all uppercase tracking-widest text-sm font-medium"
                                 >
                                     <FiShare2 size={18} />
