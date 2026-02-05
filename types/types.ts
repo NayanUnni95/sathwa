@@ -26,5 +26,5 @@ export interface CompetitionCardProps {
 }
 
 export interface IndividualCompProps {
-    compData: CompetitionData;
+  compData: CompetitionData;
 }

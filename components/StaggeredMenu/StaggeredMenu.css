@@ -44,7 +44,7 @@
   z-index: 20;
 }
 
-.sm-scope .staggered-menu-header>* {
+.sm-scope .staggered-menu-header > * {
   pointer-events: auto;
 }
 

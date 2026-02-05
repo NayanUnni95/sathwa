@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const MIN_LOADER_TIME = 4000;
 const HARD_TIMEOUT = 7000;
@@ -15,12 +15,12 @@ export default function Loader() {
   // Detect mobile properly (SSR safe)
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const closeLoader = () => {
@@ -37,12 +37,10 @@ export default function Loader() {
     if (videoRef.current) {
       videoRef.current.muted = true;
 
-      videoRef.current
-        .play()
-        .catch(() => {
-          // autoplay blocked → fallback
-          closeLoader();
-        });
+      videoRef.current.play().catch(() => {
+        // autoplay blocked → fallback
+        closeLoader();
+      });
     }
 
     const hardTimeout = setTimeout(closeLoader, HARD_TIMEOUT);
@@ -55,8 +53,8 @@ export default function Loader() {
     <div
       className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden"
       style={{
-        width: '100vw',
-        height: '100dvh', // iOS safe viewport
+        width: "100vw",
+        height: "100dvh", // iOS safe viewport
       }}
     >
       <video
@@ -70,17 +68,17 @@ export default function Loader() {
         onEnded={closeLoader}
         onError={closeLoader}
         style={{
-          position: 'absolute',
+          position: "absolute",
           inset: 0,
 
           /* 🔥 responsive behavior */
-          width: 'auto',
-          height: 'auto',
-          maxWidth: isMobile ? 'min(70vw, 300px)' : 'min(60vw, 400px)',
-          maxHeight: isMobile ? 'min(70vh, 300px)' : 'min(60vh, 400px)',
-          objectFit: 'contain',
+          width: "auto",
+          height: "auto",
+          maxWidth: isMobile ? "min(70vw, 300px)" : "min(60vw, 400px)",
+          maxHeight: isMobile ? "min(70vh, 300px)" : "min(60vh, 400px)",
+          objectFit: "contain",
 
-          margin: 'auto',
+          margin: "auto",
         }}
       />
     </div>

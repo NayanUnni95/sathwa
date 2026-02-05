@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { CompetitionCardProps } from "@/types/types"; 
-
+import type { CompetitionCardProps } from "@/types/types";
 
 export default function CompetitionCard({
   id,
   title,
   description,
   date,
-//   day,
+  //   day,
   imageUrl = "/assets/dummy2.jpg",
   details = false,
 }: CompetitionCardProps) {

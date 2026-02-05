@@ -77,7 +77,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} root-body`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} root-body`}
+      >
         <Loader />
         <AnalyticsProvider />
         <StaggeredMenu {...menuConfig} />
