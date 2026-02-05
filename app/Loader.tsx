@@ -74,10 +74,11 @@ export default function Loader() {
           inset: 0,
 
           /* 🔥 responsive behavior */
-          width: '100%',
-          height: isMobile ? 'auto' : '100%',
-          maxHeight: isMobile ? '100dvh' : '100%',
-          objectFit: isMobile ? 'contain' : 'cover',
+          width: 'auto',
+          height: 'auto',
+          maxWidth: isMobile ? 'min(70vw, 300px)' : 'min(60vw, 400px)',
+          maxHeight: isMobile ? 'min(70vh, 300px)' : 'min(60vh, 400px)',
+          objectFit: 'contain',
 
           margin: 'auto',
         }}
