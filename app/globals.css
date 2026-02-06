@@ -283,6 +283,7 @@ body {
 }
 
 
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -297,4 +298,24 @@ body {
   animation: marquee 30s linear infinite;
   display: flex !important;
   /* Ensure flex for ticker */
+}
+
+
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(2.5);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
