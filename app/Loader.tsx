@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const MIN_LOADER_TIME = 4000;
-const HARD_TIMEOUT = 7000;
+const MIN_LOADER_TIME = 3000;
+const HARD_TIMEOUT = 4000;
 
 export default function Loader() {
   const [isLoading, setIsLoading] = useState(true);
