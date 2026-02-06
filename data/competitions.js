@@ -76,7 +76,7 @@ export const competition = [
     price: "50",
     pricePool: "1500",
     guidelines:
-      "Individual participation only. Sharing solutions or collaborating is prohibited. No unfair means or external help allowed. Follow problem specifications strictly. All submissions must be completed within the given time. Highest scorer wins.",
+      "Sharing solutions or collaborating with other participants is strictly prohibited. Participants must not use unfair means or external help during the competition. Solutions must be written according to the problem specifications provided. All submissions must be completed within the stipulated time. The individual with the highest score at the end of the competition will be declared the winner.",
     note: "Participants must follow all competition rules strictly.",
     contact: [
       { name: "Nayan Mohan M S", no: "9496234636" },
@@ -97,7 +97,7 @@ export const competition = [
     price: "50",
     pricePool: "1500",
     guidelines:
-      "Individual participation only using the provided AI interface. Hacking, API misuse, or bypass attempts are prohibited. No external tools or AI assistants allowed. Sharing prompts or answers is not allowed. Follow all limits and ethical rules. Organizer decisions are final.",
+      "This event is strictly for individual participation only, and participants must use only the provided AI interface or API. Hacking or technical exploitation of any kind, including SQL injection, API misuse, bypassing limits, or system access attempts, is prohibited. External tools, scripts, automation, or other AI assistants must not be used. Sharing prompts, answers, or strategies with others is not allowed. Participants must follow all attempt limits and time limits, and maintain ethical, respectful prompting. Misuse will lead to disqualification. Winners are decided by organizers or judges, whose decisions are final.",
     note: "Ethical prompting is strictly enforced.",
     contact: [
       { name: "Pardhiv Suresh M", no: "8590448423" },
@@ -119,7 +119,7 @@ export const competition = [
     price: "50",
     pricePool: "1500",
     guidelines:
-      "Team-based event. Sharing flags or solutions is prohibited. Attacking the platform or other participants is not allowed. Flags must be submitted in correct format and within the time limit. Highest score wins.",
+      "Sharing flags, solutions, or collaborating with other teams is strictly prohibited. Attacking the platform, infrastructure, or other participants is not allowed. Flags must be submitted in the correct format on the competition platform. Flags must be submitted within the stipulated time. The team with the highest score at the end of the time wins.",
     note: "Fair play and platform safety are mandatory.",
     contact: [
       { name: "Abhinav SB", no: "8590289691" },
@@ -142,7 +142,7 @@ export const competition = [
     price: "150",
     pricePool: "1500",
     guidelines:
-      "Team of three members. Report on time. Specifications will be given on the spot. Bridge must be completed within the allotted time. Mobile phones are prohibited during the event.",
+      "Participants should report on time. Specifications will be given on the spot. The bridge must be completed within two hours, with additional time given only if required. Mobile phones are prohibited during match hours. A team can consist of only three members.",
     note: "Follow all instructions given at the venue.",
     contact: [
       { name: "Mohammed Abdulla", no: "9746985786" },
@@ -205,7 +205,7 @@ export const competition = [
     price: "99",
     pricePool: "1500",
     guidelines:
-      "Individual or team of two. Debug the faulty circuit within 10 minutes using only provided components. Mobile phones and gadgets are prohibited. Winner decided by completion time and functionality.",
+      "Open to all registered students. Participation allowed individually or in teams of two. Participants will be given a faulty circuit and must identify and rectify the error. Maximum time limit is 10 minutes. Only wires and components provided by organizers may be used. Mobile phones, tablets, smartwatches, and other electronic gadgets are strictly forbidden. Winner is decided based on who finishes first. Final circuit must be fully functional upon evaluation.",
     note: "Final circuit must be fully functional.",
     contact: [
       { name: "Bharadwaj S R", no: "9778241387" },
@@ -226,7 +226,7 @@ export const competition = [
     price: "199",
     pricePool: "1800",
     guidelines:
-      "Individual or team participation. Three elimination rounds. Only provided tools allowed. No personal tools or devices. Judging based on accuracy, correctness, and time.",
+      "Participation can be individual or team-based as specified by organizers. The event consists of three rounds with possible elimination after each round. Participants must report at least 15 minutes before the start time. Circuits will contain intentional faults, and participants must identify and rectify them. Only components, tools, and instruments provided by organizers are allowed; personal tools or components are not permitted. Any damage due to mishandling will lead to disqualification. Use of mobile phones, smart devices, or internet during the competition is strictly prohibited. Each round has a strict time limit. Judging is based on accuracy of fault identification, correctness of debugging, and time taken.",
     note: "Strict rules against device usage.",
     contact: [
       { name: "Sameera", no: "8921017008" },
@@ -247,7 +247,7 @@ export const competition = [
     price: "50 (per team)",
     pricePool: "700",
     guidelines:
-      "Team of two members. Two rounds: MCQ and buzzer. Only qualified teams proceed to round two. No electronic devices allowed. Malpractice leads to disqualification.",
+      "Each team must consist of exactly two members. The quiz will be conducted in two rounds: Round 1 with electronics-based MCQ questions and Round 2 as an electronics-based buzzer round. A total of 40 questions will be asked across both rounds. Only teams qualifying from Round 1 will be eligible for Round 2. Use of mobile phones, smart devices, calculators, or any electronic gadgets is strictly prohibited. In the buzzer round, the first team to press the buzzer gets the chance to answer. Any form of malpractice, misbehavior, or disturbance will result in immediate disqualification. Participants must be present at least 15 minutes before the scheduled start time.",
     note: "Certificates provided to participants.",
     contact: [
       { name: "Sameera", no: "8921017008" },
@@ -269,7 +269,7 @@ export const competition = [
     price: "50",
     pricePool: "1000",
     guidelines:
-      "Individual event. Participants must debug provided programs within the time limit. No internet or external materials allowed. Evaluation based on accuracy, number of fixes, and speed.",
+      "The event is open to all registered students. The competition will be individual-based. Pre-written code with errors will be provided, and participants must identify and correct the errors within the given time. Use of mobile phones, internet, or reference materials is not allowed. Only the systems provided by the organizers will be used. Evaluation will be based on accuracy, number of errors fixed, and time taken.",
     note: "Only organizer systems may be used.",
     contact: [
       { name: "Abbas Shaffi", no: "7025642963" },
