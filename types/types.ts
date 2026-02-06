@@ -3,6 +3,8 @@ export interface CompetitionData {
   categoryId: number;
   searchKey: string;
   type: string;
+  date: string;
+  dateShort: string;
   about: string;
   url: string;
   regLink: string;

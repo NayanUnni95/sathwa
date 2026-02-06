@@ -55,6 +55,7 @@ export default function CompetitionsPage() {
             {categories.map((category) => (
               <button
                 key={category}
+                type="button"
                 onClick={() => setActiveFilter(category)}
                 className={`group relative px-6 py-2.5 md:px-10 md:py-3.5 text-[10px] md:text-xs tracking-[0.3em] uppercase font-['KyivTypeTitling'] transition-all duration-500 overflow-hidden border ${
                   activeFilter === category
@@ -97,8 +98,9 @@ export default function CompetitionsPage() {
                   title={comp.name}
                   description={comp.about}
                   // Default date/day as not in data schema yet
-                  date="8-10/02/2026"
-                  day="Friday"
+                  date={comp.dateShort}
+                  day=""
+                  // day="Friday"
                   imageUrl={comp.url}
                   details={comp.details}
                 />

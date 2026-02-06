@@ -135,7 +135,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
                   Date
                 </span>
                 <span className="font-['KyivTypeTitling'] text-xl">
-                  8-10 FEB 2026
+                  {compData.date}
                 </span>
               </div>
             </div>

@@ -4,6 +4,8 @@ export const competition = [
     categoryId: 11,
     searchKey: "e-football",
     type: "non-tech",
+    date: "8-10 FEB 2026",
+    dateShort: "8-10/02/2026",
     about:
       "“Build the play. Break the defense. Rule the pitch.” Welcome to E-Football Showdown, the ultimate virtual football battle at SATHWA, the techno-cultural fest of College of Engineering Muttathara. No luck. No retries. Just precision passing, sharp tactics, and pure football IQ. Step onto the digital pitch and prove who truly owns the game.",
     url: "/assets/esports/efootball.jpeg",
@@ -25,6 +27,8 @@ export const competition = [
     categoryId: 12,
     searchKey: "bgmi-showdown",
     type: "non-tech",
+    date: "8-10 FEB 2026",
+    dateShort: "8-10/02/2026",
     about:
       "“Survive the drop. Dominate the zone.” Welcome to BGMI Showdown, the ultimate battle royale event at SATHWA, the techno-cultural fest of College of Engineering Muttathara. No mercy. No second chances. Just strategy, teamwork, and pure skill. Drop in with your squad and prove who owns the battlefield.",
     url: "/assets/esports/bgmi.jpeg",
@@ -46,6 +50,8 @@ export const competition = [
     categoryId: 13,
     searchKey: "valorant-showdown",
     type: "non-tech",
+    date: "8-10 FEB 2026",
+    dateShort: "8-10/02/2026",
     about:
       "“Plant the spike. Hold the angle. Win the round.” Calling all duelists, sentinels, controllers, and clutch gods. Welcome to Valorant Showdown, the ultimate tactical FPS event at SATHWA, the techno-cultural fest of College of Engineering Muttathara. No spray and pray. Just sharp aim, perfect utility, and next-level team coordination.",
     url: "/assets/esports/valorant.jpeg",
@@ -67,6 +73,8 @@ export const competition = [
     categoryId: 14,
     searchKey: "reverse-coding",
     type: "tech",
+    date: "27 Feb 2026",
+    dateShort: "27/02/2026",
     about:
       "Reverse Coding is an interactive coding challenge where participants analyze given outputs and logic to deduce and write the correct source code. The event tests problem-solving ability, logical thinking, and performance under real-time pressure.",
     url: "/assets/competitions/reverse-coding.jpeg",
@@ -89,6 +97,8 @@ export const competition = [
     categoryId: 15,
     searchKey: "jail-break",
     type: "tech",
+    date: "27 Feb 2026",
+    dateShort: "27/02/2026",
     about:
       "Jail Break is an ethical prompt engineering challenge where participants attempt to outsmart a restricted AI model using creative prompts. The event progresses through multiple levels, testing logical thinking, strategy, and adaptability.",
     url: "/assets/competitions/jail-break.jpeg",
@@ -110,6 +120,8 @@ export const competition = [
     categoryId: 16,
     searchKey: "capture-the-flag",
     type: "tech",
+    date: "26 Feb 2026",
+    dateShort: "26/02/2026",
     about:
       "Capture the Flag is a cybersecurity challenge where teams solve security-based puzzles to capture hidden flags across multiple domains. The event tests technical knowledge, strategy, and teamwork under pressure.",
     url: "/assets/competitions/ctf.jpeg",
@@ -133,6 +145,8 @@ export const competition = [
     categoryId: 1,
     searchKey: "bridge-construction",
     type: "tech",
+    date: "26 Feb 2026",
+    dateShort: "26/02/2026",
     about:
       "Bridge Construction is a technical competition where teams design and build a stable bridge using provided materials. The event tests structural understanding, creativity, and teamwork.",
     url: "/assets/competitions/bridge-construction.jpeg",
@@ -155,6 +169,8 @@ export const competition = [
     categoryId: 17,
     searchKey: "3d-modeling",
     type: "tech",
+    date: "27 Feb 2026",
+    dateShort: "27/02/2026",
     about:
       "3D Modeling Competition challenges participants to showcase creativity and precision by designing models within a limited time. The event encourages innovation and technical design skills.",
     url: "/assets/competitions/3d-modeling.jpeg",
@@ -176,6 +192,8 @@ export const competition = [
     categoryId: 18,
     searchKey: "autocad-drawing",
     type: "tech",
+    date: "26 Feb 2026",
+    dateShort: "26/02/2026",
     about:
       "AutoCAD Drawing Competition invites participants to showcase drafting precision and creativity through technical design challenges.",
     url: "/assets/competitions/autocard-drawing.jpeg",
@@ -197,6 +215,8 @@ export const competition = [
     categoryId: 19,
     searchKey: "circuit-debugging",
     type: "tech",
+    date: "27 Feb 2026",
+    dateShort: "27/02/2026",
     about:
       "Circuit Debugging is a technical challenge where participants identify and fix faults in electronic circuits within a limited time.",
     url: "/assets/competitions/circuit-debugging.jpeg",
@@ -218,6 +238,8 @@ export const competition = [
     categoryId: 1,
     searchKey: "hardware-debugging",
     type: "tech",
+    date: "26 Feb 2026",
+    dateShort: "26/02/2026",
     about:
       "Hardware Debugging is a multi-round competition where participants identify and fix faults in electronic circuits across different stages.",
     url: "/assets/competitions/hardware-debugging.jpeg",
@@ -239,6 +261,8 @@ export const competition = [
     categoryId: 20,
     searchKey: "ece-quiz",
     type: "tech",
+    date: "27 Feb 2026",
+    dateShort: "27/02/2026",
     about:
       "ECE Quiz is a technical knowledge competition consisting of MCQ and buzzer rounds to test electronics fundamentals, speed, and presence of mind.",
     url: "/assets/competitions/ece-quiz.jpeg",
@@ -260,6 +284,8 @@ export const competition = [
     categoryId: 21,
     searchKey: "debugging-challenge",
     type: "tech",
+    date: "27 Feb 2026",
+    dateShort: "27/02/2026",
     about:
       "Debugging Challenge is a competitive coding event where participants analyze faulty programs, identify errors, and fix them within a limited time.",
     url: "/assets/competitions/debugging-challenge.jpeg",
@@ -283,6 +309,8 @@ export const competition = [
     categoryId: 22,
     searchKey: "spark-tank",
     type: "tech",
+    date: "27 Feb 2026",
+    dateShort: "27/02/2026",
     about:
       "Spark Tank is a multi-round technical competition combining quiz, circuit design, and idea presentation. Teams must think, build, and pitch innovative solutions.",
     url: "/assets/competitions/spark-tank.jpeg",
