@@ -282,6 +282,19 @@ body {
   animation-delay: 0.4s;
 }
 
-.dot-delay-3 {
-  animation-delay: 0.8s;
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  display: flex !important;
+  /* Ensure flex for ticker */
 }

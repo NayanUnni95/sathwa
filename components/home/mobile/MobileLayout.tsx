@@ -2,6 +2,7 @@ import CountdownSection from "@/components/CountdownSection/CountdownSection";
 import MobileHeroSection from "./HeroSection/HeroSection";
 import MobileInfoCard from "./InfoCard/InfoCard";
 import EsportsSection from "../EsportsSection";
+import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./MobileLayout.css";
 
 export default function MobileLayout() {
@@ -14,6 +15,8 @@ export default function MobileLayout() {
       <MobileInfoCard />
 
       <EsportsSection />
+
+      <TechCompetitionsSection />
 
       <CountdownSection />
     </div>

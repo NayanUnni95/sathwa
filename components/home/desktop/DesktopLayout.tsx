@@ -2,6 +2,7 @@ import CountdownSection from "@/components/CountdownSection/CountdownSection";
 import DatePanel from "./DatePanel/DatePanel";
 import HeroFeatures from "./HeroFeatures/HeroFeatures";
 import EsportsSection from "../EsportsSection";
+import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./DesktopLayout.css";
 
 export default function DesktopLayout() {
@@ -15,6 +16,11 @@ export default function DesktopLayout() {
       {/* Esports Section */}
       <div className="dl-esports-section">
         <EsportsSection />
+      </div>
+
+      {/* Tech Competitions Section */}
+      <div className="dl-tech-section">
+        <TechCompetitionsSection />
       </div>
 
       {/* Countdown Section - Desktop placement */}
