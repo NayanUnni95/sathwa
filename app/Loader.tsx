@@ -64,7 +64,7 @@ export default function Loader() {
         autoPlay
         playsInline
         preload="auto"
-        poster="/assets/poster.jpg"
+        // poster="/assets/favicon.png"
         onEnded={closeLoader}
         onError={closeLoader}
         style={{
