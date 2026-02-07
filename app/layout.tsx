@@ -44,6 +44,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Sathwa Team" }],
   creator: "College of Engineering, Muttathara",
+  icons: {
+    icon: "/assets/favicon.ico",
+    shortcut: "/assets/favicon.ico",
+    apple: "/assets/favicon.ico",
+  },
   openGraph: {
     title: "Sathwa 2026 | Where Tradition Meets Technology",
     description:
