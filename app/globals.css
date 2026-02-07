@@ -282,8 +282,6 @@ body {
   animation-delay: 0.4s;
 }
 
-
-
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -300,10 +298,7 @@ body {
   /* Ensure flex for ticker */
 }
 
-
-
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 1;
