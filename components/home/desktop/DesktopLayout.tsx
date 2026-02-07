@@ -13,19 +13,24 @@ export default function DesktopLayout() {
         <DatePanel />
       </div>
 
-      {/* Esports Section */}
-      <div className="dl-esports-section">
-        <EsportsSection />
-      </div>
+      {/* Black Background Wrapper for Lower Sections */}
+      <div className="w-full bg-black flex flex-col relative z-20">
 
-      {/* Tech Competitions Section */}
-      <div className="dl-tech-section">
-        <TechCompetitionsSection />
-      </div>
 
-      {/* Countdown Section - Desktop placement */}
-      <div className="dl-countdown-section">
-        <CountdownSection />
+        {/* Esports Section */}
+        <div className="dl-esports-section">
+          <EsportsSection />
+        </div>
+
+        {/* Tech Competitions Section */}
+        <div className="dl-tech-section">
+          <TechCompetitionsSection />
+        </div>
+
+        {/* Countdown Section - Desktop placement */}
+        <div className="dl-countdown-section">
+          <CountdownSection />
+        </div>
       </div>
     </>
   );

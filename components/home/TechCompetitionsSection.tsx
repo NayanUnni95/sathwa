@@ -179,7 +179,7 @@ export default function TechCompetitionsSection() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 75%", // Starts much later (when top of section is 75% down viewport)
+                    start: "top 80%", // Starts much later (when top of section is 75% down viewport)
                     end: "bottom 90%",
                     scrub: 1.5, // Slower scrub for smoother heavy feel
                 },
@@ -226,7 +226,7 @@ export default function TechCompetitionsSection() {
     return (
         <section
             ref={containerRef}
-            className="relative w-full h-[80vh] md:h-screen overflow-hidden bg-black flex items-center justify-center group"
+            className="relative mt-36 mb-20 w-full h-[80vh] md:h-screen overflow-hidden bg-black flex items-center justify-center group"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -255,11 +255,26 @@ export default function TechCompetitionsSection() {
                     >
                         {/* The Image is repeated in each slice but positioned to look continuous */}
                         <div className="relative w-[100vw] h-full" style={{ left: `${i * -20}vw` }}>
+                            EW (Responsive switch)
+                            {/* Desktop / Tablet Image */}
                             <Image
                                 src="/assets/tech_competitions.jpeg"
                                 alt="Tech Competitions"
                                 fill
-                                className="object-cover filter brightness-80 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-out"
+                                priority
+                                className="hidden md:block object-cover filter brightness-80 
+  group-hover:grayscale-0 group-hover:brightness-100 
+  transition-all duration-700 ease-out"
+                            />
+
+                            {/* Mobile Image */}
+                            <Image
+                                src="/assets/tech_competitions_mobile2.png"
+                                alt="Tech Competitions Mobile"
+                                fill
+                                className="block md:hidden object-cover filter brightness-80 
+  group-hover:grayscale-0 group-hover:brightness-100 
+  transition-all duration-700 ease-out"
                             />
                         </div>
                         {/* Slice Overlay for depth */}
@@ -274,9 +289,9 @@ export default function TechCompetitionsSection() {
                 className="relative mt-12 z-10 flex flex-col items-center justify-center text-center mix-blend-difference px-4"
             >
                 <h2 className="text-white font-['var(--font-orbitron)'] font-black text-5xl md:text-9xl tracking-tighter leading-none uppercase select-none mt-88">
-                    TECH <br />
+                    ENGINEER <br />
                     <span className="italic font-serif font-light tracking-wide text-4xl md:text-8xl block mt-2 md:mt-4">
-                        Competitions
+                        THE FUTURE
                     </span>
                 </h2>
 
@@ -284,7 +299,7 @@ export default function TechCompetitionsSection() {
                     <Link
                         href="/competitions"
                         className="inline-flex items-center gap-2 text-white 
-    bg-white/20 backdrop-blur-md 
+    bg-white/20 
     border border-white/30 
     px-4 py-4 rounded-full 
     font-mono text-sm md:text-sm tracking-[0.3em] uppercase

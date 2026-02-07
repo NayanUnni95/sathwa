@@ -27,6 +27,15 @@ export default function TechFestHero() {
         const tl = gsap.timeline({
           defaults: { ease: "power2.inOut" }, // Smooth easing basics
         });
+        // const tl = gsap.timeline({
+        //   defaults: { ease: "power2.inOut" },
+        //   scrollTrigger: {
+        //     trigger: containerRef.current,
+        //     start: "top 75%",
+        //     once: true
+        //   }
+        // });
+
 
         // 1. Initial State: Jammed 1 & 4 only, small and hidden
         // Layers 2 & 3 are strictly hidden (internal)
@@ -313,7 +322,6 @@ export default function TechFestHero() {
           <div className="flex justify-between items-center text-[10px] tracking-[0.2em] text-zinc-400 font-mono mb-4 border-b border-white/10 pb-2">
             <span>26TH.</span>
             <span>27TH.</span>
-            <span>28TH.</span>
           </div>
 
           {/* Footer decoration: Circles + Barcode */}
@@ -353,7 +361,7 @@ export default function TechFestHero() {
             <div className="w-12 h-1 bg-black rounded-full ml-4" />
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col align-center">
             <span className="text-[15px] font-bold tracking-widest uppercase leading-tight">
               10+
             </span>

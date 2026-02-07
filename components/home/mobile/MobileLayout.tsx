@@ -4,6 +4,7 @@ import MobileInfoCard from "./InfoCard/InfoCard";
 import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./MobileLayout.css";
+import TechFestHero from "@/components/techfest/TechFestHero";
 
 export default function MobileLayout() {
   return (
@@ -14,11 +15,20 @@ export default function MobileLayout() {
       {/* Info Card Section - Scrolls Over Hero */}
       <MobileInfoCard />
 
-      <EsportsSection />
+      {/* Black Background Wrapper for Lower Sections */}
+      <div className="w-full bg-black flex flex-col relative z-20">
 
-      <TechCompetitionsSection />
 
-      <CountdownSection />
+        <EsportsSection />
+
+        <TechCompetitionsSection />
+
+        {/* <div>
+        <TechFestHero />
+      </div> */}
+
+        <CountdownSection />
+      </div>
     </div>
   );
 }
