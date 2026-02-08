@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiMinimize2 } from "react-icons/fi"; // Using a tech-y icon
 
 export default function EsportsSection() {
   return (
-    <section className="relative mt-36 w-full pt-12 pb-16 bg-[#080808] overflow-hidden border-y border-white/5">
+    <section className="relative mt-10 w-full pt-12 pb-16 bg-[#080808] overflow-hidden border-y border-white/5">
       {/* Tech Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:26px_26px] pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-[#080808] pointer-events-none" />
