@@ -72,7 +72,7 @@ export default function TechCompetitionsSection() {
     return (
         <section
             ref={containerRef}
-            className="relative w-full h-[80vh] md:h-screen overflow-hidden bg-black flex items-center justify-center group"
+            className="relative mt-25 w-full h-[80vh] md:h-screen overflow-hidden bg-black flex items-center justify-center group"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
