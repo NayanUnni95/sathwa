@@ -36,7 +36,6 @@ export default function TechFestHero() {
         //   }
         // });
 
-
         // 1. Initial State: Jammed 1 & 4 only, small and hidden
         // Layers 2 & 3 are strictly hidden (internal)
         gsap.set(".joystick-layer", {

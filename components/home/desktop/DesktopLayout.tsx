@@ -15,8 +15,6 @@ export default function DesktopLayout() {
 
       {/* Black Background Wrapper for Lower Sections */}
       <div className="w-full bg-black flex flex-col relative z-20">
-
-
         {/* Esports Section */}
         <div className="dl-esports-section">
           <EsportsSection />

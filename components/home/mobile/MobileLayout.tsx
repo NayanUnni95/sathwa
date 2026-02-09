@@ -17,8 +17,6 @@ export default function MobileLayout() {
 
       {/* Black Background Wrapper for Lower Sections */}
       <div className="w-full bg-black flex flex-col relative z-20">
-
-
         <EsportsSection />
 
         <TechCompetitionsSection />
