@@ -23,9 +23,9 @@ export default function MobileLayout() {
 
         <TechCompetitionsSection />
 
-        {/* <div>
-        <TechFestHero />
-      </div> */}
+        <div className="mt-10 mb-10">
+          <TechFestHero />
+        </div>
 
         <CountdownSection />
       </div>
