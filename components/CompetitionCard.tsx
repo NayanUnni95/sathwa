@@ -7,9 +7,11 @@ export default function CompetitionCard({
   title,
   description,
   date,
+  isRegOpen,
   //   day,
   imageUrl = "/assets/dummy2.jpg",
   details = false,
+  slug,
 }: CompetitionCardProps) {
   const [dayNum, month, year] = date.split("/");
 
@@ -89,13 +91,15 @@ export default function CompetitionCard({
           )}
 
           <Link
-            href={`/competitions/${id}`}
+            href={`/${slug}/${id}`}
             className="flex items-center justify-between border-t border-white/10 bg-[#080808] px-4 py-5 group-hover:bg-[#BC002D]/10 transition-colors duration-300"
           >
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+              <div
+                className={`w-1.5 h-1.5 rounded-full animate-pulse ${isRegOpen ? "bg-green-500" : "bg-red-500"}`}
+              ></div>
               <span className="text-[10px] uppercase tracking-widest text-zinc-400">
-                Registrations Open
+                {isRegOpen ? "Registrations Open" : "Registrations Closed"}
               </span>
             </div>
 

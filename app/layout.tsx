@@ -90,7 +90,7 @@ export default function RootLayout({
         <AnalyticsProvider />
         <StaggeredMenu {...menuConfig} />
         {children}
-        <Footer />
+        {/* <Footer /> */}
 
         <style>{`
             .root-body {
