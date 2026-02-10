@@ -13,7 +13,7 @@ export const workshop = [
       "https://docs.google.com/forms/d/e/1FAIpQLSeD35cAKBZK8we7lg2X14DI8r2ZDRXAo3T6mPHV1ElCPJlK8Q/viewform?usp=publish-editor",
     isRegOpen: true,
     price: "150",
-    pricePool: "",
+    pricePool: null,
     guidelines:
       "Participants must bring a laptop. Follow instructions given during the workshop.",
     note: "Laptop is mandatory.",
@@ -37,7 +37,7 @@ export const workshop = [
       "https://docs.google.com/forms/d/e/1FAIpQLSdUaRjjBjxSR3Vfk4Id2a60ij3sIjunPGhVJb5uvKCh9r5cwA/viewform?usp=publish-editor",
     isRegOpen: true,
     price: "99",
-    pricePool: "",
+    pricePool: null,
     guidelines:
       "Participants must follow instructions provided during the workshop.",
     note: "Duration: 2 hours.",
@@ -60,7 +60,7 @@ export const workshop = [
     regLink: "https://forms.gle/urL5U238QezSrxbW9",
     isRegOpen: true,
     price: "149",
-    pricePool: "",
+    pricePool: null,
     guidelines:
       "Participants must follow instructions and complete activities during the session.",
     note: "5+ activity points will be awarded.",
@@ -83,7 +83,7 @@ export const workshop = [
     regLink: "https://forms.gle/jxoyiY16eRWe9dEL8",
     isRegOpen: true,
     price: "20",
-    pricePool: "",
+    pricePool: null,
     guidelines:
       "Participants must follow instructions given during the session.",
     note: "Ideal for civil engineering students.",
@@ -105,7 +105,7 @@ export const workshop = [
     url: "/assets/workshops/arduino-workshop.jpeg",
     regLink: "https://forms.gle/ZraLGHvekmjUUEzP6",
     isRegOpen: true,
-    price: "",
+    price: "750",
     pricePool: "5000",
     guidelines:
       "Team-based workshop with project building on day one and competition on day two. Follow all instructions provided during sessions.",
@@ -129,7 +129,7 @@ export const workshop = [
     regLink: "https://forms.gle/8VLjaDLi6X3R8A7r5",
     isRegOpen: true,
     price: "299 (per team)",
-    pricePool: "",
+    pricePool: null,
     guidelines:
       "Team-based participation with a maximum of three members. Follow instructions and complete assigned tasks.",
     note: "Registration limited to 60 students.",
@@ -152,7 +152,7 @@ export const workshop = [
     regLink: "https://forms.gle/gHv5ZwgEi1ZLXMwi8",
     isRegOpen: true,
     price: "50",
-    pricePool: "",
+    pricePool: null,
     guidelines: "Participants must follow instructions during the workshop.",
     note: "Activity points included.",
     contact: [
@@ -174,7 +174,7 @@ export const workshop = [
     regLink: "https://forms.gle/DWeCyGtzGfANcpM76",
     isRegOpen: true,
     price: "100",
-    pricePool: "",
+    pricePool: null,
     guidelines:
       "Individual participation. Follow instructions and complete tasks during the session.",
     note: "Certificate with activity points provided.",
@@ -197,7 +197,7 @@ export const workshop = [
     regLink: "https://forms.gle/yCLAeZumTx58NUER7",
     isRegOpen: true,
     price: "90",
-    pricePool: "",
+    pricePool: null,
     guidelines:
       "Individual participation. Follow instructions and complete design exercises during the session.",
     note: "Certificate provided to all participants.",
@@ -220,7 +220,7 @@ export const workshop = [
     regLink: "https://forms.gle/iRQkBL7xwzVCocAJ8",
     isRegOpen: true,
     price: "50",
-    pricePool: "",
+    pricePool: null,
     guidelines:
       "Participants must follow instructions and engage in workshop activities throughout the day.",
     note: "Full-day workshop.",

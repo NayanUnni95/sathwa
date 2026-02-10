@@ -56,7 +56,7 @@ export const competition = [
       "“Plant the spike. Hold the angle. Win the round.” Calling all duelists, sentinels, controllers, and clutch gods. Welcome to Valorant Showdown, the ultimate tactical FPS event at SATHWA, the techno-cultural fest of College of Engineering Muttathara. No spray and pray. Just sharp aim, perfect utility, and next-level team coordination.",
     url: "/assets/esports/valorant.jpeg",
     regLink: "https://forms.gle/fziYA6Cyp7jaFDaJ7",
-    isRegOpen: true,
+    isRegOpen: false,
     price: "300 (per team)",
     pricePool: "6000",
     guidelines:
