@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SLICES = 5;
 
-export default function TechCompetitionsSection() {
+export default function WorkshopSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const slicesRef = useRef<(HTMLDivElement | null)[]>([]);
   const textRef = useRef<HTMLDivElement>(null);
@@ -113,7 +113,7 @@ export default function TechCompetitionsSection() {
             >
               {/* Desktop / Tablet Image */}
               <Image
-                src="/assets/tech_competitions.jpeg"
+                src="/assets/workshop_banner_desktop.jpeg"
                 alt="Tech Competitions"
                 fill
                 priority
@@ -124,7 +124,7 @@ export default function TechCompetitionsSection() {
 
               {/* Mobile Image */}
               <Image
-                src="/assets/tech_competitions_mobile2.png"
+                src="/assets/workshop_banner_mobile.jpeg"
                 alt="Tech Competitions Mobile"
                 fill
                 className="block md:hidden object-cover filter brightness-80 
@@ -152,7 +152,7 @@ export default function TechCompetitionsSection() {
 
         <div className="mt-8 overflow-hidden">
           <Link
-            href="/competitions"
+            href="/workshops"
             className="inline-flex items-center gap-2 text-white 
     bg-white/20 backdrop-blur-md 
     border border-white/30 

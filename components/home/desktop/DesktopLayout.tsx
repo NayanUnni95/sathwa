@@ -4,7 +4,8 @@ import HeroFeatures from "./HeroFeatures/HeroFeatures";
 import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./DesktopLayout.css";
-import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
+// import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
+import WorkshopSection from "../WorkshopSection";
 
 export default function DesktopLayout() {
   return (
@@ -24,6 +25,10 @@ export default function DesktopLayout() {
         {/* Tech Competitions Section */}
         <div className="dl-tech-section">
           <TechCompetitionsSection />
+        </div>
+
+        <div className="dl-tech-section">
+          <WorkshopSection />
         </div>
 
         {/* <div className="dl-cultural-section">
