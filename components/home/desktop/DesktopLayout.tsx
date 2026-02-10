@@ -4,6 +4,7 @@ import HeroFeatures from "./HeroFeatures/HeroFeatures";
 import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./DesktopLayout.css";
+import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
 
 export default function DesktopLayout() {
   return (
@@ -24,6 +25,10 @@ export default function DesktopLayout() {
         <div className="dl-tech-section">
           <TechCompetitionsSection />
         </div>
+
+        {/* <div className="dl-cultural-section">
+          <CulturalContainer />
+        </div> */}
 
         {/* Countdown Section - Desktop placement */}
         <div className="dl-countdown-section">

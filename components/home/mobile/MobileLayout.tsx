@@ -4,7 +4,8 @@ import MobileInfoCard from "./InfoCard/InfoCard";
 import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./MobileLayout.css";
-import TechFestHero from "@/components/techfest/TechFestHero";
+// import TechFestHero from "@/components/techfest/TechFestHero";
+import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
 
 export default function MobileLayout() {
   return (
@@ -24,6 +25,7 @@ export default function MobileLayout() {
         {/* <div>
         <TechFestHero />
       </div> */}
+        {/* <CulturalContainer /> */}
 
         <CountdownSection />
       </div>
