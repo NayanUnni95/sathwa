@@ -3,21 +3,21 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import CompetitionCard from "@/components/CompetitionCard";
-import { competition } from "@/data/competitions";
+import { workshop } from "@/data/workshops";
 
-export default function CompetitionsPage() {
+export default function WorkshopsPage() {
   const [activeFilter, setActiveFilter] = useState("all");
 
   // Dynamically derive categories from data for scalability
   const categories = useMemo(() => {
-    const types = competition.map((comp) => comp.type);
+    const types = workshop.map((comp) => comp.type);
     return ["all", ...Array.from(new Set(types))];
   }, []);
 
   // Filter logic
-  const filteredCompetitions = useMemo(() => {
-    if (activeFilter === "all") return competition;
-    return competition.filter((comp) => comp.type === activeFilter);
+  const filteredWorkshops = useMemo(() => {
+    if (activeFilter === "all") return workshop;
+    return workshop.filter((comp) => comp.type === activeFilter);
   }, [activeFilter]);
 
   return (
@@ -39,7 +39,7 @@ export default function CompetitionsPage() {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 mt-42 md:mt-50">
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-['KyivTypeTitling'] text-[#EAE0D5] tracking-widest uppercase drop-shadow-2xl ">
-            COMPETITIONS
+            WORKSHOPS
           </h1>
           <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-['KyivTypeTitling'] text-[#EAE0D5] tracking-widest uppercase mt-2 drop-shadow-2xl">
             2026
@@ -63,7 +63,6 @@ export default function CompetitionsPage() {
                     : "border-white/10 text-[#EAE0D5]/60 hover:text-[#EAE0D5] hover:border-white/30"
                 }`}
               >
-                {/* Background Fill Animation */}
                 <span
                   className={`absolute inset-0 bg-[#BC002D] transition-transform duration-500 ease-out -z-10 ${
                     activeFilter === category
@@ -72,10 +71,9 @@ export default function CompetitionsPage() {
                   }`}
                 />
                 <span className="relative z-10">
-                  {category === "all" ? "All Events" : category}
+                  {category === "all" ? "All Workshops" : category}
                 </span>
 
-                {/* Corner Accents for active state */}
                 {activeFilter === category && (
                   <>
                     <span className="absolute top-0 left-0 w-1 h-1 bg-white" />
@@ -88,7 +86,7 @@ export default function CompetitionsPage() {
 
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-22 justify-items-center transition-all duration-500">
-            {filteredCompetitions.map((comp) => (
+            {filteredWorkshops.map((comp) => (
               <div
                 key={comp.searchKey}
                 className="w-full transition-all duration-500 animate-in fade-in slide-in-from-bottom-4"
@@ -104,17 +102,17 @@ export default function CompetitionsPage() {
                   // day="Friday"
                   imageUrl={comp.url}
                   details={comp.details}
-                  slug={"competitions"}
+                  slug={"workshops"}
                 />
               </div>
             ))}
           </div>
 
           {/* Empty State */}
-          {filteredCompetitions.length === 0 && (
+          {filteredWorkshops.length === 0 && (
             <div className="text-center py-20">
               <p className="text-[#EAE0D5]/40 tracking-widest uppercase font-['KyivTypeTitling']">
-                No competitions found in this category.
+                No workshops found in this category.
               </p>
             </div>
           )}

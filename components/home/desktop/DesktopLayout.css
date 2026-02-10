@@ -48,3 +48,14 @@
     display: block;
   }
 }
+
+.dl-cultural-section {
+  display: none;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .dl-cultural-section {
+    display: block;
+  }
+}

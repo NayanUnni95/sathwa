@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useLayoutEffect, useState } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
@@ -22,20 +22,16 @@ export default function TechCompetitionsSection() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 80%", // Starts much later (when top of section is 75% down viewport)
+                    start: "top 80%",
                     end: "bottom 90%",
-                    scrub: 1.5, // Slower scrub for smoother heavy feel
+                    scrub: 1.5,
                 },
             });
 
-            // Animate Slices (Locking in from Top/Bottom)
+            // Animate Slices
             slicesRef.current.forEach((slice, i) => {
-                const direction = i % 2 === 0 ? -100 : 100; // Alternating direction
-
-                // Initial set
+                const direction = i % 2 === 0 ? -100 : 100;
                 gsap.set(slice, { yPercent: direction, scale: 1.2 });
-
-                // Animation to lock
                 tl.to(
                     slice,
                     {
@@ -44,7 +40,7 @@ export default function TechCompetitionsSection() {
                         ease: "power3.out",
                         duration: 1,
                     },
-                    0
+                    0,
                 );
             });
 
@@ -62,7 +58,7 @@ export default function TechCompetitionsSection() {
                         end: "center center",
                         scrub: 0.5,
                     },
-                }
+                },
             );
         }, containerRef);
 
@@ -81,22 +77,21 @@ export default function TechCompetitionsSection() {
                 <div className="flex gap-8 animate-marquee whitespace-nowrap text-[10px] font-mono tracking-widest text-[#00ffcc]/80">
                     {Array(15)
                         .fill(
-                            ">> SYSTEM ONLINE // MULTI-DISCIPLINE CHALLENGES ACTIVE // ACCESS GRANTED"
+                            ">> SYSTEM ONLINE // MULTI-DISCIPLINE CHALLENGES ACTIVE // ACCESS GRANTED",
                         )
                         .map((item, i) => (
                             <span key={i} className="flex items-center gap-4">
-                                {item} <span className="w-2 h-2 bg-white/20 rounded-full"></span>
+                                {item}{" "}
+                                <span className="w-2 h-2 bg-white/20 rounded-full"></span>
                             </span>
                         ))}
                 </div>
-                {/* Gradient fade for marquee edges */}
                 <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black to-transparent pointer-events-none" />
                 <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black to-transparent pointer-events-none" />
             </div>
 
             {/* Slices Container */}
             <div className="absolute inset-0 flex w-full h-full pt-8">
-                {/* Added pt-8 to account for marquee */}
                 {Array.from({ length: SLICES }).map((_, i) => (
                     <div
                         key={i}
@@ -105,12 +100,10 @@ export default function TechCompetitionsSection() {
                         }}
                         className="relative h-full flex-1 overflow-hidden border-r border-black/50 last:border-none"
                     >
-                        {/* The Image is repeated in each slice but positioned to look continuous */}
                         <div
                             className="relative w-[100vw] h-full"
                             style={{ left: `${i * -20}vw` }}
                         >
-                            {/* Desktop / Tablet Image */}
                             <Image
                                 src="/assets/tech_competitions.jpeg"
                                 alt="Tech Competitions"
@@ -120,8 +113,6 @@ export default function TechCompetitionsSection() {
   group-hover:grayscale-0 group-hover:brightness-100 
   transition-all duration-700 ease-out"
                             />
-
-                            {/* Mobile Image */}
                             <Image
                                 src="/assets/tech_competitions_mobile2.png"
                                 alt="Tech Competitions Mobile"
@@ -131,25 +122,24 @@ export default function TechCompetitionsSection() {
   transition-all duration-700 ease-out"
                             />
                         </div>
-                        {/* Slice Overlay for depth */}
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                     </div>
                 ))}
             </div>
 
-            {/* Content Overlay - Mix Blend Difference for that "Fashion Tech" look */}
+            {/* Content Overlay */}
             <div
                 ref={textRef}
                 className="relative mt-12 z-10 flex flex-col items-center justify-center text-center mix-blend-difference px-4"
             >
-                {/* <h2 className="text-white font-['var(--font-orbitron)'] font-black text-5xl md:text-9xl tracking-tighter leading-none uppercase select-none mt-88">
+                <h2 className="text-white font-['var(--font-orbitron)'] font-black text-5xl md:text-9xl tracking-tighter leading-none uppercase select-none mt-88">
                     ENGINEER <br />
                     <span className="italic font-serif font-light tracking-wide text-4xl md:text-8xl block mt-2 md:mt-4">
                         THE FUTURE
                     </span>
-                </h2> */}
+                </h2>
 
-                <div className="mt-90 overflow-hidden">
+                <div className="mt-8 overflow-hidden">
                     <Link
                         href="/competitions"
                         className="inline-flex items-center gap-2 text-white 

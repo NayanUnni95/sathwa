@@ -4,6 +4,8 @@ import HeroFeatures from "./HeroFeatures/HeroFeatures";
 import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./DesktopLayout.css";
+// import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
+import WorkshopSection from "../WorkshopSection";
 
 export default function DesktopLayout() {
   return (
@@ -15,8 +17,6 @@ export default function DesktopLayout() {
 
       {/* Black Background Wrapper for Lower Sections */}
       <div className="w-full bg-black flex flex-col relative z-20">
-
-
         {/* Esports Section */}
         <div className="dl-esports-section">
           <EsportsSection />
@@ -26,6 +26,14 @@ export default function DesktopLayout() {
         <div className="dl-tech-section">
           <TechCompetitionsSection />
         </div>
+
+        <div className="dl-tech-section">
+          <WorkshopSection />
+        </div>
+
+        {/* <div className="dl-cultural-section">
+          <CulturalContainer />
+        </div> */}
 
         {/* Countdown Section - Desktop placement */}
         <div className="dl-countdown-section">

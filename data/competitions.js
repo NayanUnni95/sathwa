@@ -10,7 +10,7 @@ export const competition = [
       "“Build the play. Break the defense. Rule the pitch.” Welcome to E-Football Showdown, the ultimate virtual football battle at SATHWA, the techno-cultural fest of College of Engineering Muttathara. No luck. No retries. Just precision passing, sharp tactics, and pure football IQ. Step onto the digital pitch and prove who truly owns the game.",
     url: "/assets/esports/efootball.jpeg",
     regLink: "https://forms.gle/bWVCYmyBsgmxqMv56",
-    isRegOpen: true,
+    isRegOpen: false,
     price: "50",
     pricePool: "1000",
     guidelines:
@@ -33,7 +33,7 @@ export const competition = [
       "“Survive the drop. Dominate the zone.” Welcome to BGMI Showdown, the ultimate battle royale event at SATHWA, the techno-cultural fest of College of Engineering Muttathara. No mercy. No second chances. Just strategy, teamwork, and pure skill. Drop in with your squad and prove who owns the battlefield.",
     url: "/assets/esports/bgmi.jpeg",
     regLink: "https://forms.gle/JqUyuXeRgXUarSFN8",
-    isRegOpen: true,
+    isRegOpen: false,
     price: "99 (per squad)",
     pricePool: "1000",
     guidelines:
@@ -56,7 +56,7 @@ export const competition = [
       "“Plant the spike. Hold the angle. Win the round.” Calling all duelists, sentinels, controllers, and clutch gods. Welcome to Valorant Showdown, the ultimate tactical FPS event at SATHWA, the techno-cultural fest of College of Engineering Muttathara. No spray and pray. Just sharp aim, perfect utility, and next-level team coordination.",
     url: "/assets/esports/valorant.jpeg",
     regLink: "https://forms.gle/fziYA6Cyp7jaFDaJ7",
-    isRegOpen: true,
+    isRegOpen: false,
     price: "300 (per team)",
     pricePool: "6000",
     guidelines:

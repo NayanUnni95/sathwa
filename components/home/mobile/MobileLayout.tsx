@@ -3,8 +3,10 @@ import MobileHeroSection from "./HeroSection/HeroSection";
 import MobileInfoCard from "./InfoCard/InfoCard";
 import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
+import WorkshopSection from "../WorkshopSection";
 import "./MobileLayout.css";
-import TechFestHero from "@/components/techfest/TechFestHero";
+// import TechFestHero from "@/components/techfest/TechFestHero";
+// import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
 
 export default function MobileLayout() {
   return (
@@ -17,15 +19,22 @@ export default function MobileLayout() {
 
       {/* Black Background Wrapper for Lower Sections */}
       <div className="w-full bg-black flex flex-col relative z-20">
-
-
         <EsportsSection />
 
         <TechCompetitionsSection />
 
-        <div className="mt-10 mb-10">
-          <TechFestHero />
-        </div>
+
+        {/* <div className="mt-10 mb-10">
+           <TechFestHero />
+         </div> */}
+
+        <WorkshopSection />
+
+        {/* <div>
+        <TechFestHero />
+      </div> */}
+        {/* <CulturalContainer /> */}
+
 
         <CountdownSection />
       </div>

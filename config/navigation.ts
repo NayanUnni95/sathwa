@@ -3,6 +3,7 @@ export const menuConfig = {
     { label: "Home", ariaLabel: "Home", link: "/" },
     { label: "Events", ariaLabel: "Events", link: "/events" },
     { label: "Competitions", ariaLabel: "Competitions", link: "/competitions" },
+    { label: "Workshops", ariaLabel: "Workshops", link: "/workshops" },
     { label: "Contact", ariaLabel: "Contact", link: "/contact" },
   ],
   socialItems: [
