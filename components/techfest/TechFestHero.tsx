@@ -28,15 +28,14 @@ export default function TechFestHero() {
         //   defaults: { ease: "power2.inOut" }, // Smooth easing basics
         // });
 
-
         const tl = gsap.timeline({
           defaults: { ease: "power2.inOut" },
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 75%",
             end: "bottom 40%",
-            once: true
-          }
+            once: true,
+          },
         });
 
         // 1. Initial State: Jammed 1 & 4 only, small and hidden
@@ -236,7 +235,6 @@ export default function TechFestHero() {
         }}
       />
 
-
       {/* Film Grain */}
       <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay"></div>
 
@@ -253,10 +251,10 @@ export default function TechFestHero() {
 
       {/* 2. Top Typography (Behind Joystick potentially) */}
       <div className="absolute top-[12%] z-10 w-full px-4 md:px-12 flex justify-between items-start pointer-events-none select-none">
-        <h1 className="text-[15vw] leading-[0.8] font-extrabold tracking-[0.035em] mix-blend-exclusion text-zinc-100 font-['var(--font-space-grotesk)']">
+        <h1 className="text-[15vw] leading-[0.8] font-extrabold tracking-[0.035em] mix-blend-exclusion text-zinc-100 font-[var(--font-space-grotesk)]">
           EXPO
         </h1>
-        <h1 className="text-[15vw] leading-[0.8] font-medium tracking-[0.04em] mix-blend-exclusion text-zinc-100 font-['var(--font-space-grotesk)']">
+        <h1 className="text-[15vw] leading-[0.8] font-medium tracking-[0.04em] mix-blend-exclusion text-zinc-100 font-[var(--font-space-grotesk)]">
           26
         </h1>
       </div>
@@ -302,7 +300,7 @@ export default function TechFestHero() {
                              font-medium
                              tracking-[0.25em]
                              text-zinc-400 uppercase
-                             font-['var(--font-space-grotesk)']`}
+                             font-[var(--font-space-grotesk)]`}
                   >
                     {text}
                   </span>
@@ -439,7 +437,7 @@ export default function TechFestHero() {
       <div className="absolute bottom-0 left-0 w-full h-32 z-40 pointer-events-none 
                 bg-gradient-to-t from-black to-transparent" /> */}
 
-      <style jsx global>{`
+      <style>{`
                 @keyframes marquee {
                     0% { transform: translateX(0%); }
                     100% { transform: translateX(-40%); }

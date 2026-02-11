@@ -40,7 +40,7 @@ export default function CompetitionCard({
         <div className="flex w-full border-b border-white/10">
           {/* Date Box - High Visual Weight */}
           <div className="w-20 md:w-24 flex-shrink-0 flex flex-col items-center justify-center border-r border-white/10 bg-[#0a0a0a] py-4 group-hover:bg-[#BC002D] group-hover:text-white transition-colors duration-300">
-            <span className="text-2xl md:text-3xl font-['KyivTypeTitling'] font-bold leading-none">
+            <span className="text-2xl md:text-3xl font-[KyivTypeTitling] font-bold leading-none">
               {dayNum}
             </span>
             <span className="text-[9px] md:text-[10px] tracking-widest uppercase mt-1 opacity-80">
@@ -53,7 +53,7 @@ export default function CompetitionCard({
             <span className="text-[8px] md:text-[9px] tracking-[0.2em] uppercase text-[#BC002D] mb-1 group-hover:text-[#BC002D] transition-colors">
               Competition
             </span>
-            <h3 className="text-xl md:text-2xl font-['KyivTypeTitling'] text-white uppercase leading-none tracking-wide group-hover:translate-x-1 transition-transform duration-300">
+            <h3 className="text-xl md:text-2xl font-[KyivTypeTitling] text-white uppercase leading-none tracking-wide group-hover:translate-x-1 transition-transform duration-300">
               {title}
             </h3>
           </div>

@@ -98,10 +98,8 @@ export default function AutoShowHero() {
           duration: 1.7,
           ease: "elastic.out(1, 0.45)",
         },
-        "-=1.0"
+        "-=1.0",
       );
-
-
 
       gsap.set(row1TextInnerRef.current, {
         scale: 1,
@@ -165,7 +163,6 @@ export default function AutoShowHero() {
           ease: "power2.out",
         });
       });
-
     }, containerRef);
 
     return () => ctx.revert();
@@ -227,39 +224,13 @@ export default function AutoShowHero() {
                 <div className="bg-[#0047FF] text-white px-2 py-1 font-mono text-md font-bold border border-white/20 shadow-[4px_4px_0px_black]">
                   * (15+)
                 </div>
-                <span className="text-white font-[Geist Mono] text-sm md:text-base tracking-widest uppercase font-medium mt-1">
+                <span className="text-white font-[var(--font-geist-mono)] text-sm md:text-base tracking-widest uppercase font-medium mt-1">
                   MODIFIED CARS
                 </span>
               </div>
 
               <div className="bg-[#CCFF00] text-black inline-flex w-fit whitespace-nowrap pl-3 pr-7 py-3 clip-path-label items-baseline gap-2 relative">
-                <span className="text-2xl md:text-5xl font-[Orbitron] font-black tracking-tighter leading-none">
-                  27. FEB
-                </span>
-                <span className="text-xs font-mono font-bold opacity-80">
-                  2026
-                </span>
-                <div className="absolute bottom-2 left-4 w-[50%] h-[3px] bg-black"></div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            ref={row1TextInnerRef}
-            className="absolute bottom-6 z-20 flex flex-col gap-3"
-          >
-            <div className="will-change-transform transform-none">
-              <div className="flex items-center gap-3">
-                <div className="bg-[#0047FF] text-white px-2 py-1 font-mono text-md font-bold border border-white/20 shadow-[4px_4px_0px_black]">
-                  * (15+)
-                </div>
-                <span className="text-white font-[Geist Mono] text-sm md:text-base tracking-widest uppercase font-medium mt-1">
-                  MODIFIED CARS
-                </span>
-              </div>
-
-              <div className="bg-[#CCFF00] text-black inline-flex w-fit whitespace-nowrap pl-3 pr-7 py-3 clip-path-label items-baseline gap-2 relative">
-                <span className="text-2xl md:text-5xl font-[Orbitron] font-black tracking-tighter leading-none">
+                <span className="text-2xl md:text-5xl font-[var(--font-orbitron)] font-black tracking-tighter leading-none">
                   27. FEB
                 </span>
                 <span className="text-xs font-mono font-bold opacity-80">
@@ -281,7 +252,7 @@ export default function AutoShowHero() {
         <div className="relative w-full flex flex-col items-center justify-center z-10 scale-75 md:scale-100">
           {/* Top Label Group */}
           <div className="flex items-center justify-end w-full gap-3 mb-[-15px] pr-[15%] z-20">
-            <span className="text-white/60 font-[Geist Mono] text-[10px] md:text-xs uppercase tracking-widest">
+            <span className="text-white/60 font-[var(--font-geist-mono)] text-[10px] md:text-xs uppercase tracking-widest">
               SUPER BIKES
             </span>
             <div className="bg-[#9F00FF] text-white px-2 py-0.5 font-mono text-sm font-bold border border-white/20 shadow-[2px_2px_0px_black]">
@@ -291,7 +262,7 @@ export default function AutoShowHero() {
 
           {/* Massive White Slab - Reduced height/padding for "small section" */}
           <div className="bg-[#E6E6E6] w-[100%] transform -skew-x-12 py-3 md:py-2 flex justify-center items-center relative border-y-2 border-black">
-            <h1 className="text-black font-[Orbitron] font-black text-[8vh] tracking-tighter leading-[0.8] transform skew-x-12 mt-1">
+            <h1 className="text-black font-[var(--font-orbitron)] font-black text-[8vh] tracking-tighter leading-[0.8] transform skew-x-12 mt-1">
               WHEELS
               <span className="align-top text-[6vh] leading-[0.5]">*</span>
             </h1>
@@ -309,7 +280,7 @@ export default function AutoShowHero() {
         <div className="w-[50%] h-full relative overflow-visible z-10">
           {/* Text "above the frontsection" */}
           <div className="absolute top-[20%] left-[10%] z-20 mix-blend-difference pb-2">
-            <span className="text-white font-[Geist Mono] text-3xl md:text-5xl tracking-tighter font-light block text-right">
+            <span className="text-white font-[var(--font-geist-mono)] text-3xl md:text-5xl tracking-tighter font-light block text-right">
               [AUTOSHOW]
             </span>
           </div>
@@ -351,7 +322,7 @@ export default function AutoShowHero() {
       >
         {/* Left Text */}
         <div className="pl-6 md:pl-12 z-10 mb-2">
-          <h2 className="text-white font-[Geist Mono] text-2xl md:text-4xl italic font-light tracking-widest opacity-80">
+          <h2 className="text-white font-[var(--font-geist-mono)] text-2xl md:text-4xl italic font-light tracking-widest opacity-80">
             /STUNTS/
           </h2>
         </div>
@@ -385,6 +356,6 @@ export default function AutoShowHero() {
             ))}
         </div>
       </div>
-    </section >
+    </section>
   );
 }

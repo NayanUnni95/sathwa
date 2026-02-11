@@ -23,12 +23,12 @@ export default function EsportsSection() {
 
           <div className="space-y-2">
             <h2
-              className="text-6xl md:text-7xl lg:text-8xl font-['var(--font-orbitron)'] font-black text-white leading-none tracking-tighter uppercase glitch-text"
+              className="text-6xl md:text-7xl lg:text-8xl font-[var(--font-orbitron)] font-black text-white leading-none tracking-tighter uppercase glitch-text"
               data-text="ESPORTS"
             >
               ESPORTS
             </h2>
-            <h3 className="text-3xl md:text-4xl font-['var(--font-orbitron)'] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-600 uppercase tracking-widest">
+            <h3 className="text-3xl md:text-4xl font-[var(--font-orbitron)] font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-600 uppercase tracking-widest">
               ARENA
             </h3>
           </div>
@@ -41,7 +41,7 @@ export default function EsportsSection() {
 
           {/* <Link
             href="/competitions"
-            className="group w-fit cursor-not-allowed relative px-8 py-4 bg-white text-black font-['var(--font-orbitron)'] font-bold uppercase tracking-wider hover:bg-[#BC002D] hover:text-white transition-colors duration-300 clip-path-slant"
+            className="group w-fit cursor-not-allowed relative px-8 py-4 bg-white text-black font-[var(--font-orbitron)] font-bold uppercase tracking-wider hover:bg-[#BC002D] hover:text-white transition-colors duration-300 clip-path-slant"
           >
             <span className="relative z-10 flex items-center gap-2 disabled:opacity-50 cursor-not-allowed">
               Registration Closed <FiMinimize2 />
@@ -51,7 +51,7 @@ export default function EsportsSection() {
 
           <div
             className="group w-fit relative px-8 py-4 bg-zinc-300 text-zinc-600 
-             font-['var(--font-orbitron)'] font-bold uppercase tracking-wider 
+             font-[var(--font-orbitron)] font-bold uppercase tracking-wider 
              clip-path-slant cursor-not-allowed select-none"
           >
             <span className="flex items-center gap-2 opacity-70">
@@ -60,7 +60,6 @@ export default function EsportsSection() {
 
             <div className="absolute inset-0 bg-zinc-400 translate-x-1 translate-y-1 -z-10" />
           </div>
-
         </div>
 
         {/* Right: Asymmetrical Image Container */}
@@ -89,7 +88,7 @@ export default function EsportsSection() {
         </div>
       </div>
 
-      <style jsx global>{`
+      <style>{`
         .clip-path-slant {
             clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
         }

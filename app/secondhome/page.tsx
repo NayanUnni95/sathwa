@@ -24,7 +24,7 @@ export default function SecondHome() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
         {/* SATHWA Title */}
         <div className="mb-8 md:mb-12">
-          <h1 className="font-['var(--font-orbitron)'] font-black text-6xl md:text-8xl lg:text-9xl tracking-tight text-center">
+          <h1 className="font-[var(--font-orbitron)] font-black text-6xl md:text-8xl lg:text-9xl tracking-tight text-center">
             <span className="text-[#E3DDC1]">SATHWA</span>
             <span className="text-[#DC2626] ml-2">'25</span>
           </h1>

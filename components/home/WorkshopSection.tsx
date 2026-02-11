@@ -142,7 +142,7 @@ export default function WorkshopSection() {
         ref={textRef}
         className="relative mt-12 z-10 flex flex-col items-center justify-center text-center mix-blend-difference px-4"
       >
-        <h2 className="text-white font-['var(--font-orbitron)'] font-black text-5xl md:text-9xl tracking-tighter leading-none uppercase select-none mt-88">
+        <h2 className="text-white font-[var(--font-orbitron)] font-black text-5xl md:text-9xl tracking-tighter leading-none uppercase select-none mt-88">
           UPGRADE <br />
           <span className="italic font-serif font-light tracking-wide text-4xl md:text-8xl block mt-2 md:mt-4">
             YOUR SKILLS

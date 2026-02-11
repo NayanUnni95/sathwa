@@ -79,7 +79,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
           <span className="reveal-item opacity-0 translate-y-8 text-[#BC002D] text-sm md:text-base tracking-[0.3em] uppercase font-medium mb-4">
             Sathva'26 Presents
           </span>
-          <h1 className="reveal-item opacity-0 translate-y-8 font-['KyivTypeTitling'] text-4xl md:text-6xl lg:text-7xl uppercase leading-none mb-6">
+          <h1 className="reveal-item opacity-0 translate-y-8 font-[KyivTypeTitling] text-4xl md:text-6xl lg:text-7xl uppercase leading-none mb-6">
             {compData.name}
           </h1>
           <div className="reveal-item opacity-0 translate-y-8 w-24 h-1 bg-gradient-to-r from-transparent via-[#BC002D] to-transparent opacity-80" />
@@ -118,7 +118,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
                 <span className="text-[10px] uppercase tracking-widest text-zinc-500">
                   Reg Fee
                 </span>
-                <span className="font-['KyivTypeTitling'] text-xl">
+                <span className="font-[KyivTypeTitling] text-xl">
                   Rs. {compData.price}
                 </span>
               </div>
@@ -128,7 +128,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
                   <span className="text-[10px] uppercase tracking-widest text-zinc-500">
                     Prize Pool
                   </span>
-                  <span className="font-['KyivTypeTitling'] text-xl">
+                  <span className="font-[KyivTypeTitling] text-xl">
                     Rs. {compData.pricePool}
                   </span>
                 </div>
@@ -138,7 +138,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
                 <span className="text-[10px] uppercase tracking-widest text-zinc-500">
                   Date
                 </span>
-                <span className="font-['KyivTypeTitling'] text-xl">
+                <span className="font-[KyivTypeTitling] text-xl">
                   {compData.date}
                 </span>
               </div>
@@ -152,7 +152,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
               <div className="absolute top-0 right-0 p-8 opacity-5">
                 <FiUsers size={120} />
               </div>
-              <h2 className="font-['KyivTypeTitling'] text-2xl mb-4 text-[#BC002D]">
+              <h2 className="font-[KyivTypeTitling] text-2xl mb-4 text-[#BC002D]">
                 About The Event
               </h2>
               <p className="text-zinc-400 leading-relaxed text-lg font-light">
@@ -163,7 +163,7 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
             {/* Guidelines */}
             {compData.guidelines && (
               <div className="reveal-item opacity-0 translate-y-8 bg-[#0A0A0A] border border-white/5 p-8 rounded-2xl group hover:border-[#BC002D]/20 transition-all duration-300">
-                <h2 className="font-['KyivTypeTitling'] text-2xl mb-6 text-[#BC002D]">
+                <h2 className="font-[KyivTypeTitling] text-2xl mb-6 text-[#BC002D]">
                   Guidelines
                 </h2>
                 <ul className="space-y-4">

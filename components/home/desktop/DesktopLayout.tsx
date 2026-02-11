@@ -29,13 +29,13 @@ export default function DesktopLayout() {
           <TechCompetitionsSection />
         </div>
 
+        <TechFestHero />
+
         <div className="dl-tech-section">
           <WorkshopSection />
         </div>
 
-        {/* <TechFestHero /> */}
-
-        {/* <AutoShowHero /> */}
+        <AutoShowHero />
 
         {/* <div className="dl-cultural-section">
           <CulturalContainer />
