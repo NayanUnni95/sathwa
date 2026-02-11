@@ -114,7 +114,7 @@ export default function WorkshopSection() {
               {/* Desktop / Tablet Image */}
               <Image
                 src="/assets/workshop_banner_desktop.jpeg"
-                alt="Tech Competitions"
+                alt="Workshop Desktop"
                 fill
                 priority
                 className="hidden md:block object-cover filter brightness-80 
@@ -124,11 +124,10 @@ export default function WorkshopSection() {
 
               {/* Mobile Image */}
               <Image
-                src="/assets/workshop_banner_mobile.jpeg"
-                alt="Tech Competitions Mobile"
+                src="/assets/workshop mobile view_edit.png"
+                alt="Workshop Mobile"
                 fill
-                className="block md:hidden object-cover filter brightness-80 
-  group-hover:grayscale-0 group-hover:brightness-100 
+                className="block md:hidden object-contain filter brightness-100 
   transition-all duration-700 ease-out"
               />
             </div>
@@ -150,7 +149,7 @@ export default function WorkshopSection() {
           </span>
         </h2>
 
-        <div className="mt-8 overflow-hidden">
+        <div className="mt-4 overflow-hidden">
           <Link
             href="/workshops"
             className="inline-flex items-center gap-2 text-white 

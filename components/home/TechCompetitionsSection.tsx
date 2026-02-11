@@ -139,7 +139,7 @@ export default function TechCompetitionsSection() {
                     </span>
                 </h2>
 
-                <div className="mt-8 overflow-hidden">
+                <div className="mt-5 overflow-hidden">
                     <Link
                         href="/competitions"
                         className="inline-flex items-center gap-2 text-white 

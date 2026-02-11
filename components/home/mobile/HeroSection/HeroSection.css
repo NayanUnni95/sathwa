@@ -9,6 +9,15 @@
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   z-index: 0;
+  background-color: #180204;
+
+  background-image:
+    linear-gradient(rgba(8, 7, 7, 0.684),
+      rgba(24, 2, 4, 0.441)),
+    url("/assets/marble.png");
+
+  background-size: cover;
+  background-position: center;
 }
 
 .mhs-circle-wrapper {
@@ -19,24 +28,30 @@
   border-radius: 9999px;
   z-index: 10;
   overflow: visible;
-  margin-top: 6rem; /* mt-24 */
+  margin-top: 6rem;
+  /* mt-24 */
 }
+
 @media (min-width: 640px) {
   .mhs-circle-wrapper {
-    margin-top: 9rem; /* sm:mt-36 */
+    margin-top: 9rem;
+    /* sm:mt-36 */
   }
 }
 
 .mhs-image-wrapper {
   position: absolute;
   inset: 0;
-  top: -2.5rem; /* -top-10 */
+  top: -2.5rem;
+  /* -top-10 */
   z-index: 20;
   transform: scale(1.25);
 }
+
 @media (min-width: 640px) {
   .mhs-image-wrapper {
-    top: -4rem; /* sm:-top-16 */
+    top: -4rem;
+    /* sm:-top-16 */
   }
 }
 
