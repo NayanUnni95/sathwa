@@ -29,6 +29,7 @@ export default function MobileLayout() {
            <TechFestHero />
          </div> */}
 
+<<<<<<< HEAD
 
         <div className="mt-30">
           <TechFestHero />
@@ -41,6 +42,11 @@ export default function MobileLayout() {
         <div className="mt-15">
           <AutoShowHero />
         </div>
+=======
+        {/* <TechFestHero /> */}
+
+        {/* <AutoShowHero /> */}
+>>>>>>> 852a77b54b32c5a13195f4da523317704ff2eda5
 
         {/* <CulturalContainer /> */}
 
