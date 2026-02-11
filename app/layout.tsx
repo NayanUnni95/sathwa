@@ -8,7 +8,6 @@ import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
 // import Footer from "@/components/Footer/Footer";
 import FooterSecondary from "@/components/FooterSecondary/FooterSecondary";
 
-
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],

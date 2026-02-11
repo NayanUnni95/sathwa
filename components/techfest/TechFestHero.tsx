@@ -53,7 +53,6 @@ export default function TechFestHero() {
         //   y: -20,
         // });
 
-
         // 2. Entrance: Fade In + Grow to Size (Assembled 1 & 4)
         tl.to(".layer-1, .layer-4", {
           scale: 1,
@@ -189,8 +188,6 @@ export default function TechFestHero() {
         // gsap.set(".joystick-layer", {
         //   transformOrigin: "50% 50%",
         // });
-
-
       };
 
       // gsap.to(containerRef.current, {
@@ -201,13 +198,10 @@ export default function TechFestHero() {
       //   ease: "sine.inOut",
       // });
 
-
       // Breakpoints
       mm.add("(max-width: 768px)", () => {
         // Mobile: Target (80, 30) | Huge (160, 60)
         runAnimation(100, 50, 170, 85);
-
-
       });
 
       mm.add("(min-width: 769px)", () => {
@@ -224,11 +218,8 @@ export default function TechFestHero() {
       ref={containerRef}
       className="relative w-full h-screen bg-[#050505] overflow-hidden flex flex-col items-center justify-center font-sans text-white"
     >
-
       {/* Soft focus vignette */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.85))]" />
-
-
 
       {/* 1. Background Grid */}
       {/* <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.03]
@@ -260,7 +251,6 @@ export default function TechFestHero() {
       <div className="absolute top-1/3 left-0 w-64 h-px bg-gradient-to-r from-transparent via-[#BC002D] to-transparent opacity-40" />
       <div className="absolute bottom-1/3 right-0 w-72 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
-
       {/* 2. Top Typography (Behind Joystick potentially) */}
       <div className="absolute top-[12%] z-10 w-full px-4 md:px-12 flex justify-between items-start pointer-events-none select-none">
         <h1 className="text-[15vw] leading-[0.8] font-extrabold tracking-[0.035em] mix-blend-exclusion text-zinc-100 font-['var(--font-space-grotesk)']">
@@ -278,27 +268,26 @@ export default function TechFestHero() {
         </span>
       </div>
 
-
-
-
       {/* 3. Scrolling Marquee (The "Element behind the image and below tathva") */}
       {/* Positioned slightly below the main title, z-index behind joystick */}
-      <div className="absolute top-[20%] w-full z-10 overflow-hidden
+      <div
+        className={`absolute top-[20%] w-full z-10 overflow-hidden
                 bg-white/10 backdrop-blur-lg
-                border-y border-white/10">
-
+                border-y border-white/10`}
+      >
         {/* Edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24
-                  bg-gradient-to-r from-black to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24
-                  bg-gradient-to-l from-black to-transparent z-20" />
+        <div
+          className={`pointer-events-none absolute inset-y-0 left-0 w-24
+                  bg-gradient-to-r from-black to-transparent z-20`}
+        />
+        <div
+          className={`pointer-events-none absolute inset-y-0 right-0 w-24
+                  bg-gradient-to-l from-black to-transparent z-20`}
+        />
 
         <div className="flex w-max animate-marquee whitespace-nowrap py-3">
           {[...Array(4)].map((_, i) => (
-            <div
-              key={i}
-              className="flex shrink-0 items-center gap-10 mx-8"
-            >
+            <div key={i} className="flex shrink-0 items-center gap-10 mx-8">
               {[
                 "Civil Expo",
                 "Robotics Expo",
@@ -308,17 +297,21 @@ export default function TechFestHero() {
                 "Hobby Circuit Expo",
               ].map((text, idx) => (
                 <React.Fragment key={idx}>
-                  <span className="text-sm md:text-base
+                  <span
+                    className={`text-sm md:text-base
                              font-medium
                              tracking-[0.25em]
                              text-zinc-400 uppercase
-                             font-['var(--font-space-grotesk)']">
+                             font-['var(--font-space-grotesk)']`}
+                  >
                     {text}
                   </span>
 
-                  <span className="w-1.5 h-1.5 rounded-full
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full
                              bg-[#BC002D]
-                             shadow-[0_0_10px_rgba(188,0,45,0.9)]" />
+                             shadow-[0_0_10px_rgba(188,0,45,0.9)]`}
+                  />
                 </React.Fragment>
               ))}
             </div>
@@ -326,17 +319,14 @@ export default function TechFestHero() {
         </div>
       </div>
 
-
-
-
       {/* 4. Joystick Container */}
       <div className="relative z-[60] w-full h-[80vh] flex items-center justify-center mt-4 pointer-events-none">
-
-        <div className="relative w-[420px] md:w-[520px] aspect-[4/3] isolate overflow-visible
+        <div
+          className={`relative w-[420px] md:w-[520px] aspect-[4/3] isolate overflow-visible
                 after:absolute after:inset-0
                 after:bg-[radial-gradient(circle_at_center,rgba(188,0,45,0.15),transparent_70%)]
-                after:blur-2xl after:-z-10">
-
+                after:blur-2xl after:-z-10`}
+        >
           {/* Layers: 4 (Bottom) -> 1 (Top) */}
           {/* Added opacity-0 class to hide initial FOUC */}
           <div className="joystick-layer layer-4 absolute inset-0 drop-shadow-2xl opacity-0">
@@ -449,7 +439,6 @@ export default function TechFestHero() {
       <div className="absolute bottom-0 left-0 w-full h-32 z-40 pointer-events-none 
                 bg-gradient-to-t from-black to-transparent" /> */}
 
-
       <style jsx global>{`
                 @keyframes marquee {
                     0% { transform: translateX(0%); }
@@ -459,6 +448,6 @@ export default function TechFestHero() {
                     animation: marquee 60s linear infinite;
                 }
             `}</style>
-    </section >
+    </section>
   );
 }
