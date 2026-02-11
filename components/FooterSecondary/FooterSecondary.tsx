@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { MdArrowUpward } from "react-icons/md";
 import "./FooterSecondary.css";
+import Image from "next/image";
 
 const FooterSecondary = () => {
   const scrollToTop = () => {
@@ -19,10 +20,10 @@ const FooterSecondary = () => {
         {/* Contact Section */}
         <div className="footer-sec-section contact-section">
           <p className="footer-sec-label">CONTACTS</p>
-          <h2 className="footer-sec-email">sathwa26@gmail.com</h2>
+          <h2 className="footer-sec-email">SATHWA26@GMAIL.COM</h2>
         </div>
 
-        {/* Organized By */}
+        {/* Organized By & Quick Links Card */}
         <div className="footer-sec-card organized-card">
           <div className="organized-header">
             <p className="footer-sec-label-small">ORGANIZED BY</p>
@@ -32,30 +33,37 @@ const FooterSecondary = () => {
               College of Engineering Muttathara
             </p>
             <p className="organized-subtitle">Trivandrum</p>
+
+            <div className="organized-logos">
+              <div className="logo-placeholder">
+                <Image
+                  alt="/assets/favicon.png"
+                  width={40}
+                  height={40}
+                  src={"/assets/favicon.png"}
+                />
+              </div>
+              {/* <div className="logo-placeholder"><Image alt="/assets/cem_logo.png" width={40} height={40} src={'/assets/cem_logo.png'} /></div> */}
+            </div>
           </div>
-          {/* <div className="organized-logos">
-                        <div className="logo-placeholder code-logo">Code</div>
-                        <div className="logo-placeholder cce-logo">CCE</div>
-                    </div> */}
 
           <div className="divider-horizontal"></div>
 
           {/* Quick Links Section */}
           <div className="quick-links-section">
-            <p className="footer-sec-label-small centered">QUICK LINKS</p>
+            <p className="footer-sec-label-small">QUICK LINKS</p>
             <div className="links-grid">
               <div className="links-column">
                 <Link href="/">Home</Link>
-                {/* <Link href="/events">Events</Link> */}
                 <Link href="/workshops">Workshops</Link>
                 <Link href="/competitions">Competitions</Link>
-                {/* <Link href="/team">Team</Link> */}
                 <Link href="/contact">Contact</Link>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Coordinators Section */}
         <div className="coordinators-container">
           <div className="coordinator-group">
             <p className="footer-sec-label-small">FACULTY COORDINATOR</p>
@@ -67,16 +75,22 @@ const FooterSecondary = () => {
 
           <div className="coordinator-group">
             <p className="footer-sec-label-small">STUDENT COORDINATOR</p>
-            {/* <h4 className="coordinator-name">Nill</h4> */}
-            {/* <a href="tel:+910000000000" className="coordinator-phone">+91 00000 00000</a> */}
-
-            <h4 className="coordinator-name mt-small">Deepak Das K</h4>
-            <a href="tel:+918139001416" className="coordinator-phone">
-              +91 81390 01416
-            </a>
+            <div className="student-coordinator-item">
+              <h4 className="coordinator-name">Deepak Das K</h4>
+              <a href="tel:+918139001416" className="coordinator-phone">
+                +91 81390 01416
+              </a>
+            </div>
+            {/* <div className="student-coordinator-item mt-small">
+              <h4 className="coordinator-name">Deepak Das K</h4>
+              <a href="tel:+918139001416" className="coordinator-phone">
+                +91 81390 01416
+              </a>
+            </div> */}
           </div>
         </div>
 
+        {/* Social Media */}
         <div className="social-section">
           <p className="footer-sec-label">SOCIAL MEDIA:</p>
           <div className="social-icons">
@@ -86,9 +100,12 @@ const FooterSecondary = () => {
             >
               <FaInstagram />
             </Link>
-            {/* <Link href="https://linkedin.com" className="social-icon-btn">
-                            <FaLinkedinIn />
-                        </Link> */}
+            {/* <Link
+              href="https://linkedin.com"
+              className="social-icon-btn"
+            >
+              <FaLinkedinIn />
+            </Link> */}
             <Link
               href="https://youtube.com/@sathwa26"
               className="social-icon-btn"
@@ -98,6 +115,7 @@ const FooterSecondary = () => {
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="footer-sec-bottom">
           <p className="copyright-text">© SATHWA'26. ALL RIGHTS RESERVED.</p>
           <p className="developer-text">
@@ -106,9 +124,14 @@ const FooterSecondary = () => {
         </div>
       </div>
 
-      {/* <button type="button" className="scroll-top-btn" onClick={scrollToTop} aria-label="Scroll to top">
-                <MdArrowUpward />
-            </button> */}
+      <button
+        type="button"
+        className="scroll-top-btn"
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        <MdArrowUpward />
+      </button>
     </footer>
   );
 };
