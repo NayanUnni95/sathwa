@@ -3,7 +3,6 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
-// import GlassSurface from "@/components/GlassSurface/GlassSurface";
 import "./StaggeredMenu.css";
 
 export interface StaggeredMenuItem {
@@ -473,17 +472,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           })()}
         </div>
 
-        {/* <GlassSurface
-          width="100%"
-          height={70}
-          borderRadius={0}
-          backgroundOpacity={0.15}
-          saturation={1.2}
-          brightness={60}
-          opacity={0.85}
-          blur={8}
-          className="sm-glass-header"
-        > */}
         <header
           className="staggered-menu-header"
           aria-label="Main navigation header"
@@ -528,7 +516,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             </span>
           </button>
         </header>
-        {/* </GlassSurface> */}
 
         <aside
           id="staggered-menu-panel"

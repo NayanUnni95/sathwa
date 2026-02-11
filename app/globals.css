@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 :root {
   --font-geist-sans: "Geist Sans", sans-serif;
   --font-geist-mono: "Geist Mono", monospace;
@@ -322,7 +320,6 @@ body {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 1;
@@ -335,15 +332,24 @@ body {
   }
 }
 
-
 /* --- Auto Show Utilities --- */
 .mask-image-gradient {
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .title-glow {
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(204, 255, 0, 0.3);
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(204, 255, 0, 0.3);
 }
 
 .animate-spin-slow {
@@ -448,7 +454,12 @@ body {
   width: 100%;
   height: 100px;
   z-index: 10;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(204, 255, 0, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(204, 255, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
   opacity: 0.1;
   position: absolute;
   bottom: 100%;
@@ -473,9 +484,12 @@ body {
 
 /* --- WARP SPEED --- */
 .warp-stars {
-  background: radial-gradient(circle at center, transparent 0%, #000 100%),
+  background:
+    radial-gradient(circle at center, transparent 0%, #000 100%),
     url("https://grainy-gradients.vercel.app/noise.svg");
-  background-size: cover, 200px 200px;
+  background-size:
+    cover,
+    200px 200px;
   animation: warp 0.2s linear infinite;
   opacity: 0.3;
 }
@@ -502,11 +516,9 @@ body {
   overflow: hidden;
 }
 
-
 .clip-path-label {
   clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
 }
-
 
 @keyframes marquee {
   0% {

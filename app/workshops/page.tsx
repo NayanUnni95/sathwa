@@ -57,16 +57,18 @@ export default function WorkshopsPage() {
                 key={category}
                 type="button"
                 onClick={() => setActiveFilter(category)}
-                className={`group relative px-6 py-2.5 md:px-10 md:py-3.5 text-[10px] md:text-xs tracking-[0.3em] uppercase font-['KyivTypeTitling'] transition-all duration-500 overflow-hidden border ${activeFilter === category
-                  ? "border-[#BC002D] text-white"
-                  : "border-white/10 text-[#EAE0D5]/60 hover:text-[#EAE0D5] hover:border-white/30"
-                  }`}
+                className={`group relative px-6 py-2.5 md:px-10 md:py-3.5 text-[10px] md:text-xs tracking-[0.3em] uppercase font-['KyivTypeTitling'] transition-all duration-500 overflow-hidden border ${
+                  activeFilter === category
+                    ? "border-[#BC002D] text-white"
+                    : "border-white/10 text-[#EAE0D5]/60 hover:text-[#EAE0D5] hover:border-white/30"
+                }`}
               >
                 <span
-                  className={`absolute inset-0 bg-[#BC002D] transition-transform duration-500 ease-out -z-10 ${activeFilter === category
-                    ? "translate-y-0"
-                    : "translate-y-full group-hover:translate-y-[90%]"
-                    }`}
+                  className={`absolute inset-0 bg-[#BC002D] transition-transform duration-500 ease-out -z-10 ${
+                    activeFilter === category
+                      ? "translate-y-0"
+                      : "translate-y-full group-hover:translate-y-[90%]"
+                  }`}
                 />
                 <span className="relative z-10">
                   {category === "all" ? "All Workshops" : category}

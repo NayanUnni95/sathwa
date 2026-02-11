@@ -23,7 +23,6 @@ export default function MobileLayout() {
 
         <TechCompetitionsSection />
 
-
         {/* <div className="mt-10 mb-10">
            <TechFestHero />
          </div> */}
@@ -34,7 +33,6 @@ export default function MobileLayout() {
         <TechFestHero />
       </div> */}
         {/* <CulturalContainer /> */}
-
 
         <CountdownSection />
       </div>

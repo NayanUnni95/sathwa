@@ -5,7 +5,8 @@ import { menuConfig } from "@/config/navigation";
 import Loader from "@/app/Loader";
 import "./globals.css";
 import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
+import FooterSecondary from "@/components/FooterSecondary/FooterSecondary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -91,6 +92,7 @@ export default function RootLayout({
         <StaggeredMenu {...menuConfig} />
         {children}
         {/* <Footer /> */}
+        <FooterSecondary />
 
         <style>{`
             .root-body {

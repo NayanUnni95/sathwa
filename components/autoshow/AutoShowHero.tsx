@@ -20,7 +20,6 @@ export default function AutoShowHero() {
   const row1TextRef = useRef<HTMLDivElement>(null);
   const row1TextInnerRef = useRef<HTMLDivElement>(null);
 
-
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -34,7 +33,6 @@ export default function AutoShowHero() {
 
       //const ropeSvgRef = useRef<SVGSVGElement>(null);
       //const ropePathRef = useRef<SVGPathElement>(null);
-
 
       gsap.set(row1MotionRef.current, { x: -1000 });
       gsap.set(row1TextInnerRef.current, { x: -300 }); // local lag only
@@ -54,7 +52,6 @@ export default function AutoShowHero() {
       //   );
       // }
 
-
       const towTL = gsap.timeline();
 
       towTL.to(row1MotionRef.current, {
@@ -71,20 +68,17 @@ export default function AutoShowHero() {
           duration: 0.6,
           ease: "elastic.out(1, 0.45)",
         },
-        "-=1.0"
+        "-=1.0",
       );
       gsap.set(row1TextInnerRef.current, {
         scale: 1,
       });
-
 
       // gsap.to(row1TextInnerRef.current, {
       //   x: 0,
       //   duration: 0.65,
       //   ease: "none",
       // });
-
-
 
       // Rope tension (optional but 🔥)
       const ropePath = row1MotionRef.current?.querySelector("path");
@@ -98,11 +92,9 @@ export default function AutoShowHero() {
             duration: 1.1,
             ease: "elastic.out(1, 0.4)",
             delay: 0.3,
-          }
+          },
         );
       }
-
-
 
       // --- ENTRANCE ANIMATION ---
       // tl.to(row1Ref.current, { xPercent: 0, opacity: 1, duration: 1.5 }, 0)
@@ -116,20 +108,16 @@ export default function AutoShowHero() {
         scale: 1,
         duration: 2,
         ease: "back.out(1.2)",
-        delay: 0.8
+        delay: 0.8,
       });
 
       // Spin Animation
       gsap.to(row3WheelRef.current, {
         rotation: 360 * 40, // Spin many times
-        duration: 80,       // Over 30 seconds
+        duration: 80, // Over 30 seconds
         ease: "power2.out", // Decelerate gradually (start fast, end slow/stop)
-        delay: 0.8
+        delay: 0.8,
       });
-
-
-
-
     }, containerRef);
 
     return () => ctx.revert();
@@ -142,10 +130,14 @@ export default function AutoShowHero() {
     >
       {/* === ROW 1: VINTAGE CARS === */}
       {/* "27oct and 20 vintage cars should be below and same level of the first section car" */}
-      <div ref={row1Ref} className="w-full flex relative border-b border-white/20 h-[28vh] overflow-hidden group">
-
-        <div ref={row1MotionRef} className="absolute inset-0 pointer-events-none">
-
+      <div
+        ref={row1Ref}
+        className="w-full flex relative border-b border-white/20 h-[28vh] overflow-hidden group"
+      >
+        <div
+          ref={row1MotionRef}
+          className="absolute inset-0 pointer-events-none"
+        >
           {/* TEXT (dragged object) */}
 
           {/* CAR (leader) */}
@@ -159,7 +151,6 @@ export default function AutoShowHero() {
             />
           </div>
           <div className="absolute right-[-30%] bottom-[-6%] w-[50%] h-[10%] bg-black/40 blur-3xl rounded-full" />
-
 
           {/* 🔗 TOW STRING (ADD THIS) */}
           <svg
@@ -175,13 +166,13 @@ export default function AutoShowHero() {
               strokeLinecap="round"
               strokeDasharray="2 6" //this what causes dashed rope
               style={{ filter: "drop-shadow(0 0 4px rgba(255,255,255,0.4))" }}
-
             />
           </svg>
 
-
-          <div ref={row1TextInnerRef} className="absolute bottom-6 z-20 flex flex-col gap-3">
-
+          <div
+            ref={row1TextInnerRef}
+            className="absolute bottom-6 z-20 flex flex-col gap-3"
+          >
             <div className="will-change-transform transform-none">
               <div className="flex items-center gap-3">
                 <div className="bg-[#0047FF] text-white px-2 py-1 font-mono text-md font-bold border border-white/20 shadow-[4px_4px_0px_black]">
@@ -193,27 +184,25 @@ export default function AutoShowHero() {
               </div>
 
               <div className="bg-[#CCFF00] text-black inline-flex w-fit whitespace-nowrap pl-3 pr-7 py-3 clip-path-label items-baseline gap-2 relative">
-
                 <span className="text-2xl md:text-5xl font-[Orbitron] font-black tracking-tighter leading-none">
                   27. FEB
                 </span>
-                <span className="text-xs font-mono font-bold opacity-80">2026</span>
+                <span className="text-xs font-mono font-bold opacity-80">
+                  2026
+                </span>
                 <div className="absolute bottom-2 left-4 w-[50%] h-[3px] bg-black"></div>
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
-
-
-
 
       {/* === ROW 2: WHEELS TITLE (Small Section) === */}
       {/* "the second section text wheels etc must be small section as per the image" */}
-      <div ref={row2Ref} className="w-full relative border-b border-white/20 h-[15vh] overflow-hidden flex items-center justify-center bg-black">
-
+      <div
+        ref={row2Ref}
+        className="w-full relative border-b border-white/20 h-[15vh] overflow-hidden flex items-center justify-center bg-black"
+      >
         <div className="relative w-full flex flex-col items-center justify-center z-10 scale-75 md:scale-100">
           {/* Top Label Group */}
           <div className="flex items-center justify-end w-full gap-3 mb-[-15px] pr-[15%] z-20">
@@ -228,17 +217,19 @@ export default function AutoShowHero() {
           {/* Massive White Slab - Reduced height/padding for "small section" */}
           <div className="bg-[#E6E6E6] w-[100%] transform -skew-x-12 py-3 md:py-2 flex justify-center items-center relative border-y-2 border-black">
             <h1 className="text-black font-[Orbitron] font-black text-[8vh] tracking-tighter leading-[0.8] transform skew-x-12 mt-1">
-              WHEELS<span className="align-top text-[6vh] leading-[0.5]">*</span>
+              WHEELS
+              <span className="align-top text-[6vh] leading-[0.5]">*</span>
             </h1>
           </div>
         </div>
       </div>
 
-
       {/* === ROW 3: AUTO SHOW + WHEEL === */}
       {/* "no need to like split the car and wheel... as i can see a line there splitting verticaaly" -> removed vertical border */}
-      <div ref={row3Ref} className="w-full flex relative border-b border-white/20 h-[25vh] overflow-hidden bg-black">
-
+      <div
+        ref={row3Ref}
+        className="w-full flex relative border-b border-white/20 h-[25vh] overflow-hidden bg-black"
+      >
         {/* Left: [AUTOSHOW] + Car Nose */}
         <div className="w-[50%] h-full relative overflow-visible z-10">
           {/* Text "above the frontsection" */}
@@ -277,11 +268,12 @@ export default function AutoShowHero() {
         </div>
       </div>
 
-
       {/* === ROW 4: STUNTS + BIKE === */}
       {/* "stunts text... be small and aligned in the same level of the car" */}
-      <div ref={row4Ref} className="w-full flex relative h-[15vh] overflow-hidden bg-black items-end pb-8">
-
+      <div
+        ref={row4Ref}
+        className="w-full flex relative h-[15vh] overflow-hidden bg-black items-end pb-8"
+      >
         {/* Left Text */}
         <div className="pl-6 md:pl-12 z-10 mb-2">
           <h2 className="text-white font-[Geist Mono] text-2xl md:text-4xl italic font-light tracking-widest opacity-80">
@@ -305,14 +297,19 @@ export default function AutoShowHero() {
 
       <div className="w-full bg-[#E6E6E6] mt-5 border-t-4 border-black z-20 relative">
         <div className="animate-marquee whitespace-nowrap flex gap-10 items-center text-black font-black font-mono text-md uppercase tracking-widest py-1 leading-none">
-          {Array(6).fill("ENGINE ROARS ✶ BURNT RUBBER ✶ LIVE STUNTS ✶ PURE ADRENALINE").map((text, i) => (
-            < span key={i} className="flex items-center gap-6 md:gap-12" >
-              {text} < span className="w-10 h-10 bg-black text-[#CCFF00] flex items-center justify-center text-sm font-bold shadow-[2px_2px_0px_#CCFF00]" > 27</span>
-            </span>
-          ))}
+          {Array(6)
+            .fill("ENGINE ROARS ✶ BURNT RUBBER ✶ LIVE STUNTS ✶ PURE ADRENALINE")
+            .map((text, i) => (
+              <span key={i} className="flex items-center gap-6 md:gap-12">
+                {text}{" "}
+                <span className="w-10 h-10 bg-black text-[#CCFF00] flex items-center justify-center text-sm font-bold shadow-[2px_2px_0px_#CCFF00]">
+                  {" "}
+                  27
+                </span>
+              </span>
+            ))}
         </div>
-      </div >
-
-    </section >
+      </div>
+    </section>
   );
 }
