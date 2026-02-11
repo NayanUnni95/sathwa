@@ -5,8 +5,6 @@ import { menuConfig } from "@/config/navigation";
 import Loader from "@/app/Loader";
 import "./globals.css";
 import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
-// import Footer from "@/components/Footer/Footer";
-import FooterSecondary from "@/components/FooterSecondary/FooterSecondary";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -97,9 +95,6 @@ export default function RootLayout({
         <AnalyticsProvider />
         <StaggeredMenu {...menuConfig} />
         {children}
-        {/* <Footer /> */}
-        <FooterSecondary />
-
         <style>{`
             .root-body {
                 -webkit-font-smoothing: antialiased;

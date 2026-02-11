@@ -52,6 +52,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onMenuClose,
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
+  const lastScrollY = useRef(0);
   const openRef = useRef(false);
 
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -441,6 +444,35 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     };
   }, [closeOnClickAway, open, closeMenu]);
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      // Don't hide navbar if the menu is open
+      if (openRef.current) {
+        setVisible(true);
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+
+      setScrolled(currentScrollY > 20);
+
+      if (currentScrollY <= 10) {
+        setVisible(true);
+      } else if (currentScrollY > lastScrollY.current + 5) {
+        // Scrolling down
+        setVisible(false);
+      } else if (currentScrollY < lastScrollY.current - 5) {
+        // Scrolling up
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className={`sm-scope ${isFixed ? "sm-fixed" : "sm-absolute-fill"}`}>
       <div
@@ -473,7 +505,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <header
-          className="staggered-menu-header"
+          className={`staggered-menu-header ${!visible ? "sm-header-hidden" : ""} ${scrolled ? "sm-header-scrolled" : ""}`}
           aria-label="Main navigation header"
         >
           <div className="sm-logo" aria-label="Logo">
