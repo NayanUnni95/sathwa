@@ -95,7 +95,7 @@ export default function AutoShowHero() {
         row1TextInnerRef.current,
         {
           x: 0,
-          duration: 1.6,
+          duration: 1.7,
           ease: "elastic.out(1, 0.45)",
         },
         "-=1.0"
@@ -201,6 +201,7 @@ export default function AutoShowHero() {
           <div className="absolute right-[-30%] bottom-[-6%] w-[50%] h-[10%] bg-black/40 blur-3xl rounded-full" />
 
           {/* 🔗 TOW STRING (ADD THIS) */}
+
           <svg
             className="absolute bottom-[40px] left-[160px] z-0"
             width="320"
@@ -216,6 +217,32 @@ export default function AutoShowHero() {
               style={{ filter: "drop-shadow(0 0 4px rgba(255,255,255,0.4))" }}
             />
           </svg>
+
+          <div
+            ref={row1TextInnerRef}
+            className="absolute bottom-6 z-20 flex flex-col gap-3"
+          >
+            <div className="will-change-transform transform-none">
+              <div className="flex items-center gap-3">
+                <div className="bg-[#0047FF] text-white px-2 py-1 font-mono text-md font-bold border border-white/20 shadow-[4px_4px_0px_black]">
+                  * (15+)
+                </div>
+                <span className="text-white font-[Geist Mono] text-sm md:text-base tracking-widest uppercase font-medium mt-1">
+                  MODIFIED CARS
+                </span>
+              </div>
+
+              <div className="bg-[#CCFF00] text-black inline-flex w-fit whitespace-nowrap pl-3 pr-7 py-3 clip-path-label items-baseline gap-2 relative">
+                <span className="text-2xl md:text-5xl font-[Orbitron] font-black tracking-tighter leading-none">
+                  27. FEB
+                </span>
+                <span className="text-xs font-mono font-bold opacity-80">
+                  2026
+                </span>
+                <div className="absolute bottom-2 left-4 w-[50%] h-[3px] bg-black"></div>
+              </div>
+            </div>
+          </div>
 
           <div
             ref={row1TextInnerRef}
@@ -358,6 +385,6 @@ export default function AutoShowHero() {
             ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 }

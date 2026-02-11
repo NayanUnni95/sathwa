@@ -304,13 +304,17 @@ body {
 }
 
 @keyframes marquee {
-  0% {
+  from {
     transform: translateX(0);
   }
 
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(-100%);
   }
+}
+
+.animate-marquee1 {
+  animation: marquee 12s linear infinite;
 }
 
 .animate-marquee {
@@ -319,11 +323,21 @@ body {
   /* Ensure flex for ticker */
 }
 
-.animate-marquee1 {
-  animation: marquee 25s linear infinite;
+/* @keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+} */
+
+/* .animate-marquee1 {
+  animation: marquee 15s linear infinite;
   display: flex !important;
   /* Ensure flex for ticker */
-}
+/* } */
 
 @keyframes pulse {
 

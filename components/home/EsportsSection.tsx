@@ -17,7 +17,7 @@ export default function EsportsSection() {
           <div className="flex items-center gap-3">
             <div className="px-3 py-1 bg-[#BC002D]/10 border border-[#BC002D] text-[#BC002D] font-mono text-xs uppercase tracking-widest flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-[#BC002D] rounded-full animate-pulse" />
-              Live Ops
+              Closed
             </div>
           </div>
 
@@ -39,15 +39,28 @@ export default function EsportsSection() {
             <span className="text-white">Are you ready to engage?</span>
           </p>
 
-          <Link
+          {/* <Link
             href="/competitions"
-            className="group w-fit relative px-8 py-4 bg-white text-black font-['var(--font-orbitron)'] font-bold uppercase tracking-wider hover:bg-[#BC002D] hover:text-white transition-colors duration-300 clip-path-slant"
+            className="group w-fit cursor-not-allowed relative px-8 py-4 bg-white text-black font-['var(--font-orbitron)'] font-bold uppercase tracking-wider hover:bg-[#BC002D] hover:text-white transition-colors duration-300 clip-path-slant"
           >
-            <span className="relative z-10 flex items-center gap-2">
-              Register Now <FiMinimize2 />
+            <span className="relative z-10 flex items-center gap-2 disabled:opacity-50 cursor-not-allowed">
+              Registration Closed <FiMinimize2 />
             </span>
             <div className="absolute inset-0 bg-zinc-200 translate-x-1 translate-y-1 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform" />
-          </Link>
+          </Link> */}
+
+          <div
+            className="group w-fit relative px-8 py-4 bg-zinc-300 text-zinc-600 
+             font-['var(--font-orbitron)'] font-bold uppercase tracking-wider 
+             clip-path-slant cursor-not-allowed select-none"
+          >
+            <span className="flex items-center gap-2 opacity-70">
+              Registration Closed <FiMinimize2 />
+            </span>
+
+            <div className="absolute inset-0 bg-zinc-400 translate-x-1 translate-y-1 -z-10" />
+          </div>
+
         </div>
 
         {/* Right: Asymmetrical Image Container */}
