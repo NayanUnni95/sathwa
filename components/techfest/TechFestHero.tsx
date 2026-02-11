@@ -39,12 +39,17 @@ export default function TechFestHero() {
         // 1. Initial State: Jammed 1 & 4 only, small and hidden
         // Layers 2 & 3 are strictly hidden (internal)
         gsap.set(".joystick-layer", {
-          scale: 0.5,
+          // scale: 0.5,
           opacity: 0,
           filter: "blur(10px)",
           y: 0,
         });
         gsap.set(".layer-2, .layer-3", { opacity: 0, display: "none" });
+
+        // gsap.set(".layer-4", {
+        //   y: -20,
+        // });
+
 
         // 2. Entrance: Fade In + Grow to Size (Assembled 1 & 4)
         tl.to(".layer-1, .layer-4", {
@@ -148,7 +153,7 @@ export default function TechFestHero() {
           )
           .to(
             ".layer-4",
-            { y: targetOuter, duration: 0.8, ease: "elastic.out(1, 0.5)" },
+            { y: targetOuter + 20, duration: 0.8, ease: "elastic.out(1, 0.5)" },
             "<",
           );
 
@@ -166,26 +171,40 @@ export default function TechFestHero() {
 
         // 5. Floating/Suspension Effect
         gsap.to(".joystick-layer", {
-          y: (i, target) => {
-            const currentY = gsap.getProperty(target, "y") as number;
-            return currentY + 15;
-          },
+          yPercent: 3,
           duration: 2.5,
           yoyo: true,
           repeat: -1,
           ease: "sine.inOut",
           stagger: {
-            each: 0.2,
+            each: 0.15,
             from: "center",
           },
-          delay: 6.5, // Wait for long sequence
+          delay: 6.5,
         });
+
+        // gsap.set(".joystick-layer", {
+        //   transformOrigin: "50% 50%",
+        // });
+
+
       };
+
+      gsap.to(containerRef.current, {
+        backgroundPositionY: "60px",
+        duration: 40,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
 
       // Breakpoints
       mm.add("(max-width: 768px)", () => {
         // Mobile: Target (80, 30) | Huge (160, 60)
-        runAnimation(80, 30, 160, 60);
+        runAnimation(100, 50, 170, 85);
+
+
       });
 
       mm.add("(min-width: 769px)", () => {
@@ -200,106 +219,146 @@ export default function TechFestHero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen bg-[#050505] overflow-hidden flex flex-col items-center justify-center font-sans text-white selection:bg-[#BC002D] selection:text-white"
+      className="relative w-full h-screen bg-[#050505] overflow-hidden flex flex-col items-center justify-center font-sans text-white"
     >
+
+      {/* Soft focus vignette */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.85))]" />
+
+
+
       {/* 1. Background Grid */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-20"
-        style={{
-          backgroundImage: `
-                        linear-gradient(to right, #444 1px, transparent 1px),
-                        linear-gradient(to bottom, #444 1px, transparent 1px)
-                    `,
-          backgroundSize: "80px 80px", // Wider grid
-        }}
-      />
+      <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.03]
+                bg-[linear-gradient(135deg,rgba(255,255,255,0.4)_1px,transparent_1px)]
+                bg-[length:60px_60px]" />
+
 
       {/* Film Grain */}
       <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay"></div>
 
+      {/* FADES */}
+      {/* <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent z-40 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-40 pointer-events-none" /> */}
+
+      {/* Section framing rails
+      <div className="absolute left-6 md:left-12 top-0 h-full w-px bg-white/5 z-20 pointer-events-none" />
+      <div className="absolute right-6 md:right-12 top-0 h-full w-px bg-white/5 z-20 pointer-events-none" /> */}
+
+      <div className="absolute top-1/3 left-0 w-64 h-px bg-gradient-to-r from-transparent via-[#BC002D] to-transparent opacity-40" />
+      <div className="absolute bottom-1/3 right-0 w-72 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+
+
       {/* 2. Top Typography (Behind Joystick potentially) */}
       <div className="absolute top-[12%] z-10 w-full px-4 md:px-12 flex justify-between items-start pointer-events-none select-none">
-        <h1 className="text-[15vw] leading-[0.8] font-bold tracking-tighter mix-blend-exclusion text-zinc-100 font-['var(--font-orbitron)']">
+        <h1 className="text-[15vw] leading-[0.8] font-extrabold tracking-[0.035em] mix-blend-exclusion text-zinc-100 font-['var(--font-space-grotesk)']">
           EXPO
         </h1>
-        <h1 className="text-[15vw] leading-[0.8] font-light tracking-tighter mix-blend-exclusion text-zinc-100 font-['var(--font-orbitron)']">
+        <h1 className="text-[15vw] leading-[0.8] font-medium tracking-[0.04em] mix-blend-exclusion text-zinc-100 font-['var(--font-space-grotesk)']">
           26
         </h1>
       </div>
 
+      <div className="absolute top-10 left-6 md:left-12 z-30 flex items-center gap-3">
+        <span className="w-6 h-px bg-[#BC002D]" />
+        <span className="text-xs tracking-[0.4em] text-zinc-400 font-mono uppercase">
+          Tech Expo Showcase
+        </span>
+      </div>
+
+
+
+
       {/* 3. Scrolling Marquee (The "Element behind the image and below tathva") */}
       {/* Positioned slightly below the main title, z-index behind joystick */}
-      <div className="absolute top-[20%] w-full z-10 overflow-hidden bg-black/50 border-y border-white/10 backdrop-blur-[2px]">
+      <div className="absolute top-[20%] w-full z-10 overflow-hidden
+                bg-white/10 backdrop-blur-lg
+                border-y border-white/10">
+
+        {/* Edge fades */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24
+                  bg-gradient-to-r from-black to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24
+                  bg-gradient-to-l from-black to-transparent z-20" />
+
         <div className="flex w-max animate-marquee whitespace-nowrap py-3">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="flex shrink-0 items-center gap-12 mx-6">
-              <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">
-                Civil EXpo
-              </span>
-              <span className="text-[#BC002D]">▸</span>
-              <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">
-                Robotics Expo
-              </span>
-              <span className="text-[#BC002D]">▸</span>
-              <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">
-                KSEB Expo
-              </span>
-              <span className="text-[#BC002D]">▸</span>
-              <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">
-                Keltron Expo
-              </span>
-              <span className="text-[#BC002D]">▸</span>
-              <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">
-                Nail Expo
-              </span>
-              <span className="text-[#BC002D]">▸</span>
-              <span className="text-sm md:text-base font-mono tracking-[0.3em] text-zinc-300 uppercase">
-                Hobby Circuit Expo
-              </span>
-              <span className="text-[#BC002D]">▸</span>
+            <div
+              key={i}
+              className="flex shrink-0 items-center gap-10 mx-8"
+            >
+              {[
+                "Civil Expo",
+                "Robotics Expo",
+                "KSEB Expo",
+                "Keltron Expo",
+                "Nail Expo",
+                "Hobby Circuit Expo",
+              ].map((text, idx) => (
+                <React.Fragment key={idx}>
+                  <span className="text-sm md:text-base
+                             font-medium
+                             tracking-[0.25em]
+                             text-zinc-400 uppercase
+                             font-['var(--font-space-grotesk)']">
+                    {text}
+                  </span>
+
+                  <span className="w-1.5 h-1.5 rounded-full
+                             bg-[#BC002D]
+                             shadow-[0_0_10px_rgba(188,0,45,0.9)]" />
+                </React.Fragment>
+              ))}
             </div>
           ))}
         </div>
       </div>
 
+
+
+
       {/* 4. Joystick Container */}
-      <div className="relative z-30 w-full h-[80vh] flex items-center justify-center mt-10 pointer-events-none">
-        <div className="relative w-[300px] md:w-[450px] aspect-[3/4]">
+      <div className="relative z-[60] w-full h-[80vh] flex items-center justify-center mt-4 pointer-events-none">
+
+        <div className="relative w-[420px] md:w-[520px] aspect-[4/3] isolate overflow-visible
+                after:absolute after:inset-0
+                after:bg-[radial-gradient(circle_at_center,rgba(188,0,45,0.15),transparent_70%)]
+                after:blur-2xl after:-z-10">
+
           {/* Layers: 4 (Bottom) -> 1 (Top) */}
           {/* Added opacity-0 class to hide initial FOUC */}
-          <div className="joystick-layer layer-4 absolute inset-0 z-0 drop-shadow-2xl opacity-0">
+          <div className="joystick-layer layer-4 absolute inset-0 drop-shadow-2xl opacity-0">
             <Image
-              src="/assets/homepage/layer-4.webp"
+              src="/assets/homepage/drone image section4 new.png"
               alt="Joystick Layer 4"
               fill
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </div>
           <div className="joystick-layer layer-3 absolute inset-0 z-10 drop-shadow-xl opacity-0">
             <Image
-              src="/assets/homepage/layer-3.webp"
+              src="/assets/homepage/drone image section3.png"
               alt="Joystick Layer 3"
               fill
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </div>
           <div className="joystick-layer layer-2 absolute inset-0 z-20 drop-shadow-lg opacity-0">
             <Image
-              src="/assets/homepage/layer-2.webp"
+              src="/assets/homepage/drone image section2 new2.png"
               alt="Joystick Layer 2"
               fill
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </div>
           <div className="joystick-layer layer-1 absolute inset-0 z-30 drop-shadow-2xl opacity-0">
             <Image
-              src="/assets/homepage/layer-1.webp"
+              src="/assets/homepage/drone image section1.png"
               alt="Joystick Layer 1"
               fill
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </div>
@@ -307,8 +366,8 @@ export default function TechFestHero() {
       </div>
 
       {/* 5. Date Card (Bottom Left) - Specific Design */}
-      <div className="absolute bottom-10 left-6 md:left-12 z-40 ui-reveal">
-        <div className="border border-white/20 bg-black/60 backdrop-blur-md p-4 w-[280px]">
+      <div className="absolute bottom-5 left-6 md:bottom-10 md:left-12 z-40 ui-reveal pb-3">
+        <div className="border border-white/20 bg-gradient-to-br from-white/10 to-black/80 shadow-[0_0_40px_rgba(188,0,45,0.15)] backdrop-blur-md p-4 w-[280px]">
           <div className="flex items-baseline gap-2 mb-1">
             <span className="font-thin text-3xl text-zinc-400 font-sans">
               2026
@@ -336,19 +395,19 @@ export default function TechFestHero() {
             <div className="flex-1 border-b border-dotted border-white/30 mx-4 mb-2" />
 
             {/* Barcode Rectangle */}
-            <div className="flex gap-0.5 h-6">
+            {/* <div className="flex gap-0.5 h-6">
               <div className="w-1 bg-white" />
               <div className="w-2 bg-white" />
               <div className="w-0.5 bg-white" />
               <div className="w-3 bg-white" />
               <div className="w-1 bg-white" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       {/* 6. Big Techfest Badge (Bottom Right) - Chamfered */}
-      <div className="absolute bottom-10 right-6 md:right-12 z-40 ui-reveal">
+      <div className="absolute bottom-5 md:bottom-10 right-6 md:right-12 z-40 ui-reveal">
         <div
           className="relative bg-zinc-200 text-black px-6 py-4 flex items-center gap-4"
           style={{
@@ -373,6 +432,10 @@ export default function TechFestHero() {
           </div>
         </div>
       </div>
+      {/* Bottom section fade
+      <div className="absolute bottom-0 left-0 w-full h-32 z-40 pointer-events-none 
+                bg-gradient-to-t from-black to-transparent" /> */}
+
 
       <style jsx global>{`
                 @keyframes marquee {
@@ -383,6 +446,6 @@ export default function TechFestHero() {
                     animation: marquee 60s linear infinite;
                 }
             `}</style>
-    </section>
+    </section >
   );
 }

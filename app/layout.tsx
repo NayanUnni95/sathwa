@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Orbitron } from "next/font/google";
+import { Geist, Geist_Mono, Orbitron, Space_Grotesk } from "next/font/google";
 import StaggeredMenu from "@/components/StaggeredMenu/StaggeredMenu";
 import { menuConfig } from "@/config/navigation";
 import Loader from "@/app/Loader";
@@ -7,6 +7,13 @@ import "./globals.css";
 import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
 // import Footer from "@/components/Footer/Footer";
 import FooterSecondary from "@/components/FooterSecondary/FooterSecondary";
+
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -85,9 +92,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} root-body`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${spaceGrotesk.variable} root-body`}
       >
-        <Loader />
+        {/* <Loader /> */}
         <AnalyticsProvider />
         <StaggeredMenu {...menuConfig} />
         {children}
