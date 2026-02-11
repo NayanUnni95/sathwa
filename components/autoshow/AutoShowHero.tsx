@@ -200,7 +200,7 @@ export default function AutoShowHero() {
           {/* 🔗 TOW STRING (ADD THIS) */}
 
           <svg
-            className="absolute bottom-[40px] left-[160px] z-0"
+            className="absolute bottom-[40px] left-[130px] z-0"
             width="320"
             height="20"
             viewBox="0 0 320 20"
