@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { MdArrowUpward } from "react-icons/md";
@@ -7,6 +8,25 @@ import "./FooterSecondary.css";
 import Image from "next/image";
 
 const FooterSecondary = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // Show button if page is near the bottom
+      const scrolled = window.scrollY + window.innerHeight;
+      const threshold = document.documentElement.scrollHeight - 300; // 300px from bottom
+
+      if (scrolled >= threshold) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -88,12 +108,12 @@ const FooterSecondary = () => {
                 +91 81390 01416
               </a>
             </div>
-            {/* <div className="student-coordinator-item mt-small">
-              <h4 className="coordinator-name">Deepak Das K</h4>
-              <a href="tel:+918139001416" className="coordinator-phone">
-                +91 81390 01416
+            <div className="student-coordinator-item">
+              <h4 className="coordinator-name">Jeswin AJ</h4>
+              <a href="tel:+917012721738" className="coordinator-phone">
+                +91 70127 21738
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
 
@@ -107,12 +127,6 @@ const FooterSecondary = () => {
             >
               <FaInstagram />
             </Link>
-            {/* <Link
-              href="https://linkedin.com"
-              className="social-icon-btn"
-            >
-              <FaLinkedinIn />
-            </Link> */}
             <Link
               href="https://youtube.com/@sathwa26"
               className="social-icon-btn"
@@ -133,7 +147,7 @@ const FooterSecondary = () => {
 
       <button
         type="button"
-        className="scroll-top-btn"
+        className={`scroll-top-btn ${isVisible ? "visible" : ""}`}
         onClick={scrollToTop}
         aria-label="Scroll to top"
       >

@@ -26,9 +26,9 @@ export default function MobileLayout() {
 
         <WorkshopSection />
 
-        {/* <TechFestHero /> */}
+        <TechFestHero />
 
-        {/* <AutoShowHero /> */}
+        <AutoShowHero />
 
         {/* <CulturalContainer /> */}
 
