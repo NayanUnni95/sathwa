@@ -109,17 +109,17 @@ export default function TechCompetitionsSection() {
                 alt="Tech Competitions"
                 fill
                 priority
-                className="hidden md:block object-cover filter brightness-80 
+                className={`hidden md:block object-cover filter brightness-80 
   group-hover:grayscale-0 group-hover:brightness-100 
-  transition-all duration-700 ease-out"
+  transition-all duration-700 ease-out`}
               />
               <Image
                 src="/assets/tech_competitions_mobile2.png"
                 alt="Tech Competitions Mobile"
                 fill
-                className="block md:hidden object-cover filter brightness-80 
+                className={`block md:hidden object-cover filter brightness-80 
   group-hover:grayscale-0 group-hover:brightness-100 
-  transition-all duration-700 ease-out"
+  transition-all duration-700 ease-out`}
               />
             </div>
             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
@@ -142,14 +142,14 @@ export default function TechCompetitionsSection() {
         <div className="mt-5 overflow-hidden">
           <Link
             href="/competitions"
-            className="inline-flex items-center gap-2 text-white 
+            className={`inline-flex items-center gap-2 text-white 
     bg-white/20 backdrop-blur-md 
     border border-white/30 
     px-4 py-4 rounded-full 
     font-mono text-sm md:text-sm tracking-[0.3em] uppercase
     shadow-lg shadow-white/10
     hover:bg-white/20 hover:border-white/60
-    transition-all duration-500 hover:tracking-[0.5em]"
+    transition-all duration-500 hover:tracking-[0.5em]`}
           >
             Enter The Arena <FiArrowUpRight className="text-lg" />
           </Link>

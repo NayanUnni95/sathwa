@@ -117,9 +117,9 @@ export default function WorkshopSection() {
                 alt="Workshop Desktop"
                 fill
                 priority
-                className="hidden md:block object-cover filter brightness-80 
+                className={`hidden md:block object-cover filter brightness-80 
   group-hover:grayscale-0 group-hover:brightness-100 
-  transition-all duration-700 ease-out"
+  transition-all duration-700 ease-out`}
               />
 
               {/* Mobile Image */}
@@ -127,8 +127,8 @@ export default function WorkshopSection() {
                 src="/assets/workshop mobile view_edit.png"
                 alt="Workshop Mobile"
                 fill
-                className="block md:hidden object-contain filter brightness-100 
-  transition-all duration-700 ease-out"
+                className={`block md:hidden object-contain filter brightness-100 
+  transition-all duration-700 ease-out`}
               />
             </div>
             {/* Slice Overlay for depth */}
@@ -152,14 +152,14 @@ export default function WorkshopSection() {
         <div className="mt-4 overflow-hidden">
           <Link
             href="/workshops"
-            className="inline-flex items-center gap-2 text-white 
+            className={`inline-flex items-center gap-2 text-white 
     bg-white/20 backdrop-blur-md 
     border border-white/30 
     px-4 py-4 rounded-full 
     font-mono text-sm md:text-sm tracking-[0.3em] uppercase
     shadow-lg shadow-white/10
     hover:bg-white/20 hover:border-white/60
-    transition-all duration-500 hover:tracking-[0.5em]"
+    transition-all duration-500 hover:tracking-[0.5em]`}
           >
             Enter The Arena <FiArrowUpRight className="text-lg" />
           </Link>

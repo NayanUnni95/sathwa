@@ -43,7 +43,14 @@ const FooterSecondary = () => {
                   src={"/assets/favicon.png"}
                 />
               </div>
-              <div className="logo-placeholder"><Image alt="/assets/cem_logo.png" width={45} height={45} src={'/assets/cem_logo.png'} /></div>
+              <div className="logo-placeholder">
+                <Image
+                  alt="/assets/cem_logo.png"
+                  width={45}
+                  height={45}
+                  src={"/assets/cem_logo.png"}
+                />
+              </div>
             </div>
           </div>
 
