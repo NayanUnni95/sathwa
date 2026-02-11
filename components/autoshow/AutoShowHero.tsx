@@ -22,7 +22,20 @@ export default function AutoShowHero() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      gsap.registerPlugin(ScrollTrigger);
+
+      //commented for hero
+      // const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          once: true, // plays once (clean + premium)
+          end: "top 40%",
+          // scrub: 0.6,
+        },
+      });
 
       // --- INITIAL STATES ---
       // gsap.set(row1Ref.current, { xPercent: -100, opacity: 0 });
@@ -52,24 +65,44 @@ export default function AutoShowHero() {
       //   );
       // }
 
-      const towTL = gsap.timeline();
+      // commented for hero
+      // const towTL = gsap.timeline();
 
-      towTL.to(row1MotionRef.current, {
+      // towTL.to(row1MotionRef.current, {
+      //   x: 0,
+      //   duration: 1.4,
+      //   ease: "power3.out",
+      //   // onUpdate: updateRope
+      // });
+
+      // towTL.to(
+      //   row1TextInnerRef.current,
+      //   {
+      //     x: 0,
+      //     duration: 0.6,
+      //     ease: "elastic.out(1, 0.45)",
+      //   },
+      //   "-=1.0",
+      // );
+
+      tl.to(row1MotionRef.current, {
         x: 0,
-        duration: 1.4,
-        ease: "power3.out",
-        // onUpdate: updateRope
+        duration: 2.0,
+        ease: "power2.out",
       });
 
-      towTL.to(
+      tl.to(
         row1TextInnerRef.current,
         {
           x: 0,
-          duration: 0.6,
+          duration: 1.6,
           ease: "elastic.out(1, 0.45)",
         },
-        "-=1.0",
+        "-=1.0"
       );
+
+
+
       gsap.set(row1TextInnerRef.current, {
         scale: 1,
       });
@@ -98,26 +131,41 @@ export default function AutoShowHero() {
 
       // --- ENTRANCE ANIMATION ---
       // tl.to(row1Ref.current, { xPercent: 0, opacity: 1, duration: 1.5 }, 0)
-      tl.to(row2Ref.current, { xPercent: 0, opacity: 1, duration: 1.5 }, 0.2)
-        .to(row3Ref.current, { xPercent: 0, opacity: 1, duration: 1.5 }, 0.4)
-        .to(row4Ref.current, { xPercent: 0, opacity: 1, duration: 1.5 }, 0.6);
+      tl.to(row2Ref.current, { xPercent: 0, opacity: 1, duration: 2.1 }, 0.2)
+        .to(row3Ref.current, { xPercent: 0, opacity: 1, duration: 2.1 }, 0.4)
+        .to(row4Ref.current, { xPercent: 0, opacity: 1, duration: 2.1 }, 0.6);
 
       // --- WHEEL SPIN (High Speed -> Stop over 30s) ---
       // Scale up the wheel first
       gsap.to(row3WheelRef.current, {
         scale: 1,
-        duration: 2,
+        duration: 2.8,
         ease: "back.out(1.2)",
         delay: 0.8,
       });
 
       // Spin Animation
-      gsap.to(row3WheelRef.current, {
-        rotation: 360 * 40, // Spin many times
-        duration: 80, // Over 30 seconds
-        ease: "power2.out", // Decelerate gradually (start fast, end slow/stop)
-        delay: 0.8,
+      // gsap.to(row3WheelRef.current, {
+      //   rotation: 360 * 40, // Spin many times
+      //   duration: 80, // Over 30 seconds
+      //   ease: "power2.out", // Decelerate gradually (start fast, end slow/stop)
+      //   delay: 0.8,
+      // });
+
+      tl.add(() => {
+        gsap.to(row3WheelRef.current, {
+          scale: 1,
+          duration: 2.5,
+          ease: "back.out(1.2)",
+        });
+
+        gsap.to(row3WheelRef.current, {
+          rotation: 360 * 40,
+          duration: 80,
+          ease: "power2.out",
+        });
       });
+
     }, containerRef);
 
     return () => ctx.revert();
@@ -296,7 +344,7 @@ export default function AutoShowHero() {
       {/* === TICKER FOOTER === */}
 
       <div className="w-full bg-[#E6E6E6] mt-5 border-t-4 border-black z-20 relative">
-        <div className="animate-marquee whitespace-nowrap flex gap-10 items-center text-black font-black font-mono text-md uppercase tracking-widest py-1 leading-none">
+        <div className="animate-marquee1 whitespace-nowrap flex gap-10 items-center text-black font-black font-mono text-md uppercase tracking-widest py-1 leading-none">
           {Array(6)
             .fill("ENGINE ROARS ✶ BURNT RUBBER ✶ LIVE STUNTS ✶ PURE ADRENALINE")
             .map((text, i) => (

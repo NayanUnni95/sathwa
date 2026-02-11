@@ -5,6 +5,8 @@ import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import WorkshopSection from "../WorkshopSection";
 import "./MobileLayout.css";
+import TechFestHero from "@/components/techfest/TechFestHero";
+import AutoShowHero from "@/components/autoshow/AutoShowHero";
 // import TechFestHero from "@/components/techfest/TechFestHero";
 // import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
 
@@ -27,11 +29,19 @@ export default function MobileLayout() {
            <TechFestHero />
          </div> */}
 
-        <WorkshopSection />
 
-        {/* <div>
-        <TechFestHero />
-      </div> */}
+        <div className="mt-30">
+          <TechFestHero />
+        </div>
+
+        <div className="mt-10">
+          <WorkshopSection />
+        </div>
+
+        <div className="mt-15">
+          <AutoShowHero />
+        </div>
+
         {/* <CulturalContainer /> */}
 
         <CountdownSection />

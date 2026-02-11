@@ -24,17 +24,20 @@ export default function TechFestHero() {
         // Reset any existing props
         gsap.set(".joystick-layer", { clearProps: "all" });
 
-        const tl = gsap.timeline({
-          defaults: { ease: "power2.inOut" }, // Smooth easing basics
-        });
         // const tl = gsap.timeline({
-        //   defaults: { ease: "power2.inOut" },
-        //   scrollTrigger: {
-        //     trigger: containerRef.current,
-        //     start: "top 75%",
-        //     once: true
-        //   }
+        //   defaults: { ease: "power2.inOut" }, // Smooth easing basics
         // });
+
+
+        const tl = gsap.timeline({
+          defaults: { ease: "power2.inOut" },
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 75%",
+            end: "bottom 40%",
+            once: true
+          }
+        });
 
         // 1. Initial State: Jammed 1 & 4 only, small and hidden
         // Layers 2 & 3 are strictly hidden (internal)
@@ -180,7 +183,7 @@ export default function TechFestHero() {
             each: 0.15,
             from: "center",
           },
-          delay: 6.5,
+          // delay: 6.5,
         });
 
         // gsap.set(".joystick-layer", {
@@ -190,13 +193,13 @@ export default function TechFestHero() {
 
       };
 
-      gsap.to(containerRef.current, {
-        backgroundPositionY: "60px",
-        duration: 40,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      // gsap.to(containerRef.current, {
+      //   backgroundPositionY: "60px",
+      //   duration: 40,
+      //   repeat: -1,
+      //   yoyo: true,
+      //   ease: "sine.inOut",
+      // });
 
 
       // Breakpoints
@@ -228,9 +231,19 @@ export default function TechFestHero() {
 
 
       {/* 1. Background Grid */}
-      <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.03]
+      {/* <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.03]
                 bg-[linear-gradient(135deg,rgba(255,255,255,0.4)_1px,transparent_1px)]
-                bg-[length:60px_60px]" />
+                bg-[length:60px_60px]" /> */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage: `
+                        linear-gradient(to right, #444 1px, transparent 1px),
+                        linear-gradient(to bottom, #444 1px, transparent 1px)
+                    `,
+          backgroundSize: "50px 50px", // Wider grid
+        }}
+      />
 
 
       {/* Film Grain */}
