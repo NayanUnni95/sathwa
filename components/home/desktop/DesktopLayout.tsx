@@ -33,9 +33,9 @@ export default function DesktopLayout() {
           <WorkshopSection />
         </div>
 
-        <TechFestHero />
+        {/* <TechFestHero /> */}
 
-        <AutoShowHero />
+        {/* <AutoShowHero /> */}
 
         {/* <div className="dl-cultural-section">
           <CulturalContainer />
