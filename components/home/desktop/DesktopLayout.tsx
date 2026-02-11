@@ -6,10 +6,12 @@ import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./DesktopLayout.css";
 // import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
 import WorkshopSection from "../WorkshopSection";
+import AutoShowHero from "@/components/autoshow/AutoShowHero";
+import TechFestHero from "@/components/techfest/TechFestHero";
 
 export default function DesktopLayout() {
   return (
-    <>
+    <div className="dl-scope">
       <div className="dl-main-content reveal reveal-3">
         <HeroFeatures />
         <DatePanel />
@@ -31,6 +33,10 @@ export default function DesktopLayout() {
           <WorkshopSection />
         </div>
 
+        {/* <TechFestHero /> */}
+
+        {/* <AutoShowHero /> */}
+
         {/* <div className="dl-cultural-section">
           <CulturalContainer />
         </div> */}
@@ -40,6 +46,6 @@ export default function DesktopLayout() {
           <CountdownSection />
         </div>
       </div>
-    </>
+    </div>
   );
 }

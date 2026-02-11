@@ -5,8 +5,9 @@ import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import WorkshopSection from "../WorkshopSection";
 import "./MobileLayout.css";
-// import TechFestHero from "@/components/techfest/TechFestHero";
+import TechFestHero from "@/components/techfest/TechFestHero";
 // import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
+import AutoShowHero from "@/components/autoshow/AutoShowHero";
 
 export default function MobileLayout() {
   return (
@@ -23,15 +24,12 @@ export default function MobileLayout() {
 
         <TechCompetitionsSection />
 
-        {/* <div className="mt-10 mb-10">
-           <TechFestHero />
-         </div> */}
-
         <WorkshopSection />
 
-        {/* <div>
-        <TechFestHero />
-      </div> */}
+        {/* <TechFestHero /> */}
+
+        {/* <AutoShowHero /> */}
+
         {/* <CulturalContainer /> */}
 
         <CountdownSection />
