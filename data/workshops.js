@@ -230,4 +230,50 @@ export const workshop = [
     ],
     details: false,
   },
+  {
+    name: "PCB Designing Workshop",
+    categoryId: 20,
+    searchKey: "pcb-designing-workshop",
+    type: "tech",
+    date: "26 Feb 2026",
+    dateShort: "26/02/2026",
+    about:
+      "A hands-on workshop that guides participants through schematic capture and PCB layout, helping them turn breadboard prototypes into professional-grade circuit boards.",
+    url: "/assets/workshops/pcb-designing.jpeg",
+    regLink: "https://forms.gle/HDMoXteqEvu87iL6A",
+    isRegOpen: true,
+    price: "199",
+    pricePool: "",
+    guidelines:
+      "Participants must follow instructions during the workshop and complete the design activities within the session.",
+    note: "Activity points will be awarded.",
+    contact: [
+      { name: "Rahul R", no: "7909101306" },
+      { name: "Anakha", no: "9048798853" },
+    ],
+    details: false,
+  },
+  {
+    name: "PixelPreneur Workshop",
+    categoryId: 21,
+    searchKey: "pixelpreneur-workshop",
+    type: "tech",
+    date: "27 Feb 2026",
+    dateShort: "27/02/2026",
+    about:
+      "A hands-on workshop where participants build a playable 2D game using the Godot engine and learn how indie developers turn game ideas into real businesses.",
+    url: "/assets/workshops/pixelpreneur.jpeg",
+    regLink: "https://forms.gle/ce5YJV5KfVCUmMSa8",
+    isRegOpen: true,
+    price: "50",
+    pricePool: "",
+    guidelines:
+      "Laptop recommended. Participants will build a game prototype and take part in idea and quiz activities during the session.",
+    note: "Limited to 60 seats.",
+    contact: [
+      { name: "Aswin V Sivan", no: "8075334794" },
+      { name: "Nazreen Shameem", no: "9995641720" },
+    ],
+    details: false,
+  },
 ];
