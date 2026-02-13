@@ -57,7 +57,7 @@ export default function CompetitionsPage() {
                 key={category}
                 type="button"
                 onClick={() => setActiveFilter(category)}
-                className={`group relative px-6 py-2.5 md:px-10 md:py-3.5 text-[10px] md:text-xs tracking-[0.3em] uppercase font-[KyivTypeTitling] transition-all duration-500 overflow-hidden border ${
+                className={`group relative px-6 py-2.5 md:px-10 md:py-3.5 text-[13px] md:text-xs tracking-[0.3em] uppercase font-[KyivTypeTitling] transition-all duration-500 overflow-hidden border ${
                   activeFilter === category
                     ? "border-[#BC002D] text-white"
                     : "border-white/10 text-[#EAE0D5]/60 hover:text-[#EAE0D5] hover:border-white/30"
