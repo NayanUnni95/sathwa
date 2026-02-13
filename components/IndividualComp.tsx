@@ -113,15 +113,17 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
             <div
               className={`reveal-item opacity-0 translate-y-8 grid ${compData.pricePool ? "grid-cols-2" : "grid-cols-1"} gap-4`}
             >
-              <div className="bg-[#0A0A0A] border border-white/5 p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center group hover:border-[#BC002D]/30 transition-colors">
-                <BiRupee className="text-[#BC002D] text-xl" />
-                <span className="text-[10px] uppercase tracking-widest text-zinc-500">
-                  Reg Fee
-                </span>
-                <span className="font-[KyivTypeTitling] text-xl">
-                  Rs. {compData.price}
-                </span>
-              </div>
+              {compData.price && (
+                <div className="bg-[#0A0A0A] border border-white/5 p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center group hover:border-[#BC002D]/30 transition-colors">
+                  <BiRupee className="text-[#BC002D] text-xl" />
+                  <span className="text-[10px] uppercase tracking-widest text-zinc-500">
+                    Reg Fee
+                  </span>
+                  <span className="font-[KyivTypeTitling] text-xl">
+                    Rs. {compData.price}
+                  </span>
+                </div>
+              )}
               {compData.pricePool && (
                 <div className="bg-[#0A0A0A] border border-white/5 p-4 rounded-xl flex flex-col items-center justify-center gap-2 text-center group hover:border-[#BC002D]/30 transition-colors">
                   <FiAward className="text-[#BC002D] text-xl" />

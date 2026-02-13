@@ -4,6 +4,7 @@ export const menuConfig = {
     { label: "Events", ariaLabel: "Events", link: "/events" },
     { label: "Competitions", ariaLabel: "Competitions", link: "/competitions" },
     { label: "Workshops", ariaLabel: "Workshops", link: "/workshops" },
+    { label: "Events", ariaLabel: "Events", link: "/events" },
     { label: "Contact", ariaLabel: "Contact", link: "/contact" },
   ],
   socialItems: [
