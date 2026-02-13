@@ -216,21 +216,23 @@ export default function IndividualComp({ compData }: IndividualCompProps) {
 
               {/* Action Buttons */}
               <div className="flex flex-col gap-4">
-                <button
-                  onClick={() =>
-                    compData.isRegOpen && navigate(compData.regLink)
-                  }
-                  disabled={!compData.isRegOpen}
-                  type="button"
-                  className={`flex-1 h-full min-h-[60px] rounded-xl flex items-center justify-center gap-3 text-lg font-bold uppercase tracking-widest transition-all duration-300 ${
-                    compData.isRegOpen
-                      ? "bg-[#BC002D] hover:bg-[#a00026] text-white shadow-lg shadow-[#BC002D]/20 hover:shadow-[#BC002D]/40 translate-y-0 hover:-translate-y-1"
-                      : "bg-zinc-800 text-zinc-500 cursor-not-allowed"
-                  }`}
-                >
-                  {compData.isRegOpen ? "Register Now" : "Closed"}
-                  {compData.isRegOpen && <FiArrowUpRight size={22} />}
-                </button>
+                {compData.regLink != null && (
+                  <button
+                    onClick={() =>
+                      compData.isRegOpen && navigate(compData.regLink)
+                    }
+                    disabled={!compData.isRegOpen}
+                    type="button"
+                    className={`flex-1 h-full min-h-[60px] rounded-xl flex items-center justify-center gap-3 text-lg font-bold uppercase tracking-widest transition-all duration-300 ${
+                      compData.isRegOpen
+                        ? "bg-[#BC002D] hover:bg-[#a00026] text-white shadow-lg shadow-[#BC002D]/20 hover:shadow-[#BC002D]/40 translate-y-0 hover:-translate-y-1"
+                        : "bg-zinc-800 text-zinc-500 cursor-not-allowed"
+                    }`}
+                  >
+                    {compData.isRegOpen ? "Register Now" : "Closed"}
+                    {compData.isRegOpen && <FiArrowUpRight size={22} />}
+                  </button>
+                )}
 
                 <button
                   onClick={shareItem}

@@ -187,7 +187,7 @@ export const workshop = [
     details: false,
   },
   {
-    name: "PixelPreneur Workshop",
+    name: "Game Development Workshop",
     categoryId: 19,
     searchKey: "pixelpreneur-workshop",
     type: "tech",

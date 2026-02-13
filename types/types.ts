@@ -23,6 +23,7 @@ export interface CompetitionCardProps {
   description: string;
   date: string;
   isRegOpen: boolean;
+  regLink: string | null;
   day: string;
   imageUrl?: string; // Optional, defaults to dummy2 if not provided
   details?: boolean;

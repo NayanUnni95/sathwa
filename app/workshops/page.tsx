@@ -98,6 +98,7 @@ export default function WorkshopsPage() {
                   // Default date/day as not in data schema yet
                   date={comp.dateShort}
                   isRegOpen={comp.isRegOpen}
+                  regLink={comp.regLink}
                   day=""
                   // day="Friday"
                   imageUrl={comp.url}

@@ -71,7 +71,7 @@ export default function EventsPage() {
                   }`}
                 />
                 <span className="relative z-10">
-                  {category === "all" ? "All Workshops" : category}
+                  {category === "all" ? "All Events" : category}
                 </span>
 
                 {activeFilter === category && (
@@ -98,6 +98,7 @@ export default function EventsPage() {
                   // Default date/day as not in data schema yet
                   date={comp.dateShort}
                   isRegOpen={comp.isRegOpen}
+                  regLink={comp.regLink}
                   day=""
                   // day="Friday"
                   imageUrl={comp.url}

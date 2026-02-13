@@ -8,6 +8,7 @@ export default function CompetitionCard({
   description,
   date,
   isRegOpen,
+  regLink,
   //   day,
   imageUrl = "/assets/dummy2.jpg",
   details = false,
@@ -40,7 +41,7 @@ export default function CompetitionCard({
         <div className="flex w-full border-b border-white/10">
           {/* Date Box - High Visual Weight */}
           <div className="w-20 md:w-24 flex-shrink-0 flex flex-col items-center justify-center border-r border-white/10 bg-[#0a0a0a] py-4 group-hover:bg-[#BC002D] group-hover:text-white transition-colors duration-300">
-            <span className="text-2xl md:text-3xl font-[KyivTypeTitling] font-bold leading-none">
+            <span className="text-2xl md:text-3xl font-[KyivTypeTitling] font-bold leading-none flex items-center justify-center">
               {dayNum}
             </span>
             <span className="text-[9px] md:text-[10px] tracking-widest uppercase mt-1 opacity-80">
@@ -96,11 +97,17 @@ export default function CompetitionCard({
           >
             <div className="flex items-center gap-2">
               <div
-                className={`w-1.5 h-1.5 rounded-full animate-pulse ${isRegOpen ? "bg-green-500" : "bg-red-500"}`}
+                className={`w-1.5 h-1.5 rounded-full animate-pulse ${regLink ? (isRegOpen ? "bg-green-500" : "bg-red-500") : "bg-blue-400"}`}
               ></div>
-              <span className="text-[10px] uppercase tracking-widest text-zinc-400">
-                {isRegOpen ? "Registrations Open" : "Registrations Closed"}
-              </span>
+              {regLink ? (
+                <span className="text-[10px] uppercase tracking-widest text-zinc-400">
+                  {isRegOpen ? "Registrations Open" : "Registrations Closed"}
+                </span>
+              ) : (
+                <span className="text-[10px] uppercase tracking-widest text-zinc-400">
+                  Access Portal Offline
+                </span>
+              )}
             </div>
 
             <div className="flex items-center gap-1 group/btn cursor-pointer">
