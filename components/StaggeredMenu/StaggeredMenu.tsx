@@ -52,9 +52,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onMenuClose,
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [scrolled, setScrolled] = useState(false);
-  const lastScrollY = useRef(0);
   const openRef = useRef(false);
 
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -386,6 +383,57 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     });
   }, []);
 
+  React.useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    let lastScroll = window.scrollY;
+    let hidden = false;
+    let upScrollDistance = 0;
+
+    const hideAfter = 60;
+    const revealAfter = 90;
+
+    const update = () => {
+      const current = window.scrollY;
+      const diff = current - lastScroll;
+
+
+      if (current < hideAfter) {
+        header.style.transform = "translateY(0)";
+        hidden = false;
+        upScrollDistance = 0;
+        lastScroll = current;
+        return;
+      }
+
+
+      if (diff > 0 && !hidden) {
+        header.style.transform = "translateY(-100%)";
+        hidden = true;
+        upScrollDistance = 0;
+      }
+
+
+      if (diff < 0 && hidden) {
+        upScrollDistance += Math.abs(diff);
+
+        if (upScrollDistance > revealAfter) {
+          header.style.transform = "translateY(0)";
+          hidden = false;
+          upScrollDistance = 0;
+        }
+      }
+
+      lastScroll = current;
+    };
+
+    const onScroll = () => window.requestAnimationFrame(update);
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const toggleMenu = useCallback(() => {
     const target = !openRef.current;
     openRef.current = target;
@@ -424,54 +472,15 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     }
   }, [playClose, animateIcon, animateColor, animateText, onMenuClose]);
 
-  React.useEffect(() => {
-    if (!closeOnClickAway || !open) return;
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        panelRef.current &&
-        !panelRef.current.contains(event.target as Node) &&
-        toggleBtnRef.current &&
-        !toggleBtnRef.current.contains(event.target as Node)
-      ) {
-        closeMenu();
-      }
-    };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [closeOnClickAway, open, closeMenu]);
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      // Don't hide navbar if the menu is open
-      if (openRef.current) {
-        setVisible(true);
-        return;
-      }
 
-      const currentScrollY = window.scrollY;
 
-      setScrolled(currentScrollY > 20);
+  const headerRef = useRef<HTMLDivElement | null>(null);
 
-      if (currentScrollY <= 10) {
-        setVisible(true);
-      } else if (currentScrollY > lastScrollY.current + 5) {
-        // Scrolling down
-        setVisible(false);
-      } else if (currentScrollY < lastScrollY.current - 5) {
-        // Scrolling up
-        setVisible(true);
-      }
 
-      lastScrollY.current = currentScrollY;
-    };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className={`sm-scope ${isFixed ? "sm-fixed" : "sm-absolute-fill"}`}>
@@ -505,7 +514,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <header
-          className={`staggered-menu-header ${!visible ? "sm-header-hidden" : ""} ${scrolled ? "sm-header-scrolled" : ""}`}
+          className="staggered-menu-header"
+          ref={headerRef}
           aria-label="Main navigation header"
         >
           <div className="sm-logo" aria-label="Logo">
