@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,10 +25,6 @@ export default function TechFestHero() {
         // Reset any existing props
         gsap.set(".joystick-layer", { clearProps: "all" });
 
-        // const tl = gsap.timeline({
-        //   defaults: { ease: "power2.inOut" }, // Smooth easing basics
-        // });
-
         const tl = gsap.timeline({
           defaults: { ease: "power2.inOut" },
           scrollTrigger: {
@@ -38,21 +35,15 @@ export default function TechFestHero() {
           },
         });
 
-        // 1. Initial State: Jammed 1 & 4 only, small and hidden
-        // Layers 2 & 3 are strictly hidden (internal)
+        // 1. Initial State
         gsap.set(".joystick-layer", {
-          // scale: 0.5,
           opacity: 0,
           filter: "blur(10px)",
           y: 0,
         });
         gsap.set(".layer-2, .layer-3", { opacity: 0, display: "none" });
 
-        // gsap.set(".layer-4", {
-        //   y: -20,
-        // });
-
-        // 2. Entrance: Fade In + Grow to Size (Assembled 1 & 4)
+        // 2. Entrance
         tl.to(".layer-1, .layer-4", {
           scale: 1,
           opacity: 1,
@@ -64,7 +55,6 @@ export default function TechFestHero() {
         // 3. Damped Oscillation Sequence
 
         // Step A: Expand Huge (Reveal 2 & 3)
-        // Turn on display for internals right before explosion
         tl.add(() => {
           gsap.set(".layer-2, .layer-3", { display: "block" });
         }, ">-0.1");
@@ -81,7 +71,7 @@ export default function TechFestHero() {
               duration: 1.2,
             },
             "expand1",
-          ) // Fade in internals
+          )
           .to(
             ".layer-3",
             {
@@ -94,7 +84,7 @@ export default function TechFestHero() {
             "expand1",
           );
 
-        // Step B: Contract Deeply (Compression)
+        // Step B: Contract Deeply
         const compressOuter = targetOuter * 0.6;
         const compressInner = targetInner * 0.6;
         tl.to(".layer-1", { y: -compressOuter, duration: 0.8 })
@@ -116,7 +106,7 @@ export default function TechFestHero() {
           .to(".layer-3", { y: targetInner, duration: 0.8 }, "<")
           .to(".layer-4", { y: targetOuter, duration: 0.8 }, "<");
 
-        // Step E: Expand Small (Micro-bounce)
+        // Step E: Expand Small
         const smallOuter = targetOuter * 1.1;
         const smallInner = targetInner * 1.1;
         tl.to(".layer-1", { y: -smallOuter, duration: 0.6, ease: "sine.out" })
@@ -136,7 +126,7 @@ export default function TechFestHero() {
             "<",
           );
 
-        // Step F: Final Settle (Target)
+        // Step F: Final Settle
         tl.to(".layer-1", {
           y: -targetOuter,
           duration: 0.8,
@@ -181,30 +171,15 @@ export default function TechFestHero() {
             each: 0.15,
             from: "center",
           },
-          // delay: 6.5,
         });
-
-        // gsap.set(".joystick-layer", {
-        //   transformOrigin: "50% 50%",
-        // });
       };
-
-      // gsap.to(containerRef.current, {
-      //   backgroundPositionY: "60px",
-      //   duration: 40,
-      //   repeat: -1,
-      //   yoyo: true,
-      //   ease: "sine.inOut",
-      // });
 
       // Breakpoints
       mm.add("(max-width: 768px)", () => {
-        // Mobile: Target (80, 30) | Huge (160, 60)
         runAnimation(100, 50, 170, 85);
       });
 
       mm.add("(min-width: 769px)", () => {
-        // Desktop: Target (210, 70) | Huge (350, 120)
         runAnimation(210, 70, 350, 120);
       });
     }, containerRef);
@@ -215,100 +190,76 @@ export default function TechFestHero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen bg-[#050505] overflow-hidden flex flex-col items-center justify-center font-sans text-white"
+      className="relative w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center font-sans text-white"
     >
-      {/* Soft focus vignette */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.85))]" />
+      {/* 1. Background Vertical Lines */}
+      {/* 
+         Pattern: "Full then shaded..." 
+         Implementing as repeating gradient lines.
+      */}
+      <div className="absolute top-[18%] bottom-0 inset-x-0 flex justify-between px-4 md:px-20 pointer-events-none z-0">
+        {[...Array(9)].map((_, i) => (
+          <div
+            key={i}
+            className="h-full w-[2px] lg:w-[3px] opacity-[0.15]"
+            style={{
+              background: `repeating-linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.4) 0,
+                rgba(255, 255, 255, 1) 15%,
+                rgba(255, 255, 255, 0.3) 30%,
+                rgba(255, 255, 255, 1) 45%,
+                rgba(255, 255, 255, 0.3) 60%,
+                rgba(255, 255, 255, 1) 75%,
+                rgba(255, 255, 255, 0.3) 100%
+              )`,
+              backgroundSize: '100% 500px'
+            }}
+          />
+        ))}
+      </div>
 
-      {/* 1. Background Grid */}
-      {/* <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.03]
-                bg-[linear-gradient(135deg,rgba(255,255,255,0.4)_1px,transparent_1px)]
-                bg-[length:60px_60px]" /> */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-20"
-        style={{
-          backgroundImage: `
-                        linear-gradient(to right, #444 1px, transparent 1px),
-                        linear-gradient(to bottom, #444 1px, transparent 1px)
-                    `,
-          backgroundSize: "50px 50px", // Wider grid
-        }}
-      />
-
-      {/* Film Grain */}
-      <div className="absolute inset-0 z-[1] pointer-events-none opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay"></div>
-
-      {/* FADES */}
-      {/* <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent z-40 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-40 pointer-events-none" /> */}
-
-      {/* Section framing rails
-      <div className="absolute left-6 md:left-12 top-0 h-full w-px bg-white/5 z-20 pointer-events-none" />
-      <div className="absolute right-6 md:right-12 top-0 h-full w-px bg-white/5 z-20 pointer-events-none" /> */}
-
-      <div className="absolute top-1/3 left-0 w-64 h-px bg-gradient-to-r from-transparent via-[#BC002D] to-transparent opacity-40" />
-      <div className="absolute bottom-1/3 right-0 w-72 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-
-      {/* 2. Top Typography (Behind Joystick potentially) */}
-      <div className="absolute top-[12%] z-10 w-full px-4 md:px-12 flex justify-between items-start pointer-events-none select-none">
-        <h1 className="text-[15vw] leading-[0.8] font-extrabold tracking-[0.035em] mix-blend-exclusion text-zinc-100 font-[var(--font-space-grotesk)]">
-          EXPO
-        </h1>
-        <h1 className="text-[15vw] leading-[0.8] font-medium tracking-[0.04em] mix-blend-exclusion text-zinc-100 font-[var(--font-space-grotesk)]">
-          26
+      {/* 2. Top Typography */}
+      <div className="absolute top-6 left-6 md:left-20 w-full z-10 flex flex-col items-start justify-start text-left pointer-events-none select-none">
+        <div className="flex items-center gap-6">
+          <p className="text-xl md:text-2xl font-medium text-[#4ADE80] tracking-wider">
+            Powering The
+          </p>
+          {/* Date Badge (Desktop Only) */}
+          <div className="hidden lg:block">
+            <div className="bg-white text-black px-6 py-2 rounded-full">
+              <span className="text-sm font-bold tracking-tight">Feb 26, 27</span>
+            </div>
+          </div>
+        </div>
+        <h1 className="text-[12vw] md:text-[7.5vw] leading-[0.85] font-normal text-white font-[family-name:var(--font-japan-ramen)] tracking-wide mt-4">
+          EXPO 2026
         </h1>
       </div>
 
-      <div className="absolute top-10 left-6 md:left-12 z-30 flex items-center gap-3">
-        <span className="w-6 h-px bg-[#BC002D]" />
-        <span className="text-xs tracking-[0.4em] text-zinc-400 font-mono uppercase">
-          Tech Expo Showcase
-        </span>
-      </div>
 
-      {/* 3. Scrolling Marquee (The "Element behind the image and below tathva") */}
-      {/* Positioned slightly below the main title, z-index behind joystick */}
+      {/* 3. Scrolling Marquee (White Strip) */}
       <div
-        className={`absolute top-[20%] w-full z-10 overflow-hidden
-                bg-white/10 backdrop-blur-lg
-                border-y border-white/10`}
+        className="absolute top-[16.5%] md:top-[17.2%] lg:top-[30%] w-full z-10 overflow-hidden bg-white py-2 md:py-3"
       >
-        {/* Edge fades */}
-        <div
-          className={`pointer-events-none absolute inset-y-0 left-0 w-24
-                  bg-gradient-to-r from-black to-transparent z-20`}
-        />
-        <div
-          className={`pointer-events-none absolute inset-y-0 right-0 w-24
-                  bg-gradient-to-l from-black to-transparent z-20`}
-        />
-
-        <div className="flex w-max animate-marquee whitespace-nowrap py-3">
+        <div className="flex w-max animate-marquee whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-10 mx-8">
               {[
-                "Civil Expo",
-                "Robotics Expo",
-                "KSEB Expo",
-                "Keltron Expo",
-                "Nail Expo",
-                "Hobby Circuit Expo",
+                "ROBOTICS EXPO",
+                "CIVIL EXPO",
+                "KELTRON EXPO",
+                "HOBBY CIRCUIT EXPO",
+                "RAIL EXPO",
               ].map((text, idx) => (
                 <React.Fragment key={idx}>
                   <span
-                    className={`text-sm md:text-base
-                             font-medium
-                             tracking-[0.25em]
-                             text-zinc-400 uppercase
-                             font-[var(--font-space-grotesk)]`}
+                    className="text-sm md:text-lg font-400 tracking-[0.1em] text-black uppercase font-plus-jakarta-sans"
                   >
                     {text}
                   </span>
-
                   <span
-                    className={`w-1.5 h-1.5 rounded-full
-                             bg-[#BC002D]
-                             shadow-[0_0_10px_rgba(188,0,45,0.9)]`}
+                    className="w-2 h-2 rounded-full bg-[#4ADE80]"
                   />
                 </React.Fragment>
               ))}
@@ -318,15 +269,11 @@ export default function TechFestHero() {
       </div>
 
       {/* 4. Joystick Container */}
-      <div className="relative z-[60] w-full h-[80vh] flex items-center justify-center mt-4 pointer-events-none">
+      <div className="relative z-20 w-full h-[80vh] flex items-center justify-center -mt-10 lg:-mt-20 lg:translate-x-[25%] pointer-events-none transition-transform duration-700">
         <div
-          className={`relative w-[420px] md:w-[520px] aspect-[4/3] isolate overflow-visible
-                after:absolute after:inset-0
-                after:bg-[radial-gradient(circle_at_center,rgba(188,0,45,0.15),transparent_70%)]
-                after:blur-2xl after:-z-10`}
+          className="relative w-[420px] md:w-[520px] lg:w-[650px] aspect-[4/3] isolate overflow-visible"
         >
           {/* Layers: 4 (Bottom) -> 1 (Top) */}
-          {/* Added opacity-0 class to hide initial FOUC */}
           <div className="joystick-layer layer-4 absolute inset-0 drop-shadow-2xl opacity-0">
             <Image
               src="/assets/homepage/drone image section4 new.png"
@@ -363,52 +310,96 @@ export default function TechFestHero() {
               priority
             />
           </div>
+
+          {/* Floating Description Box (Desktop Only) */}
+          <div className="hidden lg:block absolute -left-[45%] -bottom-[20%] z-40 ui-reveal">
+            <div
+              className="
+    backdrop-blur-md
+    border border-white/5
+    bg-[#7A7A7A30]
+    p-12
+    flex flex-col justify-center
+    text-white
+  "
+              style={{
+                width: "455.4876px",
+                height: "280px",
+                clipPath: `
+      polygon(
+        60px 0%,                 /* top-left cut */
+        calc(100% - 60px) 0%,   /* top-right cut */
+        100% 60px,
+        100% 100%,
+        140px 100%,             /* bottom-left notch start */
+        100px 85%,
+        0% 85%,
+        0% 60px
+      )
+    `,
+                borderRadius: "18.32px"
+              }}
+            >
+
+              <p className="text-base leading-relaxed mb-10 pr-10">
+                A curated showcase where ideas take form through real-world projects and cutting-edge prototypes.
+              </p>
+
+              <div className="flex justify-end pr-4">
+                <Link
+                  href="/events"
+                  className="flex items-center gap-2 text-xs font-bold tracking-[0.15em] uppercase group cursor-pointer"
+                >
+                  Explore Details
+                  <span className="transition-transform group-hover:translate-x-1">›</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
 
-      {/* 5. Date Card (Bottom Left) - Specific Design */}
-      <div className="absolute bottom-5 left-6 md:bottom-10 md:left-12 z-40 ui-reveal pb-3">
-        <div className="border border-white/20 bg-gradient-to-br from-white/10 to-black/80 shadow-[0_0_40px_rgba(188,0,45,0.15)] backdrop-blur-md p-4 w-[280px]">
-          <div className="flex items-baseline gap-2 mb-1">
-            <span className="font-thin text-3xl text-zinc-400 font-sans">
-              2026
-            </span>
-            <span className="font-black text-3xl text-white font-sans tracking-wide">
-              FEB
-            </span>
+      {/* 5. Date Card / Info Card */}
+      <div className="absolute bottom-10 left-6 md:left-20 z-40 ui-reveal">
+        {/* Desktop Version: White Chamfered Card */}
+        <div className="hidden lg:flex items-center bg-white text-black px-10 py-5 gap-10"
+          style={{ clipPath: "polygon(0 0, 85% 0, 100% 25%, 100% 100%, 0 100%)" }}>
+          <div className="flex flex-col items-start gap-1">
+            <span className="text-4xl font-black leading-none">10+</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase opacity-70">EXPOS</span>
           </div>
+          <div className="w-[2px] h-12 bg-black/10" />
+          <div className="flex flex-col gap-3">
+            <div className="w-20 h-1.5 bg-black" />
+            <div className="w-14 h-[3px] bg-black" />
+          </div>
+        </div>
 
+        {/* Mobile/Tablet Version: Original Dark Card */}
+        <div className="lg:hidden border border-white/20 bg-gradient-to-br from-white/10 to-black/80 backdrop-blur-md p-4 w-[280px]">
+          <div className="flex items-baseline gap-2 mb-1">
+            <span className="font-thin text-3xl text-zinc-400 font-sans">2026</span>
+            <span className="font-black text-3xl text-white font-sans tracking-wide">FEB</span>
+          </div>
           <div className="flex justify-between items-center text-[10px] tracking-[0.2em] text-zinc-400 font-mono mb-4 border-b border-white/10 pb-2">
             <span>26TH.</span>
             <span>27TH.</span>
           </div>
-
-          {/* Footer decoration: Circles + Barcode */}
           <div className="flex justify-between items-end h-8">
-            {/* 3 Interlocking Circles */}
             <div className="flex -space-x-2 opacity-50">
               <div className="w-6 h-6 rounded-full border border-zinc-300" />
               <div className="w-6 h-6 rounded-full border border-zinc-300" />
               <div className="w-6 h-6 rounded-full border border-zinc-300" />
             </div>
-
-            {/* Dotted Line */}
             <div className="flex-1 border-b border-dotted border-white/30 mx-4 mb-2" />
-
-            {/* Barcode Rectangle */}
-            {/* <div className="flex gap-0.5 h-6">
-              <div className="w-1 bg-white" />
-              <div className="w-2 bg-white" />
-              <div className="w-0.5 bg-white" />
-              <div className="w-3 bg-white" />
-              <div className="w-1 bg-white" />
-            </div> */}
           </div>
         </div>
       </div>
 
-      {/* 6. Big Techfest Badge (Bottom Right) - Chamfered */}
-      <div className="absolute bottom-5 md:bottom-10 right-6 md:right-12 z-40 ui-reveal">
+      {/* 6. Big Techfest Badge (Mobile/Tablet Only) */}
+      <div className="absolute bottom-5 md:bottom-10 right-6 md:right-12 z-40 ui-reveal lg:hidden">
         <div
           className="relative bg-zinc-200 text-black px-6 py-4 flex items-center gap-4"
           style={{
@@ -433,19 +424,16 @@ export default function TechFestHero() {
           </div>
         </div>
       </div>
-      {/* Bottom section fade
-      <div className="absolute bottom-0 left-0 w-full h-32 z-40 pointer-events-none 
-                bg-gradient-to-t from-black to-transparent" /> */}
 
       <style>{`
-                @keyframes marquee {
-                    0% { transform: translateX(0%); }
-                    100% { transform: translateX(-40%); }
-                }
-                .animate-marquee {
-                    animation: marquee 60s linear infinite;
-                }
-            `}</style>
-    </section>
+            @keyframes marquee {
+                0% { transform: translateX(0%); }
+                100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+                animation: marquee 30s linear infinite;
+            }
+        `}</style>
+    </section >
   );
 }
