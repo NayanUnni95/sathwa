@@ -8,7 +8,21 @@ export default function DatePanel() {
         <div className="dp-content">
           <div className="dp-badge-wrapper group">
             <div className="dp-play-btn group">
-              <div className="dp-play-icon" />
+              <div className="dp-play-icon">
+                <svg
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polygon points="6 4 20 12 6 20" />
+                </svg>
+              </div>
+
             </div>
             <div className="dp-badge-text">
               <span className="dp-month font-japan-ramen">February</span>

@@ -8,7 +8,10 @@ export default function Background() {
           opacity: 1;
           pointer-events: none;
           z-index: 0;
-          background-image: url("/assets/marble.png");
+          background-color: #090909ff;
+          background-image:
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.88)),
+    url("/assets/marble.png");
           background-size: cover;
           background-position: center;
           mix-blend-mode: multiply;

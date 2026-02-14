@@ -363,7 +363,7 @@ export default function AutoShowHero() {
 
         {/* === TICKER FOOTER === */}
 
-        <div className="w-full bg-[#E6E6E6] mt-5 border-t-4 border-black z-20 relative">
+        <div className="w-full bg-[#E6E6E6] border-t-4 border-black z-20 relative">
           <div className="animate-marquee1 whitespace-nowrap flex gap-10 items-center text-black font-black font-mono text-md uppercase tracking-widest py-1 leading-none">
             {Array(6)
               .fill(

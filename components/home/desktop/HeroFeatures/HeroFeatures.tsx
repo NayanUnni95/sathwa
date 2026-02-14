@@ -6,15 +6,14 @@ export default function HeroFeatures() {
     <>
       <div className="hf-scope-top z-20">
         <p className="hf-description">
-          A three-day techno-cultural fest celebrating innovation, creativity,
-          and engineering—where tradition meets modern technology through
-          workshops, competitions, and cultural experiences.
+          A three-day techno-cultural fest blending innovation, creativity, and engineering.
         </p>
       </div>
 
       <div className="hf-scope-main">
         {/* Left Section: Hero Circle and Text */}
         <div className="hf-left reveal reveal-1">
+          <div className="hf-2026">2026</div>
           <div className="hf-circle">
             <div className="hf-img-wrapper">
               <Image
@@ -32,7 +31,7 @@ export default function HeroFeatures() {
         <div className="hf-right">
           <div className="hf-title-block">
             <div className="hf-year-wrapper">
-              <span className="hf-year">' 26</span>
+              <span className="hf-year">'26</span>
             </div>
 
             <h1 className="hf-play-title">SATHWA</h1>

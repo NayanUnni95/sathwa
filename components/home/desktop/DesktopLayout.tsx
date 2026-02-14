@@ -25,24 +25,31 @@ export default function DesktopLayout() {
         </div>
 
         {/* Tech Competitions Section */}
-        <div className="dl-tech-section">
+        <div className="dl-tech-section mt-30">
           <TechCompetitionsSection />
         </div>
 
-        <TechFestHero />
+        <div className="mt-40">
+          <TechFestHero />
+        </div>
 
-        <div className="dl-tech-section">
+
+        <div className="dl-tech-section mt-40">
           <WorkshopSection />
         </div>
 
-        <AutoShowHero />
+        <div className="mt-30">
+          <AutoShowHero />
+
+        </div>
+
 
         {/* <div className="dl-cultural-section">
           <CulturalContainer />
         </div> */}
 
         {/* Countdown Section - Desktop placement */}
-        <div className="dl-countdown-section">
+        <div className="dl-countdown-section mt-20">
           <CountdownSection />
         </div>
       </div>
