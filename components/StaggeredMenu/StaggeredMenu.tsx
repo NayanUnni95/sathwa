@@ -398,7 +398,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       const current = window.scrollY;
       const diff = current - lastScroll;
 
-
       if (current < hideAfter) {
         header.style.transform = "translateY(0)";
         hidden = false;
@@ -407,13 +406,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         return;
       }
 
-
       if (diff > 0 && !hidden) {
         header.style.transform = "translateY(-100%)";
         hidden = true;
         upScrollDistance = 0;
       }
-
 
       if (diff < 0 && hidden) {
         upScrollDistance += Math.abs(diff);
@@ -472,15 +469,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     }
   }, [playClose, animateIcon, animateColor, animateText, onMenuClose]);
 
-
-
-
-
-
   const headerRef = useRef<HTMLDivElement | null>(null);
-
-
-
 
   return (
     <div className={`sm-scope ${isFixed ? "sm-fixed" : "sm-absolute-fill"}`}>

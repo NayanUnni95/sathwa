@@ -98,10 +98,8 @@ export default function AutoShowHero() {
           duration: 1.7,
           ease: "elastic.out(1, 0.45)",
         },
-        "-=1.0"
+        "-=1.0",
       );
-
-
 
       gsap.set(row1TextInnerRef.current, {
         scale: 1,
@@ -165,7 +163,6 @@ export default function AutoShowHero() {
           ease: "power2.out",
         });
       });
-
     }, containerRef);
 
     return () => ctx.revert();
@@ -192,12 +189,8 @@ export default function AutoShowHero() {
             {/* BIG BACKGROUND NUMBER */}
 
             <div className="absolute left-[5%] bottom-[5%] pointer-events-none z-0">
-              <span className="hero-date-bg">
-                27
-              </span>
+              <span className="hero-date-bg">27</span>
             </div>
-
-
 
             {/* CAR (leader) */}
             <div className="absolute right-[-30%] bottom-0 w-[60%] h-[100%] z-10">
@@ -229,7 +222,6 @@ export default function AutoShowHero() {
                 style={{ filter: "drop-shadow(0 0 4px rgba(255,255,255,0.4))" }}
               />
             </svg> */}
-
 
             <div
               ref={row1TextInnerRef}
@@ -294,8 +286,6 @@ export default function AutoShowHero() {
           </div>
         </div>
 
-
-
         {/* === ROW 3: AUTO SHOW + WHEEL === */}
         {/* "no need to like split the car and wheel... as i can see a line there splitting verticaaly" -> removed vertical border */}
         <div
@@ -311,11 +301,8 @@ export default function AutoShowHero() {
               </span>
             </div> */}
             <div className="absolute top-[15%] z-20 mix-blend-difference pb-4">
-              <div className="autoshow-tag">
-                AUTOSHOW
-              </div>
+              <div className="autoshow-tag">AUTOSHOW</div>
             </div>
-
 
             {/* Cropped Nose */}
             <div className="absolute left-[-80%] bottom-[-18%] w-[180%] h-[100%]">
@@ -359,10 +346,7 @@ export default function AutoShowHero() {
             {/* <h2 className="text-white font-[Geist Mono] text-2xl md:text-4xl italic font-light tracking-widest opacity-80">
               /STUNTS/
             </h2> */}
-            <h2 className="stunts-label">
-              STUNTS
-            </h2>
-
+            <h2 className="stunts-label">STUNTS</h2>
           </div>
 
           {/* Right Bike */}
@@ -382,7 +366,9 @@ export default function AutoShowHero() {
         <div className="w-full bg-[#E6E6E6] mt-5 border-t-4 border-black z-20 relative">
           <div className="animate-marquee1 whitespace-nowrap flex gap-10 items-center text-black font-black font-mono text-md uppercase tracking-widest py-1 leading-none">
             {Array(6)
-              .fill("ENGINE ROARS ✶ BURNT RUBBER ✶ LIVE STUNTS ✶ PURE ADRENALINE")
+              .fill(
+                "ENGINE ROARS ✶ BURNT RUBBER ✶ LIVE STUNTS ✶ PURE ADRENALINE",
+              )
               .map((text, i) => (
                 <span key={i} className="flex items-center gap-6 md:gap-12">
                   {text}{" "}
@@ -394,8 +380,7 @@ export default function AutoShowHero() {
               ))}
           </div>
         </div>
-
       </div>
-    </section >
+    </section>
   );
 }

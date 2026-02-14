@@ -50,15 +50,14 @@
   top: 0;
   left: 0;
   right: 0;
-  transition: transform 0.4s cubic-bezier(.4, 0, .2, 1),
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s ease,
     backdrop-filter 0.3s ease;
   will-change: transform;
 }
 
-
-
-.sm-scope .staggered-menu-header>* {
+.sm-scope .staggered-menu-header > * {
   pointer-events: auto;
 }
 

@@ -198,7 +198,7 @@ export const workshop = [
     url: "/assets/workshops/pixelpreneur.jpeg",
     regLink: "https://forms.gle/ce5YJV5KfVCUmMSa8",
     isRegOpen: true,
-    price: "50",
+    price: "100",
     pricePool: "",
     guidelines:
       "Laptop recommended. Participants will build a game prototype and take part in idea and quiz activities during the session.",
