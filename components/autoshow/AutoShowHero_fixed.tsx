@@ -483,3 +483,7 @@ export default function AutoShowHero() {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
