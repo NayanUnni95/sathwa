@@ -1,0 +1,671 @@
+.kaizen-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    color: white;
+}
+
+.kaizen-bg-marble {
+    position: absolute;
+    inset: 0;
+    background-color: #090909ff;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.88)),
+        url("/assets/marble.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- Shared Components --- */
+.kaizen-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 99px;
+    padding: 6px 20px;
+    display: inline-flex;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+
+.kaizen-badge span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+    opacity: 0.8;
+}
+
+.circled-arrow-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.circled-arrow-btn .circle {
+    border: 5px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.circled-arrow-btn.small .circle {
+    width: 65px;
+    height: 65px;
+    font-size: 2rem;
+}
+
+.circled-arrow-btn.huge .circle {
+    width: 140px;
+    height: 140px;
+    font-size: 5rem;
+    border-width: 4px;
+}
+
+.circled-arrow-btn:hover .circle {
+    background: white;
+    color: black;
+}
+
+/* --- Registration Slider --- */
+.register-slider-new {
+    position: relative;
+    width: 450px;
+    height: 75px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.slider-bg-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(196, 4, 4, 0.3));
+    z-index: 2;
+    pointer-events: none;
+}
+
+.slider-handle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 2rem;
+    cursor: grab;
+    z-index: 5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* ensure the handle is anchored at left by default */
+.slider-handle {
+    left: 8px;
+    /* anchor start position */
+    will-change: transform;
+    /* keep existing styles intact (width/height etc) */
+}
+
+/* for mobile smaller handle override (optional, you already set widths inline) */
+.register-slider-new.mobile .slider-handle {
+    left: 8px;
+}
+
+
+.slider-handle:active {
+    cursor: grabbing;
+}
+
+.slider-label {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.slider-label .red {
+    color: #ff0000;
+}
+
+/* --- Desktop Layout --- */
+.kaizen-desktop-layout {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding: 0 5%;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    background-color: #090909ff;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.88)),
+        url("/assets/marble.png");
+}
+
+.kaizen-header-desktop {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.kaizen-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.kaizen-title-wrapper {
+    display: flex;
+    align-items: baseline;
+    font-family: var(--font-japan-ramen);
+    /* Reduced size to prevent overflow */
+    font-size: 14vw;
+    line-height: 0.8;
+}
+
+.kai-text {
+    color: white;
+}
+
+.zen-text {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    /* Optional: If user really wants "black" fill with white border, uncomment below */
+    /* color: black; -webkit-text-stroke: 2px white; */
+}
+
+.year-group-desktop {
+    position: relative;
+    margin-left: 40px;
+    display: flex;
+    align-items: baseline;
+}
+
+.year-number {
+    font-family: var(--font-japan-ramen);
+    font-size: 14vw;
+    color: #FF0000;
+    line-height: 0.8;
+}
+
+.red-quote-mark {
+    position: absolute;
+    top: -1vw;
+    left: -1.5vw;
+    color: #FF0000;
+    font-size: 6vw;
+    font-family: var(--font-japan-ramen);
+    line-height: 1;
+}
+
+.desktop-arrow {
+    position: absolute;
+    /* Position relative to year-group-desktop */
+    right: 1vw;
+    bottom: -1vw;
+    z-index: 50;
+    transform: rotate(0deg);
+}
+
+.badge-wrap {
+    position: absolute;
+    top: 15vw;
+    left: 15%;
+    z-index: 30;
+}
+
+/* --- Character & Marquees (Desktop) --- */
+.kaizen-visual-desktop {
+    position: absolute;
+    inset: 0;
+    /* pointer-events: none; -> Removing this so marquees might be selectable? No, keep it non-interactive for layout purity unless debugging */
+    pointer-events: none;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+   Layering Requirement:
+   Background < Black Marquee < Red Marquee < Asset
+   We'll use specific Z-indices.
+*/
+
+.marquee-layer {
+    position: absolute;
+    width: 200vw;
+    /* Wide enough to cover diagonals */
+    display: flex;
+    /* justify-content: center; -> Removed to allow seamless flow from valid start point */
+    border-radius: 0;
+}
+
+/* Dark/Black Marquee - Bottom layer of specific elements */
+.dark-marquee {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    z-index: 22;
+    background: #ffffff;
+    /* White Background */
+    border-top: 2px solid #ccc;
+    /* Lighter border for white bg */
+    border-bottom: 2px solid #ccc;
+    overflow: hidden;
+}
+
+/* ... (Red Marquee remains same, skipped in replacement if possible, but context needed) ... */
+
+/* We need to ensure text is black for the white marquee.
+   We can target the inner container inside .dark-marquee */
+.dark-marquee .marquee-inner-desktop-scroll {
+    color: black;
+}
+
+/* Red Marquee - Middle layer */
+.red-marquee {
+    top: 60%;
+    /* Moved down from 50% */
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(10deg);
+    z-index: 24;
+    /* Above Dark Marquee */
+    background: #FF0000;
+    border-top: 2px solid #ff4d4d;
+    border-bottom: 2px solid #ff4d4d;
+    overflow: hidden;
+}
+
+.marquee-inner {
+    display: flex;
+    white-space: nowrap;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    /* Updated Font */
+    color: white;
+    /* Both utilize white text */
+    padding: 10px 0;
+}
+
+/* Desktop Scroll Animation Classes */
+.marquee-inner-desktop-scroll {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    /* Ensure seamless loop by taking full content width */
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    /* Updated Font */
+    color: white;
+    padding: 10px 0;
+    animation: scrollLeft 40s linear infinite;
+}
+
+.marquee-inner-desktop-scroll.reverse {
+    animation: scrollRight 40s linear infinite;
+}
+
+/* ... */
+
+.marquee-inner-mobile-scroll {
+    display: flex;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    /* Updated Font */
+    color: white;
+    animation: scrollLeft 80s linear infinite;
+    /* Slowed down for better readability */
+}
+
+.marquee-inner-mobile-scroll.reverse {
+    animation: scrollRight 80s linear infinite;
+    /* Slowed down for better readability */
+}
+
+/* Asset - Top layer */
+.asset-container-desktop {
+    position: absolute;
+    top: 60%;
+    /* Moved down from 50% to match marquees */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 26;
+    /* Asset on Top */
+    /* Adjust 'top' slightly if we want it to sit "on" the intersection physically.
+       Usually centering is the best bet for intersection placement. */
+    margin-top: -20px;
+    /* Slight offset to align feet */
+}
+
+.slider-bg-fill {
+    pointer-events: none;
+}
+
+
+.character-img-desktop {
+    height: 55vh;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+}
+
+.slider-handle {
+    will-change: transform;
+}
+
+
+.kaizen-footer-desktop {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+    /* Increase */
+    pointer-events: auto;
+    /* Explicit */
+}
+
+
+/* --- Mobile Layout --- */
+.kaizen-mobile-layout {
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+    padding: 60px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: #090909ff;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.88)),
+        url("/assets/marble.png");
+
+}
+
+/* Mobile Header */
+.kaizen-header-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.mobile-title-row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align baselines */
+}
+
+.kai-text-mobile {
+    font-family: var(--font-japan-ramen);
+    font-size: 21vw;
+    color: white;
+    line-height: 0.9;
+}
+
+.zen-wrapper-mobile {
+    position: relative;
+    display: flex;
+}
+
+.zen-text-mobile {
+    font-family: var(--font-japan-ramen);
+    font-size: 21vw;
+    color: transparent;
+    -webkit-text-stroke: 1.5px white;
+    line-height: 0.9;
+}
+
+.mobile-year-box-absolute {
+    position: absolute;
+    top: -14vw;
+    right: -2vw;
+    /* Positioned above 'N' approx */
+    /* "placed above N of kaizzen" */
+}
+
+.mobile-year {
+    font-family: var(--font-japan-ramen);
+    font-size: 10vw;
+    color: #FF0000;
+}
+
+.mobile-quote {
+    position: absolute;
+    top: -2vw;
+    left: -2vw;
+    font-size: 10vw;
+    color: #FF0000;
+    font-family: var(--font-japan-ramen);
+}
+
+.mobile-badge-row {
+    margin-top: 15px;
+}
+
+/* Mobile Visual */
+.kaizen-visual-mobile {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.asset-container-mobile {
+    position: absolute;
+    z-index: 30;
+    /* Front of marquees */
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.character-img-mobile {
+    height: 30vh;
+    width: 30vh;
+    max-height: 300px;
+    max-width: 500px;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.7));
+}
+
+/* Mobile Marquees - Collision at Center */
+.marquee-mobile {
+    position: absolute;
+    width: 300%;
+    /* Wider to prevent gaps */
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    left: -100%;
+    /* Start further back */
+    overflow: hidden;
+}
+
+.marquee-mobile.dark-marquee-mobile {
+    background: #ffffff;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    top: 75%;
+    /* Center Collision */
+    transform: translateY(-50%) rotate(-15deg);
+    z-index: 15;
+    margin-top: -2px;
+    font-family: "Open Japan Sans", sans-serif;
+    /* Slight offset adjustment if needed */
+}
+
+.marquee-mobile.red-marquee-mobile {
+    background: #FF0000;
+    border-top: 1px solid #ff4d4d;
+    border-bottom: 1px solid #ff4d4d;
+    top: 75%;
+    /* Center Collision */
+    transform: translateY(-50%) rotate(15deg);
+    z-index: 25;
+    color: white;
+    font-family: var(--font-japan-ramen);
+}
+
+/* CSS Infinite Scroll for Mobile */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.marquee-inner-mobile-scroll {
+    display: flex;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+    animation: scrollLeft 10s linear infinite;
+}
+
+.marquee-inner-mobile-scroll.reverse {
+    animation: scrollRight 10s linear infinite;
+}
+
+.kaizen-see-more-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    z-index: 40;
+}
+
+.mobile-arrow .circle {
+    width: 140px !important;
+    /* Reduced Size */
+    height: 140px !important;
+    /* Reduced Size */
+    font-size: 2rem !important;
+    /* Reduced Icon */
+    border-width: 4px !important;
+}
+
+
+.see-more-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    margin-top: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.kaizen-footer-mobile {
+    margin-bottom: 20px;
+    z-index: 50;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.register-slider-new.mobile {
+    width: 90%;
+    /* Ensure full width available */
+    height: 60px;
+    touch-action: none;
+    margin-left: 4px;
+    /* Critical for drag */
+}
+
+.register-slider-new.mobile .slider-handle {
+    left: 10px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+}
+
+.slider-label {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+    .kaizen-desktop-layout {
+        display: none;
+    }
+
+    .kaizen-mobile-layout {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .kaizen-desktop-layout {
+        display: block;
+    }
+
+    .kaizen-mobile-layout {
+        display: none;
+    }
+}

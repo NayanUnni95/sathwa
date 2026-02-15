@@ -9,6 +9,8 @@ import WorkshopSection from "../WorkshopSection";
 import AutoShowHero from "@/components/autoshow/AutoShowHero";
 import TechFestHero from "@/components/techfest/TechFestHero";
 
+import KaizenSection from "../../kaizen/KaizenSection";
+
 export default function DesktopLayout() {
   return (
     <div className="dl-scope">
@@ -41,6 +43,10 @@ export default function DesktopLayout() {
         <div className="mt-30">
           <AutoShowHero />
 
+        </div>
+
+        <div className="mt-40">
+          <KaizenSection />
         </div>
 
 

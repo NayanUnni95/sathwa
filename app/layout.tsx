@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Orbitron, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono, Orbitron, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google"; // Added Plus_Jakarta_Sans
 import StaggeredMenu from "@/components/StaggeredMenu/StaggeredMenu";
 import { menuConfig } from "@/config/navigation";
 import Loader from "@/app/Loader";
@@ -10,6 +10,12 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans", // Variable for usage
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"], // Added weights usually needed
 });
 
 const geistSans = Geist({
@@ -28,6 +34,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
+  // ... (metadata remains same)
   metadataBase: new URL("https://sathwa.live"),
   title: {
     default: "Sathwa'26 - Where Tradition Meets Technology",
@@ -89,7 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${spaceGrotesk.variable} root-body`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${spaceGrotesk.variable} ${plusJakartaSans.variable} root-body`}
       >
         <Loader />
         <AnalyticsProvider />
