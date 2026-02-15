@@ -1,0 +1,234 @@
+.hackathon-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #050505;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+/* Red Grid Background */
+.hackathon-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 0, 0, 0.2) 3px, transparent 3px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.2) 3px, transparent 3px);
+    background-size: 80px 80px;
+    /* Adjust grid size */
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+    mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
+}
+
+.hackathon-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hackathon-date-pill {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 8px 24px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    font-family: var(--font-plus-jakarta-sans);
+}
+
+.hackathon-title {
+    font-family: var(--font-japan-ramen);
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 1;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hackathon-title .text-white {
+    color: #EAEAEA;
+}
+
+.hackathon-title .text-red {
+    color: #FF0000;
+}
+
+.hackathon-subtitle {
+    color: #cccccc;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.hackathon-subtitle .font-bold {
+    color: #EAEAEA;
+    font-weight: 700;
+}
+
+/* Register Slider */
+.hackathon-register-slider {
+    position: relative;
+    width: 380px;
+    height: 70px;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+}
+
+.slider-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.slider-thumb {
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background: #FF0000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EAEAEA;
+    ;
+    font-size: 1.5rem;
+    z-index: 5;
+    cursor: grab;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    pointer-events: auto;
+}
+
+.slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+}
+
+.slider-text {
+    font-family: var(--font-plus-jakarta-sans);
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #EAEAEA;
+    letter-spacing: 1px;
+    z-index: 2;
+    margin-left: 50px;
+    /* Offset for thumb */
+}
+
+.slider-text .text-red {
+    color: #FF0000;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    z-index: 10;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-6px);
+    }
+
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Mobile Tweaks */
+@media (max-width: 768px) {
+    .hackathon-grid-bg {
+        background-size: 60px 60px;
+    }
+
+    .hackathon-date-pill {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+    }
+
+    .hackathon-title {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 1rem;
+    }
+
+    .hackathon-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+        margin-bottom: 2.5rem;
+    }
+
+    .hackathon-register-slider {
+        width: 100%;
+        max-width: 320px;
+        height: 60px;
+    }
+
+    .slider-thumb {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .slider-text {
+        font-size: 1rem;
+    }
+
+    .scroll-indicator {
+        bottom: 80px;
+        /* Move higher on mobile */
+    }
+}
