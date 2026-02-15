@@ -41,7 +41,7 @@ export default function AutoShowHero() {
       // gsap.set(row1Ref.current, { xPercent: -100, opacity: 0 });
       gsap.set(row2Ref.current, { xPercent: 100, opacity: 0 });
       gsap.set(row3Ref.current, { xPercent: -100, opacity: 0 });
-      gsap.set(".wheel-to-spin", { scale: 0, rotation: 0 });
+      gsap.set(row3WheelRef.current, { scale: 0, rotation: 0 });
       gsap.set(row4Ref.current, { xPercent: 100, opacity: 0 });
 
       //const ropeSvgRef = useRef<SVGSVGElement>(null);
@@ -135,7 +135,7 @@ export default function AutoShowHero() {
 
       // --- WHEEL SPIN (High Speed -> Stop over 30s)
       // Scale up the wheel first
-      gsap.to(".wheel-to-spin", {
+      gsap.to(row3WheelRef.current, {
         scale: 1,
         duration: 2.8,
         ease: "back.out(1.2)",
@@ -151,19 +151,19 @@ export default function AutoShowHero() {
       // });
 
       tl.add(() => {
-        gsap.to(".wheel-to-spin", {
+        gsap.to(row3WheelRef.current, {
           scale: 1,
           duration: 2.5,
           ease: "back.out(1.2)",
         });
 
-        gsap.to(".wheel-to-spin", {
-          rotation: 360 * 100,
-          duration: 40,
-          ease: "none",
+        gsap.to(row3WheelRef.current, {
+          rotation: 360 * 40,
+          duration: 80,
+          ease: "power2.out",
         });
       });
-    }, containerRef.current || undefined);
+    }, containerRef);
 
     return () => ctx.revert();
   }, []);
@@ -179,17 +179,10 @@ export default function AutoShowHero() {
         {/* "27oct and 20 vintage cars should be below and same level of the first section car" */}
         <div
           ref={row1Ref}
-          className="w-full flex relative h-[28vh] overflow-hidden group
-bg-gradient-to-b from-[#121514] via-[#0e1018] to-black
-lg:from-[#07080b] lg:via-[#0c0e14] lg:to-black"
-
+          className="w-full flex relative before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
+ h-[28vh] overflow-hidden group"
         >
-          <div className="absolute inset-0 
-bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.05),transparent_65%)]
-lg:bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.025),transparent_70%)]
-pointer-events-none z-0" />
-
-          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none z-0" /> */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.08),transparent_60%)] pointer-events-none z-0" />
           <div
             ref={row1MotionRef}
             className="lg:hidden absolute inset-0 pointer-events-none z-10"
@@ -203,9 +196,9 @@ pointer-events-none z-0" />
             </div>
 
             {/* CAR (leader) */}
-            <div className="absolute right-[-30%] bottom-0 w-[70%] h-[100%] z-10">
+            <div className="absolute right-[-30%] bottom-0 w-[60%] h-[100%] z-10">
               <Image
-                src="/assets/cars/car image 5.png"
+                src="/assets/cars/car right image3.png"
                 alt="Vintage Car"
                 fill
                 className="object-contain object-right-bottom scale-[1.6]"
@@ -271,7 +264,7 @@ pointer-events-none z-0" />
           {/* Desktop Version (hidden lg:flex) */}
           <div className="hidden lg:flex absolute inset-0 items-center justify-between px-[5%] z-10">
             <div className="relative w-1/4 h-full"> {/* Orange Bike */}
-              <Image src="/assets/cars/car image 6.png" alt="Bike" fill className="object-contain object-left scale-[1.4]" />
+              <Image src="/assets/cars/car left image3-Photoroom.png" alt="Bike" fill className="object-contain object-left scale-[1.8]" />
             </div>
             <div className="flex flex-col items-end flex-grow pr-10">
               <span className="text-white font-mono text-sm tracking-[0.3em] font-normal opacity-70">MOTOGRAPHY</span>
@@ -280,20 +273,20 @@ pointer-events-none z-0" />
               <div className="bg-[#CCFF00] text-black flex items-center gap-2 pl-3 pr-8 py-2 relative"
                 style={{ clipPath: "polygon(0 0, 92% 0, 100% 30%, 100% 100%, 0 100%)" }}>
                 <div className="flex flex-col border-r border-black/20 pr-3">
-                  <span className="text-4xl font-black leading-none">27.</span>
+                  <span className="text-2xl font-black leading-none">21.</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-3xl font-black leading-none tracking-tighter">FEB</span>
+                  <span className="text-2xl font-black leading-none tracking-tighter">OCT</span>
                   <div className="w-full h-[2px] bg-black mt-1" />
                 </div>
-                <span className="absolute right-2 bottom-1 text-[10px] font-bold opacity-40">2026</span>
+                <span className="absolute right-2 bottom-1 text-[10px] font-bold opacity-40">2022</span>
               </div>
             </div>
             <div className="flex flex-col items-start flex-grow pl-10">
-              <span className="text-white font-mono text-sm tracking-[0.3em] font-normal opacity-70">MOTO-RACE</span>
+              <span className="text-white font-mono text-sm tracking-[0.3em] font-normal opacity-70">MOTO-QUIZ</span>
             </div>
             <div className="relative w-1/4 h-full"> {/* Race Car */}
-              <Image src="/assets/cars/car image 5.png" alt="Race Car" fill className="object-contain object-right scale-[1.4]" />
+              <Image src="/assets/cars/car right image1.png" alt="Race Car" fill className="object-contain object-right scale-[1.4]" />
             </div>
           </div>
         </div>
@@ -305,7 +298,7 @@ pointer-events-none z-0" />
           className="w-full relative before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
  h-[15vh] overflow-hidden flex items-center justify-center bg-black"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.08),transparent_60%)] pointer-events-none z-0" />
 
           <div className="lg:hidden relative w-full flex flex-col items-center justify-center z-10 scale-75 md:scale-100">
             {/* Top Label Group */}
@@ -319,18 +312,18 @@ pointer-events-none z-0" />
             </div>
 
             {/* Massive White Slab - Reduced height/padding for "small section" */}
-            <div className="bg-[#f2f2f2] w-[100%] transform -skew-x-12 py-3 md:py-2 flex justify-center items-center relative border-y-2 border-black">
+            {/* <div className="bg-[#f2f2f2] w-[100%] transform -skew-x-12 py-3 md:py-2 flex justify-center items-center relative border-y-2 border-black">
               <h1 className="text-black font-[Orbitron] font-black text-[8vh] tracking-tighter leading-[0.8] transform skew-x-12 mt-1">
                 WHEELS
                 <span className="align-top text-[6vh] leading-[0.5]">*</span>
               </h1>
-            </div>
-            {/* <div className="relative py-4 flex justify-center items-center">
+            </div> */}
+            <div className="relative py-4 flex justify-center items-center">
               <h1 className="text-white font-[Orbitron] font-black text-[9vh] tracking-tight leading-none relative">
                 WHEELS
                 <span className="absolute -bottom-2 left-0 w-full h-[3px] bg-[#CCFF00]" />
               </h1>
-            </div> */}
+            </div>
 
           </div>
 
@@ -338,10 +331,10 @@ pointer-events-none z-0" />
           <div className="hidden lg:flex absolute inset-0 items-center justify-between px-[5%] z-10">
             <div className="flex items-center gap-3">
               <div className="bg-[#0047FF] text-white px-3 py-1 font-mono text-lg font-bold shadow-[4px_4px_0px_white]">
-                * (15+)
+                * (20+)
               </div>
               <div className="flex flex-col">
-                <span className="text-white font-mono text-xs tracking-widest leading-none">MODIFIED</span>
+                <span className="text-white font-mono text-xs tracking-widest leading-none">VINTAGE</span>
                 <span className="text-white font-mono text-xs tracking-widest leading-none">CARS</span>
               </div>
             </div>
@@ -363,11 +356,7 @@ pointer-events-none z-0" />
  h-[25vh] overflow-hidden bg-black"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black pointer-events-none z-0" />
-          {/* <div className="absolute right-0 top-0 w-[40%] h-full bg-gradient-to-l from-[#0047FF]/20 to-transparent blur-2xl pointer-events-none z-0" /> */}
-          <div className="absolute right-0 top-0 w-[40%] h-full 
-bg-gradient-to-l from-[#0047FF]/10 to-transparent blur-2xl 
-lg:from-[#2F6BFF]/10 lg:blur-3xl 
-pointer-events-none z-0" />
+          <div className="absolute right-0 top-0 w-[40%] h-full bg-gradient-to-l from-[#0047FF]/20 to-transparent blur-2xl pointer-events-none z-0" />
 
           {/* Mobile View */}
           <div className="lg:hidden w-full h-full flex relative">
@@ -379,18 +368,18 @@ pointer-events-none z-0" />
                 [AUTOSHOW]
               </span>
             </div> */}
-              <div className="absolute top-[20%] z-20 mix-blend-difference pb-2 ml-2">
+              <div className="absolute top-[15%] z-20 mix-blend-difference pb-4">
                 <div className="autoshow-tag">AUTOSHOW</div>
               </div>
 
               {/* Cropped Nose */}
-              <div className="absolute left-[-80%] bottom-[-15%] w-[180%] h-[110%]">
+              <div className="absolute left-[-80%] bottom-[-18%] w-[180%] h-[100%]">
                 <Image
-                  src="/assets/cars/car image 7.png"
+                  src="/assets/cars/car right image2.png"
                   alt="Auto Show Car"
                   fill
                   className="object-contain object-left-bottom scale-[1.3]"
-                // style={{ transform: "scaleX(-1)" }}
+                  style={{ transform: "scaleX(-1)" }}
                 />
               </div>
             </div>
@@ -399,7 +388,8 @@ pointer-events-none z-0" />
             {/* "wheel be only visible 70% from the right and its top and bottom be also out from the section" */}
             <div className="w-[60%] h-full relative overflow-hidden">
               <div
-                className="wheel-to-spin absolute right-[-80%] top-[-20%] w-[170%] h-[130%]"
+                ref={row3WheelRef}
+                className="absolute right-[-80%] top-[-20%] w-[170%] h-[130%]"
               >
                 <div className="wheel-wrap relative z-10">
                   <Image
@@ -420,11 +410,8 @@ pointer-events-none z-0" />
               <span className="absolute left-[30%] top-[10%] text-white font-mono text-[10px] tracking-widest opacity-60">CAR REVEALS</span>
             </div>
 
-            <div className="relative h-full w-1/2 overflow-hidden flex items-center justify-center 
-                lg:overflow-visible">
-              <div className="wheel-to-spin relative w-[150%] h-[150%] 
-                  lg:w-[190%] lg:h-[190%] lg:mx-auto lg:ml-25 
-                  lg:flex lg:items-center lg:justify-center">
+            <div className="relative h-full w-1/3 overflow-hidden flex items-center justify-center">
+              <div ref={row3WheelRef} className="relative w-[150%] h-[150%]">
                 <Image src="/assets/cars/wheel_dummy.png" alt="Wheel" fill className="object-contain" />
               </div>
             </div>
@@ -444,22 +431,22 @@ pointer-events-none z-0" />
           ref={row4Ref}
           className="w-full flex relative h-[15vh] overflow-hidden bg-black items-end pb-8"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.08),transparent_60%)] pointer-events-none z-0" />
 
           {/* Mobile View */}
           <div className="lg:hidden w-full h-full flex items-end pb-8">
             {/* Left Text : removed pl-6 md:pl-12 and replaced with relative */}
-            <div className="relative z-10 mb-2 ml-2 mix-blend-difference">
+            <div className="relative z-10 mb-2">
               {/* <h2 className="text-white font-[Geist Mono] text-2xl md:text-4xl italic font-light tracking-widest opacity-80">
               /STUNTS/
             </h2> */}
-              <h2 className="autoshow-tag ">STUNTS</h2>
+              <h2 className="stunts-label">STUNTS</h2>
             </div>
 
             {/* Right Bike */}
-            <div className="absolute right-[5%] bottom-[-15%] w-[100%] h-[130%]">
+            <div className="absolute right-[15%] bottom-[-30%] w-[120%] h-[160%]">
               <Image
-                src="/assets/cars/car image 6.png"
+                src="/assets/cars/car left image3-Photoroom.png"
                 alt="Stunt Bike"
                 fill
                 // style={{ transform: "scaleX(-1)" }}
@@ -474,52 +461,25 @@ pointer-events-none z-0" />
               <span className="text-white font-mono text-[10px] tracking-widest opacity-60">RALLY</span>
               <div className="flex items-center gap-3">
                 <div className="bg-[#6200EA] text-white px-3 py-1 font-mono text-lg font-bold shadow-[4px_4px_0px_white]">
-                  (3+)
+                  * (15+)
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-white font-mono text-xs tracking-widest leading-none">Hours</span>
-                  <span className="text-white font-mono text-xs tracking-widest leading-none">Experience</span>
+                  <span className="text-white font-mono text-xs tracking-widest leading-none">SUPER</span>
+                  <span className="text-white font-mono text-xs tracking-widest leading-none">BIKES</span>
                 </div>
               </div>
             </div>
 
-            <div className="relative w-1/4 h-[150%] 
-                lg:w-1/2 lg:h-[300%]">
-
-              <Image src="/assets/cars/car image 8.png" alt="Bike" fill className="object-contain" />
+            <div className="relative w-1/4 h-[150%] -mt-10">
+              <Image src="/assets/cars/car_left_image1 new.png" alt="Bike" fill className="object-contain" />
             </div>
 
-            <div className="flex items-center flex-grow justify-center gap-4 ml-6">
-              <h1 className="text-white font-mono text-5xl tracking-[0.05em] opacity-100 font-400 ml-5">/STUNTS/</h1>
+            <div className="flex items-center flex-grow justify-center gap-4">
+              <h1 className="text-white font-mono text-7xl tracking-tighter opacity-100">/STUNTS/</h1>
             </div>
 
-            <div className="relative w-1/4 h-full 
-                lg:w-1/2 lg:h-[180%] mt-10">
-
-              <Image src="/assets/cars/car_dummy1.png" alt="Race Car" fill className="object-contain object-right scale-[1.4]" />
+            <div className="relative w-1/4 h-full">
+              <Image src="/assets/cars/car_dummy4.png" alt="Race Car" fill className="object-contain object-right scale-[1.4]" />
             </div>
           </div>
         </div>
-
-
-        {/* === TICKER FOOTER === */}
-        <div className="w-full bg-[#CCFF00] border-t-4 border-black z-20 relative mt-3">
-          <div className="animate-marquee1 whitespace-nowrap flex gap-10 items-center text-black font-black font-mono text-md uppercase tracking-widest py-1 leading-none">
-            {Array(6)
-              .fill(
-                "ENGINE ROARS ✶ BURNT RUBBER ✶ LIVE STUNTS ✶ PURE ADRENALINE"
-              )
-              .map((text, i) => (
-                <span key={i} className="flex items-center gap-6 md:gap-12 text-black">
-                  {text}{" "}
-                  <span className="w-10 h-10 bg-black text-[#CCFF00] flex items-center justify-center text-sm font-bold shadow-[2px_2px_0px_#CCFF00]">
-                    27
-                  </span>
-                </span>
-              ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
