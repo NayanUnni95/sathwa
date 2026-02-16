@@ -1,0 +1,371 @@
+.hackathon-prize-section {
+    position: relative;
+    width: 100%;
+    background-color: #050505;
+    padding: 6rem 2rem;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.prize-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.prize-title-mobile {
+    display: none;
+    /* Desktop default */
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #999;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.prize-title-mobile .text-white {
+    color: white;
+    font-weight: 800;
+}
+
+/* .prize-grid {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: center;
+} */
+.prize-grid {
+    display: flex;
+    gap: 2.5rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    /* start from left */
+}
+
+
+/* Card General Styles */
+.prize-card {
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Red Card */
+.red-card {
+    /* flex: 0 0 320px; Fixed width approx */
+    width: 320px;
+    background-color: #FF0000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(255, 0, 0, 0.2);
+}
+
+.red-card-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+.red-card-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between !important;
+    min-height: 500px;
+}
+
+.red-card-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.9;
+    text-transform: capitalize;
+}
+
+.red-card-amount-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    justify-content: center;
+}
+
+.red-card-amount {
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+}
+
+.red-card-sub {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.red-card-footer-logo {
+    font-family: var(--font-japan-ramen);
+    font-size: 2rem;
+    margin-top: auto;
+    align-self: center;
+}
+
+.red-card-footer-logo .text-black {
+    color: black;
+}
+
+/* Title Desktop */
+/* .prize-title-desktop { */
+/* flex: 1; */
+/* Allow title to take available space */
+/* display: flex; */
+/* align-items: flex-start; */
+/* Move to top */
+/* justify-content: center; */
+/* padding: 2rem 2rem 0; */
+/* Add top padding */
+/* min-width: 300px; */
+/* Prevent crushing */
+/* } */
+/* Title Desktop */
+.prize-title-desktop {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    /* Align bottom to match white card bottom if possible, or center */
+    justify-content: flex-start;
+    padding: 0 2rem 2rem 0;
+    /* Add bottom padding */
+    min-width: 320px;
+}
+
+.prize-title-desktop h2 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #ccc;
+    line-height: 1;
+    text-align: right;
+    /* Right-align so 'Meet Our' ends at right */
+}
+
+.prize-title-desktop .text-white {
+    color: white;
+    font-weight: 800;
+    display: block;
+    font-size: 6rem;
+}
+
+/* Right Column */
+.prize-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+}
+
+/* Right Top Row (Title + White Card) */
+.prize-right-top-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+
+/* White Card */
+.white-card {
+    background-color: #EEEEEE;
+    color: black;
+    padding: 2.5rem;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 300px;
+    /* Increased size */
+}
+
+.white-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+}
+
+.white-card-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.prize-tier {
+    margin-bottom: 1.5rem;
+}
+
+.tier-amount {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+}
+
+/* Make rupee sign red, rest black */
+.tier-amount::first-letter {
+    color: #FF0000;
+}
+
+.tier-amount.text-red {
+    color: #000;
+    /* Black for numbers */
+}
+
+.tier-amount.text-red::first-letter {
+    color: #FF0000;
+    /* Red for rupee sign */
+}
+
+.tier-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: lowercase;
+}
+
+.lower-tiers {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.lower-tiers .tier-amount {
+    font-size: 2rem;
+}
+
+.blue-card {
+    background-color: #3B8AC4;
+    background-image:
+        radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 0% 0%, rgba(0, 0, 0, 0.1) 0%, transparent 20%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.blue-card-content {
+    display: flex;
+    flex-direction: column;
+    /* Vertical: label on top, then logo+name */
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.sponsor-label {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.sponsor-logo-container {
+    display: flex;
+    flex-direction: row;
+    /* Horizontal: logo and name side by side */
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.sponsor-logo {
+    filter: brightness(0) invert(1);
+    /* Make logo white if it's black, or keep original */
+    object-fit: contain;
+}
+
+.sponsor-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* Leventate Labs name */
+    color: #000;
+}
+
+@media (min-width: 1024px) {
+    .sponsor-name {
+        font-size: 3rem;
+        margin-left: 4rem;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .prize-container {
+        padding: 0 1rem;
+    }
+
+    .prize-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prize-title-desktop {
+        display: none;
+    }
+
+    .prize-title-mobile {
+        display: block;
+    }
+
+    .red-card {
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 1 / 1;
+        /* Square like image */
+        padding: 0;
+    }
+
+    .red-card-content {
+        height: 100%;
+        min-height: auto;
+        /* Remove the 500px constraint forcing overflow */
+        padding: 1.5rem 1rem;
+        /* Reduced padding to fit square aspect */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between !important;
+        align-items: center;
+    }
+
+    .red-card-amount {
+        font-size: 5rem;
+    }
+
+    .prize-right-column {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .white-card {
+        width: 100%;
+    }
+}

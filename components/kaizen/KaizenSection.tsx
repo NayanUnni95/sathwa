@@ -123,6 +123,21 @@ const KaizenSection = () => {
         return dragProgress * max;
     };
 
+    const handleSliderClick = () => {
+        if (isDragging || window.innerWidth < 769) return;
+        gsap.to({ val: dragProgress }, {
+            val: 1,
+            duration: 0.5,
+            ease: "power2.out",
+            onUpdate: function () {
+                setDragProgress(this.targets()[0].val);
+            },
+            onComplete: () => {
+                setTimeout(() => router.push("/hackathon"), 200);
+            }
+        });
+    };
+
     return (
         <section className="kaizen-section">
             <div className="kaizen-bg-marble" />
@@ -181,6 +196,7 @@ const KaizenSection = () => {
                         className="register-slider-new"
                         onMouseDown={handleMouseDown}
                         onTouchStart={handleMouseDown}
+                        onClick={handleSliderClick}
                         role="slider"
                         aria-valuenow={Math.round(dragProgress * 100)}
                         aria-valuemin={0}

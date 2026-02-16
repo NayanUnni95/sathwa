@@ -29,6 +29,33 @@
     -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
 }
 
+.hackathon-top-logos {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.hero-logo-mulearn {
+    height: 11rem;
+    width: 11rem;
+    opacity: 0.9;
+    object-fit: contain;
+}
+
+.hero-logo-iedc {
+    height: 11rem;
+    width: 11rem;
+    opacity: 0.9;
+    object-fit: contain;
+}
+
 .hackathon-content {
     position: relative;
     z-index: 10;
@@ -99,7 +126,7 @@
     -webkit-user-select: none;
     overflow: hidden;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    max-width: 100%;
+    max-width: 90%;
 }
 
 .slider-fill {
@@ -137,12 +164,12 @@
 
 .slider-text {
     font-family: var(--font-plus-jakarta-sans);
-    font-weight: 800;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
     color: #EAEAEA;
     letter-spacing: 1px;
     z-index: 2;
-    margin-left: 50px;
+    margin-left: 30px;
     /* Offset for thumb */
 }
 
@@ -194,6 +221,21 @@
         background-size: 60px 60px;
     }
 
+    .hackathon-top-logos {
+        top: 5rem;
+        padding: 0 15px;
+    }
+
+    .hero-logo-mulearn {
+        height: 6rem;
+        width: 7rem;
+    }
+
+    .hero-logo-iedc {
+        height: 6rem;
+        width: 7rem;
+    }
+
     .hackathon-date-pill {
         font-size: 0.8rem;
         padding: 6px 16px;
@@ -212,9 +254,10 @@
     }
 
     .hackathon-register-slider {
-        width: 100%;
+        width: 85%;
         max-width: 320px;
-        height: 60px;
+        height: 65px;
+        padding: 10px;
     }
 
     .slider-thumb {

@@ -85,9 +85,31 @@ const HackathonHero = () => {
         return dragProgress * max;
     };
 
+    const handleSliderClick = () => {
+        if (isDragging || window.innerWidth < 769) return;
+        gsap.to({ val: dragProgress }, {
+            val: 1,
+            duration: 0.5,
+            ease: "power2.out",
+            onUpdate: function () {
+                setDragProgress(this.targets()[0].val);
+            },
+            onComplete: () => {
+                console.log("Registered!");
+                // Optionally perform actual registration logic here
+                setTimeout(() => setDragProgress(0), 1000);
+            }
+        });
+    };
+
     return (
         <section className="hackathon-hero">
             <div className="hackathon-grid-bg"></div>
+
+            <div className="hackathon-top-logos">
+                <img src="/assets/hackathon/mulearn.png" alt="Mulearn" className="hero-logo-mulearn" />
+                <img src="/assets/hackathon/iedc.png" alt="IEDC" className="hero-logo-iedc" />
+            </div>
 
             <div className="hackathon-content">
                 <div className="hackathon-date-pill">
@@ -109,6 +131,7 @@ const HackathonHero = () => {
                     className="hackathon-register-slider"
                     onMouseDown={handleMouseDown}
                     onTouchStart={handleMouseDown}
+                    onClick={handleSliderClick}
                 >
                     <div className="slider-fill" style={{ width: `${dragProgress * 100}%` }}></div>
                     <div
@@ -124,7 +147,7 @@ const HackathonHero = () => {
                         <FiArrowRight />
                     </div>
                     <div className="slider-text">
-                        <span className="text-red">R</span>EGISTER <span className="text-red">N</span>OW
+                        REGISTER NOW
                     </div>
                 </div>
             </div>

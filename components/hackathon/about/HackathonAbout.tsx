@@ -69,7 +69,7 @@ const HackathonAbout = () => {
             </div>
 
             {/* Marquee Footer */}
-            <div className="about-marquee-footer">
+            <div className="about-marquee-footer mb-8">
                 <div className="marquee-track">
                     {/* Duplicate for infinite scroll */}
                     {[...Array(6)].map((_, i) => (

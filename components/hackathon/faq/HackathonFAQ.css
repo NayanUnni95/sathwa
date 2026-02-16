@@ -1,0 +1,273 @@
+.hackathon-faq-section {
+    position: relative;
+    width: 100%;
+    background-color: #050505;
+    padding: 6rem 2rem;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.faq-title-label {
+    color: white;
+}
+
+.faq-title-abbr {
+    color: #999;
+    font-weight: 400;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem 0;
+    /* Increased padding */
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    /* Initially dimmed */
+    font-size: 1.5rem;
+    /* Larger size like image */
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+.faq-item.active .faq-question {
+    color: white;
+    /* Bright when active */
+}
+
+.faq-question:hover {
+    color: white;
+}
+
+.faq-number {
+    color: inherit;
+    /* Follow question color */
+    font-weight: 700;
+    min-width: 50px;
+    font-size: 1.5rem;
+}
+
+.faq-question-text {
+    flex: 1;
+}
+
+.faq-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: white;
+    flex-shrink: 0;
+}
+
+.faq-icon-wrapper:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.faq-icon-wrapper.active {
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-answer.expanded {
+    max-height: 500px;
+    padding-bottom: 1.5rem;
+}
+
+.faq-answer-content {
+    color: #999;
+    /* Dimmer answer text */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding-left: 50px;
+    /* Match number width */
+    font-weight: 500;
+}
+
+.faq-answer-content p {
+    margin-bottom: 1rem;
+}
+
+.faq-answer-content p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer-content strong {
+    color: white;
+    font-weight: 700;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .faq-title {
+        font-size: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .faq-question {
+        font-size: 1.25rem;
+        padding: 1.5rem 0;
+    }
+
+    .faq-number {
+        min-width: 40px;
+        font-size: 1.25rem;
+    }
+
+    .faq-answer-content {
+        padding-left: 40px;
+        font-size: 1rem;
+    }
+
+    .faq-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Coordinators Section */
+.coordinators-section {
+    margin-top: 6rem;
+}
+
+.coordinators-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2.5rem;
+}
+
+.coordinators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.coordinator-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.coordinator-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.coord-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.coord-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.coord-phone {
+    font-size: 1rem;
+    color: #999;
+}
+
+.copy-phone-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.copy-phone-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+.copy-phone-btn svg {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .coordinators-section {
+        margin-top: 4rem;
+    }
+
+    .coordinators-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .coordinator-card {
+        padding: 1.5rem;
+    }
+
+    .coord-name {
+        font-size: 1.4rem;
+    }
+}

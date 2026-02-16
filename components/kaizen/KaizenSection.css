@@ -344,25 +344,7 @@
     animation: scrollRight 40s linear infinite;
 }
 
-/* ... */
-
-.marquee-inner-mobile-scroll {
-    display: flex;
-    white-space: nowrap;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-family: var(--font-plus-jakarta-sans), sans-serif;
-    /* Updated Font */
-    color: white;
-    animation: scrollLeft 80s linear infinite;
-    /* Slowed down for better readability */
-}
-
-.marquee-inner-mobile-scroll.reverse {
-    animation: scrollRight 80s linear infinite;
-    /* Slowed down for better readability */
-}
+/* Mobile versions (These were redundant, removed to allow the mobile-layout specific ones to rule) */
 
 /* Asset - Top layer */
 .asset-container-desktop {
@@ -551,7 +533,7 @@
     transform: translateY(-50%) rotate(15deg);
     z-index: 25;
     color: white;
-    font-family: var(--font-japan-ramen);
+    font-family: var(--font-plus-jakarta-sans), sans-s
 }
 
 /* CSS Infinite Scroll for Mobile */
@@ -582,11 +564,11 @@
     font-weight: 800;
     text-transform: uppercase;
     color: white;
-    animation: scrollLeft 10s linear infinite;
+    animation: scrollLeft 40s linear infinite;
 }
 
 .marquee-inner-mobile-scroll.reverse {
-    animation: scrollRight 10s linear infinite;
+    animation: scrollRight 40s linear infinite;
 }
 
 .kaizen-see-more-mobile {

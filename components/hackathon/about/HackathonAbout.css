@@ -84,7 +84,7 @@
     font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 800;
     line-height: 1.1;
-    margin-bottom: 2rem;
+    margin-bottom: 0.8rem;
     font-family: var(--font-plus-jakarta-sans);
     /* Or maybe a tighter font? Using Jakarta for now */
 }
@@ -99,7 +99,7 @@
 }
 
 .title-underline {
-    width: 100%;
+    width: 85%;
     height: 4px;
     background: white;
     border-radius: 2px;
@@ -190,7 +190,8 @@
 .marquee-track {
     display: flex;
     white-space: nowrap;
-    animation: scrollAbout 20s linear infinite;
+    width: max-content;
+    animation: scrollAbout 40s linear infinite;
     align-items: center;
 }
 
@@ -258,5 +259,9 @@
 
     .card-text-content {
         font-size: 1rem;
+    }
+
+    .marquee-track {
+        animation: scrollAbout 35s linear infinite;
     }
 }
