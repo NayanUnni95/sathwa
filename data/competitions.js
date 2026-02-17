@@ -154,7 +154,7 @@ export const competition = [
       "https://docs.google.com/forms/d/e/1FAIpQLSeTPghI8czfARDgNeY9Dn-pDletLbV4dBE5ZuxAEVfNvIG93Q/viewform?usp=dialog",
     isRegOpen: true,
     price: "150",
-    pricePool: "1500",
+    pricePool: "2250",
     guidelines:
       "Participants should report on time. Specifications will be given on the spot. The bridge must be completed within two hours, with additional time given only if required. Mobile phones are prohibited during match hours. A team can consist of only three members.",
     note: "Follow all instructions given at the venue.",
@@ -230,29 +230,6 @@ export const competition = [
     contact: [
       { name: "Bharadwaj S R", no: "9778241387" },
       { name: "Abhishak", no: "9074800168" },
-    ],
-    details: false,
-  },
-  {
-    name: "Hardware Debugging",
-    categoryId: 1,
-    searchKey: "hardware-debugging",
-    type: "tech",
-    date: "26 Feb 2026",
-    dateShort: "26/02/2026",
-    about:
-      "Hardware Debugging is a multi-round competition where participants identify and fix faults in electronic circuits across different stages.",
-    url: "/assets/competitions/hardware-debugging.jpeg",
-    regLink: "https://forms.gle/gUEkLx9DWUAgM1qT9",
-    isRegOpen: true,
-    price: "199",
-    pricePool: "1800",
-    guidelines:
-      "Participation can be individual or team-based as specified by organizers. The event consists of three rounds with possible elimination after each round. Participants must report at least 15 minutes before the start time. Circuits will contain intentional faults, and participants must identify and rectify them. Only components, tools, and instruments provided by organizers are allowed; personal tools or components are not permitted. Any damage due to mishandling will lead to disqualification. Use of mobile phones, smart devices, or internet during the competition is strictly prohibited. Each round has a strict time limit. Judging is based on accuracy of fault identification, correctness of debugging, and time taken.",
-    note: "Strict rules against device usage.",
-    contact: [
-      { name: "Sameera", no: "8921017008" },
-      { name: "Abin", no: "6238483998" },
     ],
     details: false,
   },
