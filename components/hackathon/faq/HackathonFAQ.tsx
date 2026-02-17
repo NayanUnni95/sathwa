@@ -25,23 +25,20 @@ const faqData: FAQItem[] = [
         question: "How does the registration process work?",
         answer: (
             <>
-                <p>Registration happens in two phases:</p>
-                <p><strong>Phase 1:</strong> Free registration where you submit your team profile, previous projects, and the specific Agentic AI topic you plan to tackle.</p>
-                <p><strong>Phase 2:</strong> If your team is shortlisted based on innovation and feasibility, you will receive a personal email. You will then complete a final registration and pay a fee of ₹300 per person to receive your entry ticket.</p>
+                <p>Registration is now a single-step process. Just click the link to provide your team name, select your track, and enter details for all four members.
+Complete a total payment of ₹1200 (₹300 per person) via the provided VPA. Don't forget to apply your promo code if you have one! Once submitted, your team is ready to go.</p>
+                {/* <p><strong>Phase 1:</strong> Free registration where you submit your team profile, previous projects, and the specific Agentic AI topic you plan to tackle.</p> */}
+                {/* <p><strong>Phase 2:</strong> If your team is shortlisted based on innovation and feasibility, you will receive a personal email. You will then complete a final registration and pay a fee of ₹300 per person to receive your entry ticket.</p> */}
             </>
         )
     },
     {
         question: "What should we bring?",
-        answer: "Your laptop, chargers, extension cords (recommended), and any personal essentials for an overnight stay."
+        answer: "Your laptop, chargers, and any personal essentials for an overnight stay."
     },
     {
         question: "Will food be provided?",
         answer: "Yes! Full catering (meals and refreshments) will be provided to all registered participants throughout the event to keep your brain fueled."
-    },
-    {
-        question: "What is the \"Open Innovation\" theme?",
-        answer: "You have the freedom to choose any problem statement as long as the core solution utilizes Agentic AI. We value solutions that are useful, creative, and technically challenging."
     },
     {
         question: "Is there a sleeping area?",

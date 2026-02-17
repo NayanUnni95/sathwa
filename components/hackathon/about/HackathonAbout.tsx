@@ -55,8 +55,7 @@ const HackathonAbout = () => {
 
                             <div className="card-text-content">
                                 <p>
-                                    We are looking for <span className="font-bold">Open Innovation</span>.
-                                    Whether it’s transforming FinOps, automating complex workflows,
+                                    We are looking for transforming FinOps, automating complex workflows,
                                     or creating self-evolving AI agents, your mission is to build
                                     solutions that are innovative, creative, and ground-breaking.
                                     This isn’t just a competition; it’s a 24-hour sprint to define

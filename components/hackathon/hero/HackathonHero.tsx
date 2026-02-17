@@ -87,7 +87,7 @@ const HackathonHero = () => {
         if (isDragging || window.innerWidth < 769) return;
         gsap.to({ val: dragProgress }, {
             val: 1,
-            duration: 0.5,
+            duration: 0.3,
             ease: "power2.out",
             onUpdate: function () {
                 setDragProgress(this.targets()[0].val);
@@ -95,7 +95,7 @@ const HackathonHero = () => {
             onComplete: () => {
                 // Redirect to registration page
                 window.location.href = "https://makemypass.com/event/kaizen26";
-                setTimeout(() => setDragProgress(0), 1000);
+                setTimeout(() => setDragProgress(0), 10);
             }
         });
     };
