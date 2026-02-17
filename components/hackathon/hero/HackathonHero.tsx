@@ -23,13 +23,8 @@ const HackathonHero = () => {
 
             if (dragProgress > 0.8) {
                 setDragProgress(1);
-                // Redirect logic or scroll down? User said "register now button as done before" -> redirect to /hackathon (which is this page? Or maybe scroll to register form? The previous one went to /hackathon. Here let's assume it scrolls to next section or opens form. For now keep redirect or just complete action visual)
-                // Actually, if we ARE on /hackathon, maybe it opens a form?
-                // The prompt says "recreate the same register now button as done before". The previous one redirected to /hackathon.
-                // If I am ON /hackathon, redirecting to /hackathon does nothing.
-                // I will add a console log or placeholder for now, maybe it scrolls to a form section below.
-                console.log("Registered!");
-                // Reset for demo or actually perform action
+                // Redirect to registration page
+                window.location.href = "https://makemypass.com/event/kaizen26";
                 setTimeout(() => setDragProgress(0), 1000);
             } else {
                 gsap.to({ val: dragProgress }, {
@@ -84,7 +79,7 @@ const HackathonHero = () => {
     };
 
     const handleSliderClick = () => {
-        if (isDragging || window.innerWidth < 769) return;
+        if (isDragging) return;
         gsap.to({ val: dragProgress }, {
             val: 1,
             duration: 0.3,
