@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { FiArrowRight, FiChevronDown } from "react-icons/fi";
 import { gsap } from "gsap";
 import "./HackathonHero.css";
 
 const HackathonHero = () => {
-    const router = useRouter();
     const sliderRef = useRef<HTMLDivElement>(null);
     const thumbRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -95,8 +93,8 @@ const HackathonHero = () => {
                 setDragProgress(this.targets()[0].val);
             },
             onComplete: () => {
-                console.log("Registered!");
-                // Optionally perform actual registration logic here
+                // Redirect to registration page
+                window.location.href = "https://makemypass.com/event/kaizen26";
                 setTimeout(() => setDragProgress(0), 1000);
             }
         });
@@ -108,7 +106,7 @@ const HackathonHero = () => {
 
             <div className="hackathon-top-logos">
                 <img src="/assets/hackathon/mulearn.png" alt="Mulearn" className="hero-logo-mulearn" />
-                <img src="/assets/hackathon/iedc.png" alt="IEDC" className="hero-logo-iedc" />
+                <img src="/assets/hackathon/iedc-new.png" alt="IEDC" className="hero-logo-iedc" />
             </div>
 
             <div className="hackathon-content">

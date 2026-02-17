@@ -1,0 +1,323 @@
+/* ============================================
+   Hackathon Tracks Section
+   ============================================ */
+
+.hackathon-tracks-section {
+    position: relative;
+    width: 100%;
+    background-color: #050505;
+    padding: 4rem 2rem;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tracks-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* ============================================
+   Section Header
+   ============================================ */
+
+.tracks-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.tracks-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.title-kaizen {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    color: white;
+}
+
+.title-year {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    color: #FF0000;
+}
+
+.title-tracks {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    color: white;
+    font-weight: 700;
+}
+
+.tracks-subtitle-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.65rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.pill-highlight {
+    color: #FF0000;
+    font-weight: 600;
+}
+
+
+
+/* ============================================
+   Track Cards Grid - Desktop (3 columns, 2 rows)
+   ============================================ */
+
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* ============================================
+   Individual Track Card (Folder Shape)
+   ============================================ */
+
+.track-card-wrapper {
+    position: relative;
+    cursor: pointer;
+    /* Folder tab sticks above the main card */
+}
+
+/* The folder tab - the small rectangular notch at top-left */
+.folder-tab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 38px;
+    background: linear-gradient(113.49deg, #e04a4a 15.74%, #b80000 88.45%);
+    border-radius: 16px 16px 0 0;
+    z-index: 1;
+}
+
+/* Main card body */
+.track-card {
+    position: relative;
+    z-index: 2;
+    margin-top: 18px;
+    width: 100%;
+    min-height: 250px;
+    background: linear-gradient(113.49deg, #FF5454 15.74%, #CB0000 88.45%);
+    border-radius: 28.55px;
+    padding: 1.8rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: default;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.track-card:hover {
+    transform: translateY(-4px);
+    /* box-shadow: 0 16px 40px rgba(255, 84, 84, 0.25); */
+}
+
+/* Card Top Row: category label + number */
+.track-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.track-category {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    max-width: 60%;
+}
+
+.track-number {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.18);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+/* Card Bottom: Track Title */
+.track-card-bottom {
+    margin-top: auto;
+}
+
+.track-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.25;
+    margin: 0;
+}
+
+/* ============================================
+   Desktop Large (1440px+)
+   ============================================ */
+
+@media (min-width: 1440px) {
+    .track-card {
+        min-height: 290px;
+        padding: 2rem 1.8rem;
+    }
+
+    .track-number {
+        font-size: 5rem;
+    }
+
+    .track-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
+   Tablet (769px - 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .hackathon-tracks-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .tracks-title {
+        font-size: 3.5rem;
+    }
+
+    .tracks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .track-card {
+        min-height: 260px;
+        padding: 1.5rem 1.3rem;
+    }
+
+    .track-number {
+        font-size: 3.5rem;
+    }
+
+    .track-title {
+        font-size: 1.15rem;
+    }
+}
+
+/* ============================================
+   Mobile (≤768px) - Horizontal scrollable
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hackathon-tracks-section {
+        padding: 3rem 0;
+        padding-top: 3rem;
+    }
+
+    .tracks-container {
+        max-width: 100%;
+    }
+
+    .tracks-header {
+        padding: 0 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .tracks-title {
+        font-size: 2.5rem;
+    }
+
+    .tracks-subtitle-pill {
+        font-size: 0.8rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    /* Convert grid to horizontal scroll */
+    .tracks-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.2rem;
+        padding: 0 1.5rem;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+
+        /* Hide scrollbar for cleaner look */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .tracks-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .track-card-wrapper {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+
+    .track-card {
+        min-height: 240px;
+        padding: 1.4rem 1.2rem;
+    }
+
+    .folder-tab {
+        height: 30px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .track-card {
+        margin-top: 14px;
+        border-radius: 22px;
+    }
+
+    .track-number {
+        font-size: 3.5rem;
+    }
+
+    .track-title {
+        font-size: 1.15rem;
+    }
+
+    .track-category {
+        font-size: 0.6rem;
+    }
+}
+
+/* ============================================
+   Small Mobile (≤480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    .tracks-title {
+        font-size: 2rem;
+    }
+
+    .track-card-wrapper {
+        flex: 0 0 250px;
+    }
+
+    .track-card {
+        min-height: 220px;
+    }
+
+    .track-number {
+        font-size: 3rem;
+    }
+
+    .track-title {
+        font-size: 1.05rem;
+    }
+}

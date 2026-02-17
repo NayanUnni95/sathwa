@@ -60,7 +60,9 @@ const KaizenSection = () => {
 
             if (dragProgress > 0.8) {
                 setDragProgress(1);
-                setTimeout(() => router.push("/hackathon"), 300);
+                setTimeout(() => {
+                    window.location.href = "https://makemypass.com/event/kaizen26";
+                }, 300);
             } else {
                 // animate back to zero
                 gsap.to({ val: dragProgress }, {
@@ -133,7 +135,9 @@ const KaizenSection = () => {
                 setDragProgress(this.targets()[0].val);
             },
             onComplete: () => {
-                setTimeout(() => router.push("/hackathon"), 200);
+                setTimeout(() => {
+                    window.location.href = "https://makemypass.com/event/kaizen26";
+                }, 200);
             }
         });
     };

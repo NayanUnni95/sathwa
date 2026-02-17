@@ -72,13 +72,13 @@ const HackathonPrize = () => {
                                 <span className="sponsor-label">Our Sponsor</span>
                                 <div className="sponsor-logo-container">
                                     <Image
-                                        src="/assets/hackathon/hackathon-sponsor.png"
+                                        src="/assets/hackathon/logo-origial.png"
                                         alt="Leventate Labs"
-                                        width={120}
+                                        width={850}
                                         height={120}
                                         className="sponsor-logo"
                                     />
-                                    <span className="sponsor-name">Leventae Labs</span>
+                                    {/* <span className="sponsor-name">Leventae Labs</span> */}
                                 </div>
                             </div>
                         </div>
