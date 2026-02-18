@@ -1,0 +1,741 @@
+/* ProShowSection.css */
+
+.proshow-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align mic to bottom */
+    overflow: hidden;
+    padding: 0;
+    background-color: #0D0203;
+}
+
+.proshow-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        url("/assets/marble.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.proshow-bg-marble {
+    position: absolute;
+    inset: 0;
+    background-color: #090909ff;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.88)),
+        url("/assets/marble.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.proshow-content-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Bottom align for mic */
+    z-index: 2;
+}
+
+/* --- Layering --- */
+
+/* 1. Text Layer (Top behind Mic Head) */
+.proshow-text-layer {
+    position: absolute;
+    top: 15%;
+    /* Top area */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* 2. Artist Button Layer (Middle Section) */
+.proshow-artist-layer {
+    position: absolute;
+    top: 60%;
+    /* Middle/Lower-Middle */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    width: 90vw;
+    height: 25vh;
+    /* Define height for the box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+/* 3. Mic Layer (Front, anchored bottom) */
+.proshow-mic-layer {
+    position: relative;
+    /* Relative to flow in flex-end container */
+    height: 90vh;
+    /* Tall mic */
+    z-index: 20;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+    margin-bottom: -5vh;
+    /* Bleed off screen slightly if needed */
+}
+
+/* --- Typography & Styling --- */
+
+.font-japan {
+    font-family: var(--font-japan-ramen), "Orbitron", sans-serif;
+}
+
+.pro-text,
+.show-text,
+.hyphen-text {
+    font-size: 13vw;
+    /* Large */
+    color: #e6e6e6;
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.pro-text {
+    color: #e6e6e6;
+    margin-right: 0.2em;
+    /* Slight gap */
+}
+
+.show-text {
+    color: #cc0000;
+    margin-left: 0.2em;
+}
+
+.hyphen-text {
+    color: #cc0000;
+    display: inline-block;
+    /* opacity: 0; */
+    /* Hide explicitly if not needed, or make visible */
+    /* Spacing */
+}
+
+.proshow-mic {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
+}
+
+/* --- Button Styling --- */
+
+.view-artists-btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center text */
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 120px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    /* For absolute arrow */
+}
+
+.artist-text {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-weight: 800;
+    font-size: 12vw;
+    /* Covers the box */
+    /* color: transparent; */
+    /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4); */
+    text-transform: uppercase;
+    /* letter-spacing: 2px; */
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+}
+
+.view-artists-btn:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.view-artists-btn:hover .artist-text {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
+}
+
+.btn-circle {
+    position: absolute;
+    bottom: -7px;
+    /* Align to edge */
+    right: 25px;
+    /* Align to edge */
+    width: 80px;
+    height: 80px;
+    background-color: #cc0000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+    /* Match bg to cutout look */
+}
+
+.view-artists-btn:hover .btn-circle {
+    transform: scale(1.1);
+}
+
+
+/* ============================================
+   Media Queries
+   ============================================ */
+
+@media (max-width: 768px) {
+    .proshow-section {
+        height: 100vh;
+        align-items: flex-end;
+        padding-top: 0;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .proshow-content-wrapper {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 1. Mobile Text */
+    .proshow-text-layer {
+        position: absolute;
+        top: 15vh;
+        /* Adjust based on mic height */
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 0;
+        z-index: 10;
+    }
+
+    .pro-text,
+    .show-text {
+        font-size: 22vw;
+        width: 100%;
+        text-align: center;
+    }
+
+    .pro-text {
+        z-index: 1;
+        /* Above mic top */
+        /* margin-bottom: 1vh; */
+        color: #e6e6e6;
+    }
+
+    .show-text {
+        z-index: 10;
+        font-size: 22vw;
+        /* Behind mic (20) */
+        color: #cc0000;
+        margin-top: 0;
+    }
+
+    .hyphen-text {
+        display: none;
+    }
+
+    /* 2. Mobile Mic */
+    .proshow-mic-layer {
+        height: 50vh;
+        z-index: 20;
+        margin-bottom: 0;
+        position: absolute;
+        bottom: 20vh;
+        /* Space for button */
+    }
+
+    /* 3. Mobile Artist Button */
+    .proshow-artist-layer {
+        position: absolute;
+        bottom: 9vh;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90vw;
+        height: 10vh;
+        /* Smaller height for mobile */
+        z-index: 30;
+    }
+
+    .view-artists-btn {
+        border-radius: 50px;
+        padding: 0 20px;
+        justify-content: space-between;
+        /* Reset for mobile typical layout or keep centered? User: "view artists view red arrow as per the image" */
+    }
+
+    .artist-text {
+        font-size: 2.7rem;
+        text-align: left;
+        width: auto;
+        font-size: 11vw;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-circle {
+        /* position: relative; */
+        /* Reset absolute for mobile if it's inside */
+        /* bottom: auto; */
+        /* right: auto; */
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        border: none;
+        bottom: -15px;
+        right: 10px;
+    }
+}
+
+/* ============================================
+   Artist View Animations & Layout
+   ============================================ */
+
+/* Desktop: Center the PRO-SHOW text when active */
+.artist-view-active .proshow-text-layer {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    justify-content: center;
+    gap: 2vw;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.artist-view-active .pro-text,
+.artist-view-active .show-text {
+    font-size: 15vw;
+    /* Slightly smaller or adjusted for background */
+    opacity: 0.1;
+    /* Fade out slightly to be background */
+}
+
+/* Artist Container */
+.artist-view-container {
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    /* Hidden initially to prevent flash; GSAP reveals it */
+    /* Animation handled by GSAP entrance effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .circle-text-svg {
+        display: none;
+    }
+}
+
+/* Date Badge */
+.date-badge {
+    position: absolute;
+    top: 75%;
+    left: 21%;
+    width: 7vw;
+    height: 7vw;
+    min-width: 80px;
+    min-height: 80px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 5px solid var(--badge-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 60;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 10px;
+    /* Positioning handled by GSAP + rotation transitions strictly for color/fit */
+}
+
+.date-text {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-weight: 900;
+    font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+    color: black;
+    line-height: 0.9;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.wave-img-dynamic {
+    margin-top: 5px;
+    width: 80% !important;
+    height: 20px !important;
+    z-index: 2;
+}
+
+/* Circles Layout - Desktop */
+.artist-circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+}
+
+/* New Dynamic Wrapper */
+.artist-circle-wrapper-dynamic {
+    position: absolute;
+    width: 35vw;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    z-index: 50;
+    /* transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+/* Base style for all dynamic circles */
+.artist-circle-wrapper-dynamic .artist-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transition: filter 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
+    background: #1a1a1a;
+    box-sizing: border-box;
+    border: none;
+    /* No border by default */
+}
+
+.artist-circle-wrapper-dynamic .circle-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.5s ease;
+}
+
+/* Desktop Positions — sides tuck under active */
+.artist-circle-wrapper-dynamic.position-left {
+    transform: translateX(-18vw);
+    z-index: 51;
+}
+
+.artist-circle-wrapper-dynamic.position-center {
+    transform: translateX(0);
+    z-index: 55;
+}
+
+.artist-circle-wrapper-dynamic.position-right {
+    transform: translateX(18vw);
+    z-index: 51;
+}
+
+/* Center Highlight Styling — only active gets border */
+.position-center .artist-circle {
+    border: 10px solid var(--theme-border);
+    box-shadow: var(--theme-shadow);
+    filter: none;
+}
+
+.position-center .circle-img {
+    filter: none;
+}
+
+/* Side B&W Styling — grayscale only, NO transparency */
+.position-left .artist-circle,
+.position-right .artist-circle {
+    filter: grayscale(100%);
+    opacity: 1;
+}
+
+.logo-circle.artist-circle {
+    background-color: #333;
+    /* Grey background for logo as per design */
+}
+
+.position-center .logo-circle {
+    background-color: transparent;
+    /* Full logo visibility when active */
+}
+
+.logo-contain {
+    object-fit: cover !important;
+    /* padding: 20%; */
+    /* Keep logo small inside circle */
+}
+
+.position-left .circle-img,
+.position-right .circle-img {
+    filter: grayscale(100%);
+}
+
+/* SVG Text Curve */
+.circle-text-svg {
+    position: absolute;
+    inset: -25px;
+    width: calc(100% + 50px);
+    height: calc(100% + 50px);
+    pointer-events: none;
+    z-index: 60;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.circle-text-svg.visible {
+    opacity: 1;
+}
+
+.curved-text-content {
+    font-family: var(--font-rammetto-one), "Orbitron", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 800;
+    filter: drop-shadow(1.5px 1.5px 0px black);
+}
+
+.circle-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    /* Subtle darkening only — grayscale does the B&W */
+    transition: opacity 0.8s ease;
+}
+
+.position-center .circle-overlay {
+    opacity: 0;
+}
+
+/* Artist Link Button */
+.artist-link-btn {
+    position: absolute;
+    bottom: 5vh;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    border: 1px solid white;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.7);
+    /* backdrop-filter removed as requested */
+    text-decoration: none;
+    z-index: 60;
+    transition: background-color 0.3s ease;
+}
+
+.artist-link-btn span {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    color: white;
+    font-size: 1rem;
+    text-transform: lowercase;
+}
+
+.artist-link-btn:hover {
+    background: white;
+}
+
+.artist-link-btn:hover span {
+    color: black;
+}
+
+.arrow-icon {
+    color: white;
+}
+
+.artist-link-btn:hover .arrow-icon {
+    color: black;
+}
+
+/* Nav Arrow Desktop */
+.nav-arrow-container {
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+    z-index: 60;
+}
+
+.nav-arrow-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow-circle:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.mobile-artist-name {
+    display: none;
+}
+
+/* ============================================
+   Artist View - Mobile
+   ============================================ */
+@media (max-width: 768px) {
+    .artist-view-active .proshow-text-layer {
+        display: none;
+    }
+
+    .artist-view-container {
+        justify-content: flex-start;
+        padding-top: 1vh;
+        overflow: hidden;
+    }
+
+    /* Date Badge - pushed down on mobile */
+    .date-badge {
+        position: relative;
+        top: -1%;
+        left: auto;
+        transform: none;
+        width: 100px;
+        height: 100px;
+        z-index: 80;
+        /* margin-top: 5vh; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .artist-circles {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        margin-top: 0;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vw;
+        /* Accommodate the 85vw circles + offsets */
+    }
+
+    .artist-circle-wrapper-dynamic {
+        width: 85vw;
+        /* Restored to large size */
+        aspect-ratio: 1 / 1;
+        box-shadow: none;
+    }
+
+    /* Mobile Positions — Optimized for 85vw circles with tight vertical fit */
+    .artist-circle-wrapper-dynamic.position-right {
+        transform: translateY(-15vw);
+        /* Shifted up into top space */
+        z-index: 30;
+        opacity: 1;
+    }
+
+    .artist-circle-wrapper-dynamic.position-left {
+        transform: translateY(10vw);
+        z-index: 40;
+        opacity: 1;
+    }
+
+    .artist-circle-wrapper-dynamic.position-center {
+        transform: translateY(35vw);
+        z-index: 50;
+        opacity: 1;
+    }
+
+    /* Side circles: no border */
+    .position-right .artist-circle,
+    .position-left .artist-circle {
+        border: none;
+    }
+
+    /* Active circle: visible border */
+    .position-center .artist-circle {
+        border: 8px solid var(--theme-border);
+        box-shadow: var(--theme-shadow);
+    }
+
+    .mobile-artist-name {
+        display: block;
+        font-size: 15vw;
+        /* Reduced as requested */
+        text-align: center;
+        line-height: 1;
+        margin-top: 22vw;
+        /* Positioned after the circle stack finishes */
+        /* Clear the stack */
+        z-index: 60;
+        text-transform: uppercase;
+        font-family: var(--font-rammetto-one), sans-serif;
+    }
+
+    .artist-link-btn {
+        position: relative;
+        bottom: auto;
+        margin-top: 2rem;
+        padding: 12px 30px;
+    }
+
+    .nav-arrow-container {
+        display: none;
+    }
+
+    .bottom-text-mobile {
+        display: block;
+        color: #888;
+        font-size: 0.85rem;
+        text-align: center;
+        max-width: 80%;
+        margin: 2rem auto;
+        line-height: 1.4;
+    }
+}

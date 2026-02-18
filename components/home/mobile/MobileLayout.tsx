@@ -8,6 +8,7 @@ import "./MobileLayout.css";
 import TechFestHero from "@/components/techfest/TechFestHero";
 import AutoShowHero from "@/components/autoshow/AutoShowHero";
 import KaizenSection from "../../kaizen/KaizenSection";
+import ProShowSection from "@/components/proshow/ProShowSection";
 
 export default function MobileLayout() {
   return (
@@ -38,6 +39,10 @@ export default function MobileLayout() {
 
         <div className="mt-20">
           <KaizenSection />
+        </div>
+
+        <div className="mt-20">
+          <ProShowSection />
         </div>
 
         <CountdownSection />

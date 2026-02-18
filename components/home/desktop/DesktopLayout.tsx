@@ -10,6 +10,7 @@ import AutoShowHero from "@/components/autoshow/AutoShowHero";
 import TechFestHero from "@/components/techfest/TechFestHero";
 
 import KaizenSection from "../../kaizen/KaizenSection";
+import ProShowSection from "@/components/proshow/ProShowSection";
 
 export default function DesktopLayout() {
   return (
@@ -47,6 +48,10 @@ export default function DesktopLayout() {
 
         <div className="mt-40">
           <KaizenSection />
+        </div>
+
+        <div className="mt-40">
+          <ProShowSection />
         </div>
 
 
