@@ -1,4 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  themeColor: "#050505",
+  width: "device-width",
+  initialScale: 1,
+};
 import { Geist, Geist_Mono, Orbitron, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google"; // Added Plus_Jakarta_Sans
 import StaggeredMenu from "@/components/StaggeredMenu/StaggeredMenu";
 import { menuConfig } from "@/config/navigation";
@@ -34,7 +40,6 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  // ... (metadata remains same)
   metadataBase: new URL("https://sathwa.live"),
   title: {
     default: "Sathwa'26 - Where Tradition Meets Technology",
@@ -57,23 +62,35 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Sathwa Team" }],
   creator: "College of Engineering, Muttathara",
+  publisher: "College of Engineering, Muttathara",
   icons: {
     icon: "/assets/favicon.ico",
     shortcut: "/assets/favicon.ico",
     apple: "/assets/favicon.ico",
   },
   openGraph: {
-    title: "Sathwa 2026 | Where Tradition Meets Technology",
+    title: "Sathwa'26 | Where Tradition Meets Technology",
     description:
       "A three-day techno-cultural fest celebrating innovation, creativity, and engineering at College of Engineering, Muttathara.",
-    type: "website",
-    locale: "en_IN",
+    url: "https://sathwa.live",
     siteName: "Sathwa'26",
+    images: [
+      {
+        url: "/assets/sathwa.png",
+        width: 1200,
+        height: 630,
+        alt: "Sathwa'26 - Techno Cultural Fest",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sathwa 2026",
-    description: "Where Tradition Meets Technology",
+    title: "Sathwa'26 | Where Tradition Meets Technology",
+    description:
+      "A three-day techno-cultural fest celebrating innovation, creativity, and engineering at College of Engineering, Muttathara.",
+    images: ["/assets/sathwa.png"],
   },
   robots: {
     index: true,
