@@ -21,9 +21,14 @@ export default function MobileLayout() {
 
       {/* Black Background Wrapper for Lower Sections */}
       <div className="w-full bg-black flex flex-col relative z-20">
-        <EsportsSection />
+        {/* <EsportsSection /> */}
+        <div className="mt-10">
+          <TechCompetitionsSection />
+        </div>
 
-        <TechCompetitionsSection />
+        <div className="mt-20">
+          <KaizenSection />
+        </div>
 
         <div className="mt-30">
           <TechFestHero />
@@ -33,12 +38,8 @@ export default function MobileLayout() {
           <WorkshopSection />
         </div>
 
-        <div className="mt-15">
-          <AutoShowHero />
-        </div>
-
         <div className="mt-20">
-          <KaizenSection />
+          <AutoShowHero />
         </div>
 
         <div className="mt-20">

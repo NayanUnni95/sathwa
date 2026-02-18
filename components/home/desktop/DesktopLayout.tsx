@@ -23,13 +23,14 @@ export default function DesktopLayout() {
       {/* Black Background Wrapper for Lower Sections */}
       <div className="w-full bg-black flex flex-col relative z-20">
         {/* Esports Section */}
-        <div className="dl-esports-section">
-          <EsportsSection />
+        <div className="dl-esports-section mt-20">
+          {/* <EsportsSection /> */}
+          <TechCompetitionsSection />
         </div>
 
         {/* Tech Competitions Section */}
         <div className="dl-tech-section mt-30">
-          <TechCompetitionsSection />
+          <KaizenSection />
         </div>
 
         <div className="mt-40">
@@ -46,9 +47,8 @@ export default function DesktopLayout() {
 
         </div>
 
-        <div className="mt-40">
-          <KaizenSection />
-        </div>
+        {/* <div className="mt-40">
+        </div> */}
 
         <div className="mt-40">
           <ProShowSection />

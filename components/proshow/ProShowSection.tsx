@@ -272,7 +272,7 @@ const ProShowSection = () => {
             if (!isAnimating.current) {
                 setActiveIndex((prev) => (prev + 1) % ARTISTS.length);
             }
-        }, 5000);
+        }, 3500);
         return () => clearInterval(interval);
     }, [showArtists]);
 
