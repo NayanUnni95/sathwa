@@ -76,10 +76,11 @@ export const metadata: Metadata = {
     siteName: "Sathwa'26",
     images: [
       {
-        url: "/assets/sathwa.png",
+        url: "/assets/sathwa-og.jpeg",
         width: 1200,
         height: 630,
         alt: "Sathwa'26 - Techno Cultural Fest",
+        type: "image/jpeg",
       },
     ],
     locale: "en_IN",
@@ -90,7 +91,12 @@ export const metadata: Metadata = {
     title: "Sathwa'26 | Where Tradition Meets Technology",
     description:
       "A three-day techno-cultural fest celebrating innovation, creativity, and engineering at College of Engineering, Muttathara.",
-    images: ["/assets/sathwa.png"],
+    images: [
+      {
+        url: "/assets/sathwa-og.jpeg",
+        alt: "Sathwa'26 - Techno Cultural Fest",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -102,6 +108,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  alternates: {
+    canonical: "https://sathwa.live",
   },
 };
 
