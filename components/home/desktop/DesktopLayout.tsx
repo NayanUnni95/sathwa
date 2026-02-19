@@ -11,6 +11,7 @@ import TechFestHero from "@/components/techfest/TechFestHero";
 
 import KaizenSection from "../../kaizen/KaizenSection";
 import ProShowSection from "@/components/proshow/ProShowSection";
+import FashionShowSection from "@/components/fashionshow/FashionShowSection";
 
 export default function DesktopLayout() {
   return (
@@ -50,6 +51,9 @@ export default function DesktopLayout() {
         {/* <div className="mt-40">
         </div> */}
 
+        <FashionShowSection />
+
+
         <div className="mt-40">
           <ProShowSection />
         </div>
@@ -60,7 +64,7 @@ export default function DesktopLayout() {
         </div> */}
 
         {/* Countdown Section - Desktop placement */}
-        <div className="dl-countdown-section mt-20">
+        <div className="mt-20">
           <CountdownSection />
         </div>
       </div>

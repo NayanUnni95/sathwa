@@ -179,6 +179,10 @@ body {
   animation: nameFadeOnly 3s ease-in-out infinite;
 }
 
+.font-playfair {
+  font-family: var(--font-playfair-display), serif;
+}
+
 .font-japan {
   font-family: "JapanRamen", serif;
 }

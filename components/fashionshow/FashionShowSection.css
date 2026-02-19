@@ -1,0 +1,356 @@
+.fashionshow-section {
+    position: relative;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: #000;
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    color: #fff;
+}
+
+/* Cinematic Overlays */
+.fs-grain {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.25;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    filter: contrast(150%) brightness(100%);
+}
+
+.fs-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 8;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 50%, transparent 20%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.95) 100%);
+}
+
+.fs-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.fs-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* Light Rays Effect - Enhanced for High-End feel */
+.fs-light-ray {
+    position: absolute;
+    top: -30%;
+    left: 40%;
+    width: 250vw;
+    height: 250vh;
+    background: conic-gradient(from 180deg at 50% 0%,
+            transparent 35%,
+            rgba(255, 255, 255, 0.02) 42%,
+            rgba(255, 0, 0, 0.06) 48%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 0, 0, 0.06) 52%,
+            rgba(255, 255, 255, 0.02) 58%,
+            transparent 65%);
+    z-index: 4;
+    pointer-events: none;
+    transform-origin: top center;
+    filter: blur(60px);
+    mix-blend-mode: screen;
+}
+
+.fs-bg-image {
+    object-fit: cover;
+    object-position: center;
+}
+
+.desktop-bg {
+    display: block;
+}
+
+.mobile-bg {
+    display: none;
+}
+
+.fs-content {
+    position: relative;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    padding: clamp(20px, 5vw, 60px);
+}
+
+/* Premium Components */
+.fs-logo-wrapper {
+    position: absolute;
+    top: clamp(30px, 4vw, 60px);
+    left: clamp(30px, 4vw, 60px);
+    width: clamp(70px, 8vw, 100px);
+    height: clamp(70px, 8vw, 100px);
+    background: rgba(0, 0, 0, 1);
+    /* backdrop-filter: blur(40px) saturate(180%); */
+    /* -webkit-backdrop-filter: blur(40px) saturate(180%); */
+    /* border: 1px solid rgba(255, 255, 255, 0.15); */
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: clamp(10px, 1vw, 20px); */
+    /* box-shadow:
+        0 8px 32px 0 rgba(0, 0, 0, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.02); */
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 30;
+}
+
+
+.fs-logo-wrapper:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.fs-logo {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2)); */
+}
+
+.fs-description {
+    position: absolute;
+    top: clamp(220px, 30vh, 360px);
+    left: clamp(30px, 4vw, 60px);
+    max-width: 500px;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.fs-desc-line {
+    display: block;
+    font-size: clamp(28px, 2.5vw, 56px);
+    font-weight: 200;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 12px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.fs-desc-accent {
+    display: block;
+    font-size: clamp(10px, 0.8vw, 14px);
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #ff3333;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+
+.fs-top-right {
+    position: absolute;
+    top: clamp(40px, 5vw, 80px);
+    right: clamp(30px, 4vw, 60px);
+    text-align: right;
+}
+
+.fs-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.fs-title {
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1px;
+    font-family: var(--font-playfair-display), serif !important;
+}
+
+.fs-title-underline {
+    width: 100%;
+    max-width: 12vw;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #f00);
+}
+
+.fs-date-badge {
+    position: absolute;
+    left: clamp(30px, 4vw, 60px);
+    bottom: clamp(100px, 25vh, 250px);
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    transition: all 0.5s ease;
+}
+
+.fs-date-badge:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateX(5px);
+}
+
+.fs-date-label {
+    font-size: clamp(8px, 0.6vw, 11px);
+    letter-spacing: 0.6em;
+    font-weight: 800;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+.fs-date-value {
+    font-size: clamp(20px, 1.2vw, 30px);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.fs-main-text-wrapper {
+    position: absolute;
+    bottom: 4vh;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.fs-main-text {
+    font-size: clamp(100px, 16vw, 540px);
+    font-weight: 600;
+    line-height: 0.85;
+    letter-spacing: -0.01em;
+    font-family: var(--font-playfair-display), serif !important;
+    text-transform: uppercase;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-right: clamp(25px, 3vw, 60px);
+    /* filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.4)); */
+}
+
+.fs-text-reveal {
+    display: flex;
+    overflow: hidden;
+}
+
+.fs-main-text span {
+    display: inline-block;
+}
+
+.fs-asterisk-wrapper {
+    position: absolute;
+    right: 0;
+    top: -5%;
+    width: clamp(30px, 5vw, 100px);
+    height: auto;
+}
+
+.fs-asterisk {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .fashionshow-section {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    .mobile-bg {
+        display: block;
+    }
+
+    .desktop-bg {
+        display: none;
+    }
+
+    .fs-content {
+        padding: 30px 20px;
+    }
+
+    .fs-logo-wrapper {
+        top: 20px;
+        left: 20px;
+        width: 70px;
+        height: 70px;
+        border-radius: 12px;
+        padding: 1px;
+        z-index: 25;
+    }
+
+    .fs-top-right {
+        top: 30px;
+        right: 20px;
+    }
+
+    .fs-title {
+        font-size: 20px;
+    }
+
+    .fs-title-underline {
+        max-width: 35vw;
+    }
+
+    .fs-description {
+        top: 120px;
+        left: 20px;
+        max-width: 90%;
+    }
+
+    .fs-desc-line {
+        font-size: 22px;
+    }
+
+    .fs-desc-accent {
+        font-size: 13px;
+        letter-spacing: 0.2em;
+    }
+
+    .fs-main-text-wrapper {
+        bottom: 30vh;
+        /* overflow: hidden; */
+    }
+
+    .fs-main-text {
+        font-size: clamp(60px, 18vw, 140px);
+        padding-right: 20px;
+        margin-bottom: 7vh;
+        overflow: visible;
+    }
+
+    .fs-asterisk-wrapper {
+        width: clamp(20px, 5vw, 40px);
+        right: 10px;
+    }
+
+    .fs-date-badge {
+        left: 45%;
+        bottom: 3vh;
+        transform: translateX(-50%);
+        padding: 12px 22px;
+        align-items: center;
+        border-radius: 50px;
+    }
+
+    .fs-date-value {
+        font-size: 15px;
+    }
+}

@@ -5,7 +5,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
-import { Geist, Geist_Mono, Orbitron, Space_Grotesk, Plus_Jakarta_Sans, Rammetto_One } from "next/font/google"; // Added Plus_Jakarta_Sans
+import { Geist, Geist_Mono, Orbitron, Space_Grotesk, Plus_Jakarta_Sans, Rammetto_One, Playfair_Display } from "next/font/google"; // Added Plus_Jakarta_Sans, Playfair_Display
 import StaggeredMenu from "@/components/StaggeredMenu/StaggeredMenu";
 import { menuConfig } from "@/config/navigation";
 import Loader from "@/app/Loader";
@@ -28,6 +28,12 @@ const rammettoOne = Rammetto_One({
   variable: "--font-rammetto-one",
   subsets: ["latin"],
   weight: ["400"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const geistSans = Geist({
@@ -130,7 +136,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${spaceGrotesk.variable} ${plusJakartaSans.variable} ${rammettoOne.variable} root-body`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${spaceGrotesk.variable} ${plusJakartaSans.variable} ${rammettoOne.variable} ${playfairDisplay.variable} root-body`}
       >
         <Loader />
         <AnalyticsProvider />
