@@ -264,7 +264,7 @@
 .fs-asterisk {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+    filter: drop-shadow(0 0 20px rgb(255, 0, 0));
 }
 
 /* Mobile Adjustments */
@@ -351,6 +351,7 @@
     }
 
     .fs-date-value {
-        font-size: 15px;
+        font-size: 16px;
+        font-family: var(--font-plus-jakarta-sans);
     }
 }
