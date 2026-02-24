@@ -108,7 +108,7 @@
 .event-item::before {
     content: "";
     position: absolute;
-    left: -4.35rem;
+    left: -4.15rem;
     top: 1.5rem;
     width: 10px;
     height: 10px;
@@ -164,7 +164,7 @@
 
 .card-bg-number {
     position: absolute;
-    right: 2rem;
+    right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     font-family: var(--font-orbitron);
@@ -252,6 +252,7 @@
 .event-time-wrap {
     position: relative;
     z-index: 1;
+    margin-left: -20rem;
 }
 
 .event-time {
@@ -324,7 +325,7 @@
     }
 
     .event-item::before {
-        left: -2rem;
+        left: -2.25rem;
         top: 2rem;
     }
 
@@ -333,19 +334,19 @@
         align-items: flex-start;
         padding: 2rem 1.5rem;
         gap: 2rem;
-        width: 100%;
+        width: 99%;
         max-width: 100%;
         box-sizing: border-box;
     }
 
     .card-bg-number {
-        font-size: 4.5rem;
-        right: 0.5rem;
+        font-size: 4rem;
+        right: 0.8rem;
         bottom: 0.5rem;
         top: auto;
         transform: none;
         gap: 1rem;
-        color: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.03);
         /* opacity: 0.3; */
     }
 
@@ -355,14 +356,16 @@
 
     .event-time-wrap {
         width: 100%;
+        margin-left: -1rem;
     }
 
     .event-time {
-        width: 90%;
+        width: 85%;
         text-align: center;
-        padding: 0.9rem;
+        padding: 0.9rem 0.4rem;
         box-sizing: border-box;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.1rem;
+        margin-left: 1em;
     }
 
     .event-name {
