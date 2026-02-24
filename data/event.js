@@ -23,7 +23,7 @@ export const event = [
     details: false,
   },
   {
-    name: "Cyber Launchpad",
+    name: "HackSim",
     categoryId: 11,
     searchKey: "cyber-launchpad",
     type: "talk-session",
