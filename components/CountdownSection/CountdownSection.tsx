@@ -104,9 +104,9 @@ const CountdownSection = () => {
 
             {/* Cadence dots */}
             <div className="cds-dots">
-              <span className="cds-dot cds-dot-red dot dot-delay-1" />
-              <span className="cds-dot cds-dot-dark dot dot-delay-2" />
               <span className="cds-dot cds-dot-dark dot dot-delay-3" />
+              <span className="cds-dot cds-dot-dark dot dot-delay-2" />
+              <span className="cds-dot cds-dot-red dot dot-delay-1" />
             </div>
           </div>
         </div>

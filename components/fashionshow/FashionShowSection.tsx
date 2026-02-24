@@ -1,9 +1,8 @@
-"use client";
-
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FashionShowModal from "./FashionShowModal";
 import "./FashionShowSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,13 +15,15 @@ const FashionShowSection = () => {
     const asteriskRef = useRef<HTMLDivElement>(null);
     const bgRef = useRef<HTMLDivElement>(null);
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     useEffect(() => {
         if (!sectionRef.current) return;
 
         const ctx = gsap.context(() => {
             // Initial states
             gsap.set(".fs-main-text span", { y: "110%", skewY: 10, opacity: 0 });
-            gsap.set(".fs-logo-wrapper, .fs-description, .fs-top-right, .fs-date-badge", {
+            gsap.set(".fs-logo-wrapper, .fs-description, .fs-top-right, .fs-date-badge, .fs-view-more-btn", {
                 y: 30,
                 opacity: 0,
                 filter: "blur(10px)"
@@ -51,7 +52,7 @@ const FashionShowSection = () => {
             );
 
             // Refined Staggered Entrance for Metadata
-            tl.to(".fs-logo-wrapper, .fs-top-right, .fs-description, .fs-date-badge", {
+            tl.to(".fs-logo-wrapper, .fs-top-right, .fs-description, .fs-date-badge, .fs-view-more-btn", {
                 y: 0,
                 opacity: 1,
                 filter: "blur(0px)",
@@ -139,9 +140,9 @@ const FashionShowSection = () => {
     return (
         <section ref={sectionRef} className="fashionshow-section">
             {/* Grain Overlay */}
-            <div className="fs-grain" />
-            <div className="fs-vignette" />
-            <div className="fs-light-ray" />
+            {/* <div className="fs-grain" /> */}
+            {/* <div className="fs-vignette" /> */}
+            {/* <div className="fs-light-ray" /> */}
 
             <div className="fs-container">
                 {/* Background Image */}
@@ -209,13 +210,26 @@ const FashionShowSection = () => {
                         </h1>
                     </div>
 
-                    {/* Date Badge */}
-                    <div className="fs-date-badge lg:mb-20">
-                        {/* <span className="fs-date-label">2026</span> */}
-                        <span className="fs-date-value">FEB 27, 2026</span>
+                    {/* Date Badge and View More Button Container */}
+                    <div className="fs-bottom-controls lg:mb-20">
+                        <div className="fs-date-badge">
+                            <span className="fs-date-value">FEB 27, 2026</span>
+                        </div>
+
+                        <button
+                            className="fs-view-more-btn"
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            View More
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <FashionShowModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
         </section>
     );
 };

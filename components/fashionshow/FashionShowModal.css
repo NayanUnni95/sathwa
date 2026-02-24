@@ -1,0 +1,186 @@
+.fs-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fs-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fs-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(25px) saturate(150%);
+    -webkit-backdrop-filter: blur(25px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: clamp(30px, 5vw, 50px);
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+.fs-modal-overlay.active .fs-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.fs-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.fs-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+}
+
+.fs-modal-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.fs-modal-title {
+    font-family: var(--font-playfair-display), serif;
+    font-size: clamp(24px, 3vw, 36px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.fs-modal-subtitle {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: #ff3333;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.fs-guidelines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+.fs-guidelines-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.fs-guidelines-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.fs-guidelines-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.fs-guideline-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.fs-guideline-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ff3333;
+    margin-top: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+}
+
+.fs-guideline-text {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-size: clamp(14px, 1.2vw, 15px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+}
+
+.fs-guideline-note {
+    font-weight: 700;
+    color: #fff;
+}
+
+.fs-register-btn {
+    width: 100%;
+    padding: 18px;
+    background: #ff3333;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.fs-register-btn:hover {
+    background: #e62e2e;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(255, 51, 51, 0.3);
+}
+
+@media (max-width: 768px) {
+    .fs-modal-content {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+
+    .fs-modal-title {
+        font-size: 20px;
+    }
+
+    .fs-guidelines-list {
+        margin-bottom: 30px;
+    }
+
+    .fs-register-btn {
+        padding: 16px;
+    }
+}
