@@ -321,7 +321,7 @@
 
     .event-item {
         margin-bottom: 3rem;
-        padding-left: 0.8rem;
+        padding-left: 0.5rem;
     }
 
     .event-item::before {
@@ -334,7 +334,7 @@
         align-items: flex-start;
         padding: 2rem 1.5rem;
         gap: 2rem;
-        width: 99%;
+        width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
