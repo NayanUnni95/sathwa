@@ -199,7 +199,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
     gap: 6px;
     transition: all 0.5s ease;
@@ -213,7 +213,10 @@
 }
 
 .fs-view-more-btn {
-    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 6px 6px 6px 30px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
@@ -230,12 +233,27 @@
     width: fit-content;
 }
 
-.fs-view-more-btn:hover {
+.fs-btn-circle {
+    width: 38px;
+    height: 38px;
     background: #fff;
     color: #000;
-    border-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fs-view-more-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
     transform: translateX(10px);
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.fs-view-more-btn:hover .fs-btn-circle {
+    transform: rotate(-45deg) scale(1.1);
 }
 
 .fs-date-label {
@@ -400,11 +418,16 @@
     }
 
     .fs-view-more-btn {
-        width: 65%;
-        text-align: center;
-        padding: 10px;
+        width: 100%;
+        justify-content: space-between;
+        padding: 5px 5px 5px 20px;
         margin-bottom: -12px;
-        font-size: 13px;
+        font-size: 12px;
         backdrop-filter: blur(15px);
+    }
+
+    .fs-btn-circle {
+        width: 32px;
+        height: 32px;
     }
 }

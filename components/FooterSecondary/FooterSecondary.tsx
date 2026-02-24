@@ -82,8 +82,10 @@ const FooterSecondary = () => {
             <div className="links-grid">
               <div className="links-column">
                 <Link href="/">Home</Link>
+                <Link href="/events">Events</Link>
                 <Link href="/workshops">Workshops</Link>
                 <Link href="/competitions">Competitions</Link>
+                <Link href="/schedule">Schedule</Link>
                 <Link href="/contact">Contact</Link>
               </div>
             </div>

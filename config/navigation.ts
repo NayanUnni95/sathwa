@@ -5,6 +5,7 @@ export const menuConfig = {
     { label: "Competitions", ariaLabel: "Competitions", link: "/competitions" },
     { label: "Workshops", ariaLabel: "Workshops", link: "/workshops" },
     { label: "Contact", ariaLabel: "Contact", link: "/contact" },
+    { label: "Schedule", ariaLabel: "Schedule", link: "/schedule" }
   ],
   socialItems: [
     { label: "Instagram", link: "https://instagram.com/sathwa_cem" },

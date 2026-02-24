@@ -3,6 +3,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FashionShowModal from "./FashionShowModal";
+import { FiArrowRight } from "react-icons/fi";
 import "./FashionShowSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -212,15 +213,14 @@ const FashionShowSection = () => {
 
                     {/* Date Badge and View More Button Container */}
                     <div className="fs-bottom-controls lg:mb-20">
-                        <div className="fs-date-badge">
-                            <span className="fs-date-value">FEB 27, 2026</span>
-                        </div>
-
                         <button
                             className="fs-view-more-btn"
                             onClick={() => setIsModalOpen(true)}
                         >
-                            View More
+                            <span className="fs-date-value">FEB 27, 2026</span>
+                            <div className="fs-btn-circle">
+                                <FiArrowRight size={16} />
+                            </div>
                         </button>
                     </div>
                 </div>
