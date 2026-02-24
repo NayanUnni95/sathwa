@@ -1,0 +1,377 @@
+.schedule-container {
+    min-height: 100vh;
+    background-color: #030303;
+    color: #fff;
+    padding: 8rem 1.5rem;
+    font-family: var(--font-geist-sans);
+    background-image:
+        radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.schedule-header {
+    max-width: 1200px;
+    margin: 0 auto 8rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.schedule-title {
+    font-family: "JapanRamen", sans-serif;
+    font-size: clamp(3rem, 12vw, 7rem);
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.15));
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+.schedule-subtitle {
+    font-family: var(--font-geist-mono);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+}
+
+.schedule-timeline {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 4rem;
+}
+
+/* The vertical stick/line */
+.schedule-timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(255, 255, 255, 0.15) 5%,
+            rgba(255, 255, 255, 0.15) 95%,
+            transparent 100%);
+}
+
+.day-section {
+    margin-bottom: 10rem;
+}
+
+.day-header {
+    position: sticky;
+    top: 3rem;
+    z-index: 10;
+    background: rgba(3, 3, 3, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 1rem 2rem;
+    margin-left: -4rem;
+    margin-bottom: 4rem;
+    border-left: 1px solid #fff;
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    transition: all 0.4s ease;
+}
+
+.day-number {
+    font-family: "JapanRamen", sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    line-height: 1;
+}
+
+.day-date {
+    font-family: var(--font-geist-mono);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.3em;
+    font-weight: 300;
+}
+
+.event-item {
+    position: relative;
+    margin-bottom: 4rem;
+    padding-left: 3rem;
+}
+
+/* Event node on the line */
+.event-item::before {
+    content: "";
+    position: absolute;
+    left: -4.35rem;
+    top: 1.5rem;
+    width: 10px;
+    height: 10px;
+    background: #030303;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.event-item:hover::before {
+    transform: scale(2.5);
+    background: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Elite Glass Capsule Design */
+.event-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Mouse spotlight */
+.event-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(255, 255, 255, 0.1),
+            transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.event-card:hover::before {
+    opacity: 1;
+}
+
+.card-bg-number {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-orbitron);
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    pointer-events: none;
+    z-index: 0;
+    line-height: 1;
+    transition: all 0.8s ease;
+}
+
+.event-card:hover .card-bg-number {
+    color: rgba(255, 255, 255, 0.04);
+    transform: translateY(-50%) translateX(-20px) scale(1.1);
+}
+
+.card-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #fff, transparent);
+    opacity: 0.1;
+    transition: all 0.6s ease;
+}
+
+.event-card:hover .card-accent {
+    opacity: 1;
+    width: 4px;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.event-name {
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: #fff;
+    line-height: 1.1;
+    text-transform: uppercase;
+    word-break: break-word;
+}
+
+.event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-family: var(--font-geist-mono);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.meta-label {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.2em;
+    font-weight: 600;
+}
+
+.meta-value {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.event-card:hover .meta-value {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.event-time-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.event-time {
+    padding: 1.25rem 2rem;
+    background: rgba(3, 3, 3, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    font-family: var(--font-geist-mono);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.event-card:hover .event-time {
+    background: #fff;
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.event-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px);
+    box-shadow:
+        0 40px 80px -20px rgba(0, 0, 0, 0.8),
+        inset 0 0 40px rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 768px) {
+    .schedule-container {
+        padding: 5rem 1rem;
+    }
+
+    .schedule-title {
+        font-size: 2.5rem;
+    }
+
+    .schedule-header {
+        margin-bottom: 4rem;
+    }
+
+    .schedule-timeline {
+        padding-left: 2rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .day-header {
+        margin-left: -2rem;
+        padding: 1rem 1.25rem;
+        gap: 1.25rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .day-date {
+        font-size: 1rem;
+    }
+
+    .day-number {
+        font-size: 1.6rem;
+    }
+
+    .event-item {
+        margin-bottom: 3rem;
+        padding-left: 0.8rem;
+    }
+
+    .event-item::before {
+        left: -2rem;
+        top: 2rem;
+    }
+
+    .event-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card-bg-number {
+        font-size: 4.5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
+        top: auto;
+        transform: none;
+        gap: 1rem;
+        color: rgba(255, 255, 255, 0.06);
+        /* opacity: 0.3; */
+    }
+
+    .event-card:hover .card-bg-number {
+        transform: scale(1.1);
+    }
+
+    .event-time-wrap {
+        width: 100%;
+    }
+
+    .event-time {
+        width: 90%;
+        text-align: center;
+        padding: 0.9rem;
+        box-sizing: border-box;
+        margin-bottom: 0.5rem;
+    }
+
+    .event-name {
+        font-size: 1.5rem;
+    }
+
+    .event-meta {
+        gap: 1rem;
+        font-size: 1em;
+        margin-bottom: -0.8rem;
+    }
+}
