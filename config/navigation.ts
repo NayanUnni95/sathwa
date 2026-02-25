@@ -4,8 +4,9 @@ export const menuConfig = {
     { label: "Events", ariaLabel: "Events", link: "/events" },
     { label: "Competitions", ariaLabel: "Competitions", link: "/competitions" },
     { label: "Workshops", ariaLabel: "Workshops", link: "/workshops" },
-    { label: "Contact", ariaLabel: "Contact", link: "/contact" },
-    { label: "Schedule", ariaLabel: "Schedule", link: "/schedule" }
+    { label: "Schedule", ariaLabel: "Schedule", link: "/schedule" },
+    { label: "Gallery", ariaLabel: "Gallery", link: "/gallery" },
+    { label: "Contact", ariaLabel: "Contact", link: "/contact" }
   ],
   socialItems: [
     { label: "Instagram", link: "https://instagram.com/sathwa_cem" },
