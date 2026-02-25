@@ -142,7 +142,7 @@ const FooterSecondary = () => {
         <div className="footer-sec-bottom">
           <p className="copyright-text">© SATHWA'26. ALL RIGHTS RESERVED.</p>
           <div className="developer-text">
-            <span className="dev-label">DEVELOPED & SHIPPED BY</span>
+            <span className="dev-label">DESIGNED & DEVELOPED BY</span>
             <div className="dev-links">
               <Link href="https://instagram.com/_.n4y4n">Nayan</Link>,{" "}
               <Link href="https://instagram.com/mr.clifin._.12">Clifin</Link> &{" "}
