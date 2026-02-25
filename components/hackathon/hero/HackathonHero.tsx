@@ -121,26 +121,21 @@ const HackathonHero = () => {
 
                 <div
                     ref={sliderRef}
-                    className="hackathon-register-slider"
-                    onMouseDown={handleMouseDown}
-                    onTouchStart={handleMouseDown}
-                    onClick={handleSliderClick}
+                    className="hackathon-register-slider registration-closed"
                 >
-                    <div className="slider-fill" style={{ width: `${dragProgress * 100}%` }}></div>
+                    <div className="slider-fill" style={{ width: `0%` }}></div>
                     <div
                         ref={thumbRef}
                         className="slider-thumb"
                         style={{
                             left: 8,
-                            transform: `translateX(${computeTranslate()}px)`
+                            transform: `translateX(0px)`
                         }}
-                        onMouseDown={(e) => { e.stopPropagation(); handleMouseDown(e); }}
-                        onTouchStart={(e) => { e.stopPropagation(); handleMouseDown(e); }}
                     >
                         <FiArrowRight />
                     </div>
                     <div className="slider-text">
-                        REGISTER NOW
+                        REGISTRATION CLOSED
                     </div>
                 </div>
             </div>

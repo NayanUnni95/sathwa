@@ -155,6 +155,27 @@
     color: #ff0000;
 }
 
+/* Closed State */
+.register-slider-new.registration-closed {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.01);
+    border-color: rgba(255, 255, 255, 0.05);
+    filter: grayscale(1);
+}
+
+.register-slider-new.registration-closed .slider-handle {
+    cursor: not-allowed !important;
+    background: #555;
+    box-shadow: none;
+}
+
+.register-slider-new.registration-closed .slider-label {
+    color: #666;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
 /* --- Desktop Layout --- */
 .kaizen-desktop-layout {
     display: block;

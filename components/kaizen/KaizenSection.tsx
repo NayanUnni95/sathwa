@@ -197,14 +197,7 @@ const KaizenSection = () => {
                 <div className="kaizen-footer-desktop">
                     <div
                         ref={desktopSliderRef}
-                        className="register-slider-new"
-                        onMouseDown={handleMouseDown}
-                        onTouchStart={handleMouseDown}
-                        onClick={handleSliderClick}
-                        role="slider"
-                        aria-valuenow={Math.round(dragProgress * 100)}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
+                        className="register-slider-new registration-closed"
                     >
                         <div className="slider-bg-fill" style={{ width: `${dragProgress * 100}%` }} />
 
@@ -214,17 +207,15 @@ const KaizenSection = () => {
                             className="slider-handle"
                             style={{
                                 left: 8,
-                                transform: `translateX(${computeTranslateFor(desktopSliderRef.current)}px)`
+                                transform: `translateX(0px)`
                             }}
-                            onMouseDown={(e) => { e.stopPropagation(); handleMouseDown(e); }}
-                            onTouchStart={(e) => { e.stopPropagation(); handleMouseDown(e); }}
                             aria-hidden={false}
                         >
                             <FiArrowRight />
                         </div>
 
                         <div className="slider-label">
-                            <span className="red">R</span>EGISTER <span className="red">N</span>OW
+                            <span className="red">R</span>EGISTRATION <span className="red">C</span>LOSED
                         </div>
                     </div>
                 </div>
@@ -282,13 +273,8 @@ const KaizenSection = () => {
 
                 <div className="kaizen-footer-mobile">
                     <div
-                        className="register-slider-new mobile p-2"
+                        className="register-slider-new mobile p-2 registration-closed"
                         ref={mobileSliderRef}
-                        onTouchStart={handleMouseDown}
-                        role="slider"
-                        aria-valuenow={Math.round(dragProgress * 100)}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
                     >
                         <div className="slider-bg-fill" style={{ width: `${dragProgress * 100}%` }} />
 
@@ -296,17 +282,16 @@ const KaizenSection = () => {
                             className="slider-handle ml-2"
                             style={{
                                 left: 8,
-                                transform: `translateX(${computeTranslateFor(mobileSliderRef.current)}px)`,
+                                transform: `translateX(0px)`,
                                 width: 45,
                                 height: 45
                             }}
-                            onTouchStart={(e) => { e.stopPropagation(); handleMouseDown(e); }}
                         >
                             <FiArrowRight />
                         </div>
 
                         <div className="slider-label ml-12">
-                            <span>REGISTER NOW</span>
+                            <span>REGISTRATION CLOSED</span>
                         </div>
                     </div>
                 </div>

@@ -177,6 +177,28 @@
     color: #FF0000;
 }
 
+/* Closed State */
+.hackathon-register-slider.registration-closed {
+    cursor: not-allowed;
+    opacity: 0.6;
+    border-color: rgba(255, 255, 255, 0.05);
+    background: rgba(10, 10, 10, 0.5);
+    filter: grayscale(0.5);
+}
+
+.hackathon-register-slider.registration-closed .slider-thumb {
+    background: #444;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.hackathon-register-slider.registration-closed .slider-text {
+    color: #888;
+    margin-left: 0;
+    font-size: 1.1rem;
+    padding-left: 20px;
+}
+
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;

@@ -316,8 +316,9 @@
 
 .dev-links {
   text-transform: none;
-  color: #666;
-  font-weight: 700;
+  color: #999696;
+  font-weight: 800;
+  font-size: 0.9rem;
 }
 
 .dev-links a {
