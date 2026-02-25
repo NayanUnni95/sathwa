@@ -300,15 +300,37 @@
 .developer-text {
   font-size: 0.75rem;
   color: #444;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+  text-align: center;
 }
 
-.dev-name {
+.dev-label {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.dev-links {
+  text-transform: none;
   color: #666;
   font-weight: 700;
-  border-bottom: 1px solid #333;
 }
+
+.dev-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dev-links a:hover {
+  color: var(--fs-accent);
+}
+
+
 
 /* Floating Scroll Top Button */
 .scroll-top-btn {
@@ -414,5 +436,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .developer-text {
+    align-items: flex-end;
+    text-align: right;
   }
 }

@@ -141,9 +141,14 @@ const FooterSecondary = () => {
         {/* Bottom Bar */}
         <div className="footer-sec-bottom">
           <p className="copyright-text">© SATHWA'26. ALL RIGHTS RESERVED.</p>
-          <p className="developer-text">
-            DESIGNED & DEVELOPED BY <span className="dev-name">MakeITShip</span>
-          </p>
+          <div className="developer-text">
+            <span className="dev-label">DEVELOPED & SHIPPED BY</span>
+            <div className="dev-links">
+              <Link href="https://instagram.com/_.n4y4n">Nayan</Link>,{" "}
+              <Link href="https://instagram.com/mr.clifin._.12">Clifin</Link> &{" "}
+              <Link href="https://instagram.com/aswinvs_123">Aswin</Link>
+            </div>
+          </div>
         </div>
       </div>
 
