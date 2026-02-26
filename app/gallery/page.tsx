@@ -9,6 +9,8 @@ export const metadata: Metadata = {
         "Relive the best moments from Sathwa '26 — a three-day techno-cultural fest at College of Engineering, Muttathara. Browse photos from cultural shows, hackathons, workshops, and more.",
 };
 
+export const revalidate = 10;
+
 const PAGE_SIZE = 10;
 
 export default async function GalleryPage() {
