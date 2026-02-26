@@ -12,6 +12,7 @@ import TechFestHero from "@/components/techfest/TechFestHero";
 import KaizenSection from "../../kaizen/KaizenSection";
 import ProShowSection from "@/components/proshow/ProShowSection";
 import FashionShowSection from "@/components/fashionshow/FashionShowSection";
+import DjSection from "../../dj/DjSection";
 
 export default function DesktopLayout() {
   return (
@@ -53,10 +54,14 @@ export default function DesktopLayout() {
 
         <FashionShowSection />
 
+        <div className="mt-40">
+          <DjSection />
+        </div>
 
         <div className="mt-40">
           <ProShowSection />
         </div>
+
 
 
         {/* <div className="dl-cultural-section">
