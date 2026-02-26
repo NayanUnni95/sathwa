@@ -10,6 +10,7 @@ import AutoShowHero from "@/components/autoshow/AutoShowHero";
 import KaizenSection from "../../kaizen/KaizenSection";
 import ProShowSection from "@/components/proshow/ProShowSection";
 import FashionShowSection from "@/components/fashionshow/FashionShowSection";
+import DjSection from "../../dj/DjSection";
 
 export default function MobileLayout() {
   return (
@@ -48,8 +49,13 @@ export default function MobileLayout() {
         </div>
 
         <div className="mt-20">
+          <DjSection />
+        </div>
+
+        <div className="mt-20">
           <ProShowSection />
         </div>
+
 
         <CountdownSection />
       </div>
