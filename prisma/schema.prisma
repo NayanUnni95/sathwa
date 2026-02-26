@@ -21,8 +21,6 @@ model FestMedia {
   updatedById                      String   @db.Uuid
   createdAt                        DateTime @default(now())
   updatedAt                        DateTime
-  User_FestMedia_createdByIdToUser User     @relation("FestMedia_createdByIdToUser", fields: [createdById], references: [id])
-  User_FestMedia_updatedByIdToUser User     @relation("FestMedia_updatedByIdToUser", fields: [updatedById], references: [id])
 
   @@index([imageRank])
   @@index([isVisible])
