@@ -1,7 +1,7 @@
-import CountdownSection from "@/components/CountdownSection/CountdownSection";
+// import CountdownSection from "@/components/CountdownSection/CountdownSection";
 import DatePanel from "./DatePanel/DatePanel";
 import HeroFeatures from "./HeroFeatures/HeroFeatures";
-import EsportsSection from "../EsportsSection";
+// import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import "./DesktopLayout.css";
 // import CulturalContainer from "@/components/CulturalContainer/CulturalContainer";
@@ -69,9 +69,9 @@ export default function DesktopLayout() {
         </div> */}
 
         {/* Countdown Section - Desktop placement */}
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <CountdownSection />
-        </div>
+        </div> */}
       </div>
     </div>
   );

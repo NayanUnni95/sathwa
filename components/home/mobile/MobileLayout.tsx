@@ -1,7 +1,7 @@
-import CountdownSection from "@/components/CountdownSection/CountdownSection";
+// import CountdownSection from "@/components/CountdownSection/CountdownSection";
 import MobileHeroSection from "./HeroSection/HeroSection";
 import MobileInfoCard from "./InfoCard/InfoCard";
-import EsportsSection from "../EsportsSection";
+// import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
 import WorkshopSection from "../WorkshopSection";
 import "./MobileLayout.css";
@@ -57,7 +57,7 @@ export default function MobileLayout() {
         </div>
 
 
-        <CountdownSection />
+        {/* <CountdownSection /> */}
       </div>
     </div>
   );
