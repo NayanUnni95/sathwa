@@ -272,9 +272,9 @@
     .dj-stamp-text {
         font-family: var(--font-roboto), sans-serif;
         fill: #000;
-        font-size: 11px;
+        font-size: 13px;
         text-transform: lowercase;
-        letter-spacing: 2px;
+        letter-spacing: 2.5px;
     }
 
     .dj-stamp-inner-circle {
@@ -332,16 +332,17 @@
         left: 0;
         margin-top: 0;
         gap: 1.5rem;
-        padding: 0 4rem;
+        /* padding: 0 4rem; */
         width: 100%;
         justify-content: center;
         z-index: 10;
-        max-width: 2000px;
+        max-width: 1800px;
         margin: 0 auto;
+        /* margin-left: -30px; */
     }
 
     .dj-shape {
-        width: clamp(390px, 38vw, 580px);
+        width: clamp(380px, 36vw, 480px);
         /* border-width: 4px; */
     }
 
