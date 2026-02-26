@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model FestMedia {
+  id                               String   @id @db.Uuid
+  url                              String
+  caption                          String?
+  mimeType                         String?
+  sizeBytes                        Int?
+  imageRank                        Int      @default(0)
+  isVisible                        Boolean  @default(true)
+  thumbnailUrl                     String?
+  meta                             Json?
+  createdById                      String   @db.Uuid
+  updatedById                      String   @db.Uuid
+  createdAt                        DateTime @default(now())
+  updatedAt                        DateTime
+  User_FestMedia_createdByIdToUser User     @relation("FestMedia_createdByIdToUser", fields: [createdById], references: [id])
+  User_FestMedia_updatedByIdToUser User     @relation("FestMedia_updatedByIdToUser", fields: [updatedById], references: [id])
+
+  @@index([imageRank])
+  @@index([isVisible])
+  @@map("FestMedia")
+}

@@ -228,49 +228,55 @@ export default function GalleryClient({
             </div>
 
             {/* Gallery Grid */}
-            <div className={`gallery-grid gallery-grid--${viewMode}`}>
-                {items.map((item, index) => (
-                    <button
-                        key={item.id}
-                        type="button"
-                        className="gallery-item"
-                        onClick={() => setLightboxIndex(index)}
-                        aria-label={item.caption ?? `Gallery image ${index + 1}`}
-                    >
-                        <div className="gallery-item-inner">
-                            <Image
-                                src={item.url}
-                                alt={item.caption ?? `Sathwa 26 - image ${index + 1}`}
-                                fill
-                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                className="gallery-item-img"
-                                loading={index < 6 ? "eager" : "lazy"}
-                            />
-                            <div className="gallery-item-overlay">
-                                {item.caption && (
-                                    <p className="gallery-item-caption">{item.caption}</p>
-                                )}
-                                <div className="gallery-item-actions">
-                                    <div className="gallery-item-zoom">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-                                        </svg>
+            {items.length === 0 && !isLoading ? (
+                <div className="gallery-empty">
+                    <p className="gallery-empty-text">No moments captured yet.</p>
+                </div>
+            ) : (
+                <div className={`gallery-grid gallery-grid--${viewMode}`}>
+                    {items.map((item, index) => (
+                        <button
+                            key={item.id}
+                            type="button"
+                            className="gallery-item"
+                            onClick={() => setLightboxIndex(index)}
+                            aria-label={item.caption ?? `Gallery image ${index + 1}`}
+                        >
+                            <div className="gallery-item-inner">
+                                <Image
+                                    src={item.url}
+                                    alt={item.caption ?? `Sathwa 26 - image ${index + 1}`}
+                                    fill
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    className="gallery-item-img"
+                                    loading={index < 6 ? "eager" : "lazy"}
+                                />
+                                <div className="gallery-item-overlay">
+                                    {item.caption && (
+                                        <p className="gallery-item-caption">{item.caption}</p>
+                                    )}
+                                    <div className="gallery-item-actions">
+                                        <div className="gallery-item-zoom">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
+                                {/* Rank badge */}
+                                <div className="gallery-item-rank">#{item.imageRank}</div>
                             </div>
-                            {/* Rank badge */}
-                            <div className="gallery-item-rank">#{item.imageRank}</div>
-                        </div>
-                    </button>
-                ))}
+                        </button>
+                    ))}
 
-                {/* Skeleton placeholders while loading more */}
-                {isLoading && Array.from({ length: 3 }).map((_, i) => (
-                    <div key={`skeleton-${i}`} className="gallery-item gallery-skeleton">
-                        <div className="gallery-item-inner gallery-skeleton-inner" />
-                    </div>
-                ))}
-            </div>
+                    {/* Skeleton placeholders while loading more */}
+                    {isLoading && Array.from({ length: 3 }).map((_, i) => (
+                        <div key={`skeleton-${i}`} className="gallery-item gallery-skeleton">
+                            <div className="gallery-item-inner gallery-skeleton-inner" />
+                        </div>
+                    ))}
+                </div>
+            )}
 
             {/* Load More */}
             {nextPage !== null && (
@@ -355,7 +361,7 @@ export default function GalleryClient({
                                     e.stopPropagation();
                                     handleDownload(
                                         items[lightboxIndex].url,
-                                        items[lightboxIndex].caption
+                                        items[lightboxIndex].caption ?? undefined
                                     );
                                 }}
                                 aria-label="Download image"
