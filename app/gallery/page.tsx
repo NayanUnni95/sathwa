@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import GalleryClient from "./GalleryClient";
-import { galleryData } from "@/data/gallery";
+import prisma from "@/lib/prisma";
 import "./Gallery.css";
 
 export const metadata: Metadata = {
@@ -12,15 +12,30 @@ export const metadata: Metadata = {
 const PAGE_SIZE = 10;
 
 export default async function GalleryPage() {
-    // Directly read data for SSR (no self-referential fetch needed)
-    // When backend is ready, replace this with a db/api call
-    const allItems = galleryData;
-    const firstPage = allItems.slice(0, PAGE_SIZE);
-    const hasMore = allItems.length > PAGE_SIZE;
+    let items: any[] = [];
+    let totalCount = 0;
+
+    try {
+        [items, totalCount] = await Promise.all([
+            prisma.festMedia.findMany({
+                where: { isVisible: true },
+                orderBy: { imageRank: "asc" },
+                take: PAGE_SIZE,
+            }),
+            prisma.festMedia.count({
+                where: { isVisible: true },
+            }),
+        ]);
+    } catch (error) {
+        console.error("Database connection failed:", error);
+        items = [];
+        totalCount = 0;
+    }
+
+    const hasMore = items.length < totalCount;
 
     return (
         <main className="gallery-page">
-            {/* Hero */}
             <section className="gallery-hero">
                 <span className="gallery-hero-label">Sathwa'26 — CEM</span>
                 <h1 className="gallery-hero-title">GALLERY</h1>
@@ -30,12 +45,11 @@ export default async function GalleryPage() {
                 </p>
             </section>
 
-            {/* Grid + Load More */}
             <section style={{ paddingBottom: "8rem" }}>
                 <GalleryClient
-                    initialItems={firstPage}
+                    initialItems={items}
                     initialNextPage={hasMore ? 2 : null}
-                    totalCount={allItems.length}
+                    totalCount={totalCount}
                 />
             </section>
         </main>

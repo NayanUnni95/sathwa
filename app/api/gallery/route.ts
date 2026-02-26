@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { galleryData } from "@/data/gallery";
-import type { FestMedia } from "@/data/gallery";
+import prisma from "@/lib/prisma";
+import type { FestMedia } from "@prisma/client";
 
 export type { FestMedia };
 
@@ -16,23 +16,48 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const page = Number(searchParams.get("page") ?? "1");
 
-    const start = (page - 1) * PAGE_SIZE;
-    const end = start + PAGE_SIZE;
-    const items = galleryData.slice(start, end);
-    const nextPage = end < galleryData.length ? page + 1 : null;
+    const skip = (page - 1) * PAGE_SIZE;
 
-    return NextResponse.json(
-        {
-            items,
-            nextPage,
-            totalCount: galleryData.length,
-        } satisfies GalleryResponse,
-        {
-            status: 200,
-            headers: {
-                // Cache for 1 hour, stale-while-revalidate for 30 minutes
-                "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=1800",
-            },
+    try {
+        let items: FestMedia[] = [];
+        let totalCount = 0;
+
+        try {
+            [items, totalCount] = await Promise.all([
+                prisma.festMedia.findMany({
+                    where: { isVisible: true },
+                    orderBy: { imageRank: "asc" },
+                    skip,
+                    take: PAGE_SIZE,
+                }),
+                prisma.festMedia.count({
+                    where: { isVisible: true },
+                }),
+            ]);
+        } catch (dbError) {
+            console.error("Database connection failed in API:", dbError);
+            items = [];
+            totalCount = 0;
         }
-    );
+
+        const nextPage = skip + items.length < totalCount ? page + 1 : null;
+
+        return NextResponse.json(
+            {
+                items,
+                nextPage,
+                totalCount,
+            } satisfies GalleryResponse,
+            {
+                status: 200,
+                headers: {
+                    // Cache for 1 hour, stale-while-revalidate for 30 minutes
+                    "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=1800",
+                },
+            }
+        );
+    } catch (error) {
+        console.error("Gallery API error:", error);
+        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    }
 }
