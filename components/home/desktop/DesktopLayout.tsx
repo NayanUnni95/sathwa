@@ -19,7 +19,6 @@ export default function DesktopLayout() {
     <div className="dl-scope">
       <div className="dl-main-content reveal reveal-3">
         <HeroFeatures />
-        <DatePanel />
       </div>
 
       {/* Black Background Wrapper for Lower Sections */}

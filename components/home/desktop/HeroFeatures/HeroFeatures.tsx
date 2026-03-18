@@ -1,13 +1,14 @@
 import Image from "next/image";
+import DatePanel from "../DatePanel/DatePanel";
 import "./HeroFeatures.css";
 
 export default function HeroFeatures() {
   return (
-    <>
+    <div className="hf-container">
       <div className="hf-scope-top z-20">
-        <p className="hf-description">
+        {/* <p className="hf-description">
           A three-day techno-cultural fest blending innovation, creativity, and engineering.
-        </p>
+        </p> */}
       </div>
 
       <div className="hf-scope-main">
@@ -29,6 +30,9 @@ export default function HeroFeatures() {
 
         {/* Right Section: Title and Subtitle */}
         <div className="hf-right">
+          <p className="hf-description">
+            A three-day techno-cultural fest blending innovation, creativity, and engineering with events, workshops, competitions
+          </p>
           <div className="hf-title-block">
             <div className="hf-year-wrapper">
               <span className="hf-year">'26</span>
@@ -38,8 +42,9 @@ export default function HeroFeatures() {
 
             <p className="hf-subtitle">where tradition meets technology</p>
           </div>
+          <DatePanel />
         </div>
       </div>
-    </>
+    </div>
   );
 }
