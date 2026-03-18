@@ -1,8 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import DatePanel from "../DatePanel/DatePanel";
 import "./HeroFeatures.css";
+import { useLoaderState } from "@/components/providers/LoaderStateProvider";
 
 export default function HeroFeatures() {
+  const { isLoaderDone } = useLoaderState();
+  const leftClassName = isLoaderDone ? "hf-left reveal reveal-1" : "hf-left";
+
   return (
     <div className="hf-container">
       <div className="hf-scope-top z-20">
@@ -13,7 +19,7 @@ export default function HeroFeatures() {
 
       <div className="hf-scope-main">
         {/* Left Section: Hero Circle and Text */}
-        <div className="hf-left reveal reveal-1">
+        <div className={leftClassName}>
           <div className="hf-2026">2026</div>
           <div className="hf-circle">
             <div className="hf-img-wrapper">

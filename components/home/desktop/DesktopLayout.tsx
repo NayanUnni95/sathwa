@@ -1,5 +1,6 @@
+"use client";
+
 // import CountdownSection from "@/components/CountdownSection/CountdownSection";
-import DatePanel from "./DatePanel/DatePanel";
 import HeroFeatures from "./HeroFeatures/HeroFeatures";
 // import EsportsSection from "../EsportsSection";
 import TechCompetitionsSection from "../TechCompetitionsSection";
@@ -13,11 +14,17 @@ import KaizenSection from "../../kaizen/KaizenSection";
 import ProShowSection from "@/components/proshow/ProShowSection";
 import FashionShowSection from "@/components/fashionshow/FashionShowSection";
 import DjSection from "../../dj/DjSection";
+import { useLoaderState } from "@/components/providers/LoaderStateProvider";
 
 export default function DesktopLayout() {
+  const { isLoaderDone } = useLoaderState();
+  const mainContentClassName = isLoaderDone
+    ? "dl-main-content reveal reveal-2"
+    : "dl-main-content";
+
   return (
     <div className="dl-scope">
-      <div className="dl-main-content reveal reveal-3">
+      <div className={mainContentClassName}>
         <HeroFeatures />
       </div>
 

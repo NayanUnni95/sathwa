@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLoaderState } from "@/components/providers/LoaderStateProvider";
 
 const MIN_LOADER_TIME = 3000;
 const HARD_TIMEOUT = 4000;
 
 export default function Loader() {
   const [isLoading, setIsLoading] = useState(true);
+  const { setIsLoaderDone } = useLoaderState();
   const videoRef = useRef<HTMLVideoElement>(null);
   const startTime = useRef(Date.now());
   const closed = useRef(false);
@@ -30,7 +32,10 @@ export default function Loader() {
     const elapsed = Date.now() - startTime.current;
     const remaining = Math.max(MIN_LOADER_TIME - elapsed, 0);
 
-    setTimeout(() => setIsLoading(false), remaining);
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsLoaderDone(true);
+    }, remaining);
   };
 
   useEffect(() => {
