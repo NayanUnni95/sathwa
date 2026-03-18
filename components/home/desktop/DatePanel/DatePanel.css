@@ -50,6 +50,9 @@
   transition: transform 0.3s ease;
   cursor: pointer;
   margin-right: 3em;
+  border: 0;
+  text-align: left;
+  color: inherit;
 }
 
 @media (min-width: 1024px) {
