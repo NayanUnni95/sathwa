@@ -1,18 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import DatePanel from "../DatePanel/DatePanel";
 import "./HeroFeatures.css";
+import { useLoaderState } from "@/components/providers/LoaderStateProvider";
 
 export default function HeroFeatures() {
+  const { isLoaderDone } = useLoaderState();
+  const leftClassName = isLoaderDone ? "hf-left reveal reveal-1" : "hf-left";
+
   return (
-    <>
+    <div className="hf-container">
       <div className="hf-scope-top z-20">
-        <p className="hf-description">
+        {/* <p className="hf-description">
           A three-day techno-cultural fest blending innovation, creativity, and engineering.
-        </p>
+        </p> */}
       </div>
 
       <div className="hf-scope-main">
         {/* Left Section: Hero Circle and Text */}
-        <div className="hf-left reveal reveal-1">
+        <div className={leftClassName}>
           <div className="hf-2026">2026</div>
           <div className="hf-circle">
             <div className="hf-img-wrapper">
@@ -29,6 +36,9 @@ export default function HeroFeatures() {
 
         {/* Right Section: Title and Subtitle */}
         <div className="hf-right">
+          <p className="hf-description">
+            A three-day techno-cultural fest blending innovation, creativity, and engineering with events, workshops, competitions
+          </p>
           <div className="hf-title-block">
             <div className="hf-year-wrapper">
               <span className="hf-year">'26</span>
@@ -38,8 +48,9 @@ export default function HeroFeatures() {
 
             <p className="hf-subtitle">where tradition meets technology</p>
           </div>
+          <DatePanel />
         </div>
       </div>
-    </>
+    </div>
   );
 }

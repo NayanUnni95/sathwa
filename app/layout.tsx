@@ -11,6 +11,7 @@ import { menuConfig } from "@/config/navigation";
 import Loader from "@/app/Loader";
 import "./globals.css";
 import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
+import { LoaderStateProvider } from "@/components/providers/LoaderStateProvider";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -138,10 +139,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${spaceGrotesk.variable} ${plusJakartaSans.variable} ${rammettoOne.variable} ${playfairDisplay.variable} root-body`}
       >
-        <Loader />
-        <AnalyticsProvider />
-        <StaggeredMenu {...menuConfig} />
-        {children}
+        <LoaderStateProvider>
+          <Loader />
+          <AnalyticsProvider />
+          <StaggeredMenu {...menuConfig} />
+          {children}
+        </LoaderStateProvider>
         <style>{`
             .root-body {
                 -webkit-font-smoothing: antialiased;
