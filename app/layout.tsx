@@ -6,8 +6,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 import { Geist, Geist_Mono, Orbitron, Space_Grotesk, Plus_Jakarta_Sans, Rammetto_One, Playfair_Display } from "next/font/google"; // Added Plus_Jakarta_Sans, Playfair_Display
-import StaggeredMenu from "@/components/StaggeredMenu/StaggeredMenu";
-import { menuConfig } from "@/config/navigation";
+import Navbar from "@/components/Navbar/Navbar";
 import Loader from "@/app/Loader";
 import "./globals.css";
 import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
@@ -142,7 +141,7 @@ export default function RootLayout({
         <LoaderStateProvider>
           <Loader />
           <AnalyticsProvider />
-          <StaggeredMenu {...menuConfig} />
+          <Navbar />
           {children}
         </LoaderStateProvider>
         <style>{`
