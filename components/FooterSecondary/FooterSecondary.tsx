@@ -39,7 +39,7 @@ const FooterSecondary = () => {
       <div className="footer-sec-content">
         {/* Contact Section */}
         <div className="footer-sec-section contact-section">
-          <p className="footer-sec-label">CONTACTS</p>
+          <p className="footer-sec-label">CONTACT</p>
           <h2 className="footer-sec-email">SATHWA26@GMAIL.COM</h2>
         </div>
 
