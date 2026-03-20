@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import "./VideoPlayer.css";
 import type Hls from "hls.js";
 
@@ -20,6 +21,7 @@ type VideoPlayerProps = {
 
 const DEFAULT_HLS_SRC = "/assets/trailer/master.m3u8";
 const SEEK_SECONDS = 10;
+const CONTROLS_AUTO_HIDE_MS = 3000;
 
 const formatTime = (value: number) => {
   if (!Number.isFinite(value) || value < 0) {
@@ -47,6 +49,7 @@ export default function VideoPlayer({
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const hlsRef = useRef<Hls | null>(null);
+  const controlsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const qualityMenuId = useId();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -57,6 +60,8 @@ export default function VideoPlayer({
   const [selectedQuality, setSelectedQuality] = useState<number>(-1);
   const [isQualityMenuOpen, setIsQualityMenuOpen] = useState(false);
   const [statusText, setStatusText] = useState("Loading stream...");
+  const [areControlsVisible, setAreControlsVisible] = useState(true);
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
 
   const progressPercent = duration > 0 ? `${(currentTime / duration) * 100}%` : "0%";
 
@@ -68,6 +73,33 @@ export default function VideoPlayer({
     const match = qualityOptions.find((option) => option.index === selectedQuality);
     return match?.label ?? "Auto";
   }, [qualityOptions, selectedQuality]);
+
+  const clearControlsTimer = () => {
+    if (controlsTimeoutRef.current) {
+      clearTimeout(controlsTimeoutRef.current);
+      controlsTimeoutRef.current = null;
+    }
+  };
+
+  const showControls = (autoHide = true) => {
+    setAreControlsVisible(true);
+    clearControlsTimer();
+
+    if (!autoHide || !isPlaying || isQualityMenuOpen) {
+      return;
+    }
+
+    controlsTimeoutRef.current = setTimeout(() => {
+      setAreControlsVisible(false);
+      setIsQualityMenuOpen(false);
+    }, CONTROLS_AUTO_HIDE_MS);
+  };
+
+  const hideControls = () => {
+    clearControlsTimer();
+    setIsQualityMenuOpen(false);
+    setAreControlsVisible(false);
+  };
 
   useEffect(() => {
     if (!isOpen) {
@@ -101,6 +133,16 @@ export default function VideoPlayer({
   }, [isOpen, onClose]);
 
   useEffect(() => {
+    setPortalTarget(document.body);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      clearControlsTimer();
+    };
+  }, []);
+
+  useEffect(() => {
     if (!isOpen) {
       const video = videoRef.current;
       if (video) {
@@ -116,6 +158,8 @@ export default function VideoPlayer({
       setQualityOptions([]);
       setSelectedQuality(-1);
       setStatusText("Loading stream...");
+      setAreControlsVisible(true);
+      clearControlsTimer();
       return undefined;
     }
 
@@ -211,9 +255,24 @@ export default function VideoPlayer({
     };
   }, [isOpen, src]);
 
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    if (isPlaying) {
+      showControls(true);
+      return;
+    }
+
+    showControls(false);
+  }, [isOpen, isPlaying, isQualityMenuOpen]);
+
   const togglePlayback = async () => {
     const video = videoRef.current;
     if (!video) return;
+
+    showControls(!video.paused);
 
     if (video.paused) {
       try {
@@ -232,6 +291,7 @@ export default function VideoPlayer({
     const video = videoRef.current;
     if (!video) return;
 
+    showControls(true);
     const nextTime = Math.min(Math.max(video.currentTime + delta, 0), duration || video.duration || 0);
     video.currentTime = nextTime;
   };
@@ -240,6 +300,7 @@ export default function VideoPlayer({
     const video = videoRef.current;
     if (!video) return;
 
+    showControls(true);
     const nextMuted = !video.muted;
     video.muted = nextMuted;
     setIsMuted(nextMuted);
@@ -253,6 +314,7 @@ export default function VideoPlayer({
       return;
     }
 
+    showControls(true);
     hls.currentLevel = levelIndex;
     hls.nextLevel = levelIndex;
     setSelectedQuality(levelIndex);
@@ -266,19 +328,36 @@ export default function VideoPlayer({
     setIsQualityMenuOpen(false);
   };
 
+  const handleVideoClick = () => {
+    if (areControlsVisible && isPlaying) {
+      hideControls();
+      return;
+    }
+
+    showControls(true);
+  };
+
   if (!isOpen) {
     return null;
   }
 
-  return (
+  if (!portalTarget) {
+    return null;
+  }
+
+  return createPortal(
     <div className="vp-overlay" role="dialog" aria-modal="true" aria-label={title}>
       <div className="vp-surface">
-        <div className="vp-video-shell">
+        <div
+          className="vp-video-shell"
+          data-controls-visible={areControlsVisible}
+        >
           <video
             ref={videoRef}
             className="vp-video"
             poster={poster}
             playsInline
+            onClick={handleVideoClick}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
@@ -295,7 +374,7 @@ export default function VideoPlayer({
           <div className="vp-topbar">
             <div className="vp-brand">
               <Image
-                src="/assets/logo-white.png"
+                src="/assets/sathwa-short-logo-white.png"
                 alt="Sathwa"
                 width={64}
                 height={64}
@@ -337,6 +416,7 @@ export default function VideoPlayer({
                   const value = Number(event.target.value);
                   const video = videoRef.current;
                   if (!video) return;
+                  showControls(true);
                   video.currentTime = value;
                   setCurrentTime(value);
                 }}
@@ -496,6 +576,7 @@ export default function VideoPlayer({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    portalTarget
   );
 }
