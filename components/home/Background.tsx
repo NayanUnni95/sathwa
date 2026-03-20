@@ -8,10 +8,10 @@ export default function Background() {
           opacity: 1;
           pointer-events: none;
           z-index: 0;
-          background-color: #090909ff;
+          background-color: #0D0203;
           background-image:
-    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.88)),
-    url("/assets/marble.png");
+    linear-gradient(rgba(13, 2, 3, 0.84), rgba(13, 2, 3, 0.84)),
+      url("/assets/marble-2.webp");
           background-size: cover;
           background-position: center;
           mix-blend-mode: multiply;
