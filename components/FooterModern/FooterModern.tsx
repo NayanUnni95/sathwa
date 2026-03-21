@@ -76,7 +76,10 @@ export default function FooterModern() {
             </a> */}
             <div className="footer-modern__person">
               <p className="footer-modern__name">Dr. Anoop Sivasankar</p>
-              <a className="footer-modern__contact-link">
+              <a
+                href="tel:+919446747253"
+                className="footer-modern__contact-link"
+              >
                 <FiPhone aria-hidden="true" />
                 <span>+91 94467 47253</span>
               </a>
@@ -130,13 +133,41 @@ export default function FooterModern() {
           </div>
 
           <p className="footer-modern__credits">
-            Designed & developed by Nayan, Cifin & Aswin
+            Designed & developed by{" "}
+            <a
+              href="https://www.instagram.com/_.n4y4n"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-modern__credit-link"
+            >
+              Nayan
+            </a>
+            ,{" "}
+            <a
+              href="https://www.instagram.com/mr.clifin._.12"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-modern__credit-link"
+            >
+              Clifin
+            </a>{" "}
+            &{" "}
+            <a
+              href="https://www.instagram.com/aswinvs_123"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-modern__credit-link"
+            >
+              Aswin
+            </a>
           </p>
         </div>
       </div>
 
       <div className="footer-modern__bottom">
-        <p>&copy; SATHWA&apos;26. ALL RIGHTS RESERVED.</p>
+        <p>
+          &copy; <strong>SATHWA 2026</strong>. ALL RIGHTS RESERVED.
+        </p>
       </div>
     </footer>
   );

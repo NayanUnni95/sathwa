@@ -1,5 +1,5 @@
 .footer-modern {
-  --footer-bg: #040404;
+  --footer-bg: #131313;
   --footer-surface: #111827;
   --footer-border: rgba(120, 145, 185, 0.2);
   --footer-text: #f6f7fb;
@@ -39,7 +39,7 @@
 .footer-modern__logo {
   margin: 0 0 1rem;
   font-family: "JapanRamen", sans-serif;
-  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 800;
   letter-spacing: 0.08em;
   line-height: 0.95;
@@ -136,6 +136,11 @@
   transition: color 0.22s ease;
 }
 
+.footer-modern__mail {
+  font-family: "JapanRamen", sans-serif;
+  letter-spacing: 0.1em
+}
+
 .footer-modern__contact-link:hover,
 .footer-modern__mail:hover {
   color: var(--footer-text);
@@ -185,14 +190,27 @@
   text-align: right;
 }
 
+.footer-modern__credit-link {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-size: 1.05em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: color 0.22s ease;
+}
+
+.footer-modern__credit-link:hover {
+  color: rgb(238, 26, 26);
+}
+
 .footer-modern__bottom {
-  background: #141414;
+  background: #000000;
   padding: 1.5rem 1rem 1.65rem;
 }
 
 .footer-modern__bottom p {
   margin: 0;
-  color: #ff4848;
+  color: #a0a0a0;
   text-align: center;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.95rem;
