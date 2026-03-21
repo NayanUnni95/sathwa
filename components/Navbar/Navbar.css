@@ -5,9 +5,9 @@
   right: 0;
   z-index: 100;
   width: 100%;
-  min-height: 5.9rem;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+  min-height: 4.8rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
   padding-left: 1rem;
   padding-right: calc(0.45rem + var(--app-scrollbar-compensation, 0px));
   display: grid;
@@ -15,6 +15,15 @@
   align-items: center;
   gap: 1rem;
   background: #0b0b0b;
+  transition:
+    transform 0.32s ease,
+    opacity 0.32s ease;
+  will-change: transform;
+}
+
+.nav-shell[data-hidden="true"] {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 .nav-left,
@@ -34,7 +43,7 @@
 
 .nav-logo {
   width: auto;
-  height: 3rem;
+  height: 2.7rem;
   object-fit: contain;
 }
 
@@ -58,7 +67,7 @@
 
 .nav-link:hover,
 .nav-link[data-active="true"] {
-  color: #ffffff;
+  color: #ff2b2b;
 }
 
 .nav-menu-button {
@@ -86,13 +95,13 @@
 
 @media (min-width: 768px) {
   .nav-shell {
-    min-height: 6.4rem;
+    min-height: 5.8rem;
     padding-left: 2.2rem;
     padding-right: calc(2.2rem + var(--app-scrollbar-compensation, 0px));
   }
 
   .nav-logo {
-    height: 4.5rem;
+    height: 4rem;
   }
 
   .nav-center {

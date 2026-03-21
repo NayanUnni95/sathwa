@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import AppMenu from "@/components/AppMenu/AppMenu";
 import "./Navbar.css";
@@ -30,10 +30,40 @@ const isActivePath = (pathname: string, href: string) => {
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+    let previousScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - previousScrollY;
+
+      if (currentScrollY <= 16) {
+        setIsHidden(false);
+      } else if (Math.abs(delta) > 6) {
+        setIsHidden(delta > 0);
+      }
+
+      previousScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsHidden(false);
+    }
+  }, [isMenuOpen]);
 
   return (
     <>
-      <header className="nav-shell">
+      <header className="nav-shell" data-hidden={isHidden && !isMenuOpen}>
         <div className="nav-left">
           <Link href="/" className="nav-logo-link" aria-label="Go to home page">
             <Image
