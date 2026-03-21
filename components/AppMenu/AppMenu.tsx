@@ -38,40 +38,43 @@ const isItemActive = (pathname: string, href: string) => {
 };
 
 const panelVariants = {
-  hidden: {
+  closed: {
     x: "100%",
     transition: {
-      ease: [0.4, 0, 1, 1] as const,
-      when: "afterChildren" as const,
-      staggerChildren: 0.045,
-      staggerDirection: -1 as const,
-      duration: 0.34,
+      x: {
+        duration: 0.74,
+        ease: [0.22, 1, 0.36, 1] as const,
+      },
     },
   },
-  visible: {
+  open: {
     x: 0,
     transition: {
-      duration: 0.38,
-      ease: [0.16, 1, 0.3, 1] as const,
+      x: {
+        type: "spring" as const,
+        stiffness: 340,
+        damping: 34,
+        mass: 0.9,
+      },
       when: "beforeChildren" as const,
       staggerChildren: 0.06,
-      delayChildren: 0.1,
+      delayChildren: 0.08,
     },
   },
 };
 
 const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 14,
+  closed: {
+    opacity: 1,
+    x: 0,
     transition: {
       duration: 0.18,
       ease: [0.4, 0, 1, 1] as const,
     },
   },
-  visible: {
+  open: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
       duration: 0.28,
       ease: [0.16, 1, 0.3, 1] as const,
@@ -134,7 +137,7 @@ export default function AppMenu({ isOpen, onClose }: AppMenuProps) {
   }
 
   return createPortal(
-    <AnimatePresence>
+    <AnimatePresence initial={false}>
       {isOpen ? (
         <motion.div
           className="app-menu-overlay"
@@ -160,9 +163,9 @@ export default function AppMenu({ isOpen, onClose }: AppMenuProps) {
           <motion.aside
             className="app-menu-panel"
             variants={panelVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
+            initial="closed"
+            animate="open"
+            exit="closed"
           >
             <motion.div className="app-menu-topbar" variants={itemVariants}>
               <button type="button" className="app-menu-close" onClick={onClose} aria-label="Close menu">
