@@ -513,7 +513,7 @@
 
 .character-img-mobile {
     height: 40vh;
-    width: 37vh;
+    width: 40vh;
     max-height: 400px;
     max-width: 630px;
     filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.7));
