@@ -156,9 +156,9 @@ const KaizenSection = () => {
                             <div className="year-group-desktop ml-2">
                                 <span className="red-quote-mark">'</span>
                                 <span className="year-number">26</span>
-                                <button className="circled-arrow-btn small desktop-arrow" onClick={() => router.push("/hackathon")}>
+                                <button className="circled-arrow-btn huge desktop-arrow" onClick={() => router.push("/hackathon")}>
                                     <div className="circle">
-                                        <FiArrowRight size={40} />
+                                        <FiArrowRight size={70} />
                                     </div>
                                 </button>
                             </div>
@@ -200,8 +200,6 @@ const KaizenSection = () => {
                         className="register-slider-new registration-closed"
                     >
                         <div className="slider-bg-fill" style={{ width: `${dragProgress * 100}%` }} />
-
-                        {/* anchor left: 8px so thumb starts at left, then translateX moves it right */}
                         <div
                             ref={thumbRef}
                             className="slider-handle"
@@ -271,7 +269,7 @@ const KaizenSection = () => {
                     <span className="see-more-label">View More</span>
                 </div>
 
-                <div className="kaizen-footer-mobile">
+                {/* <div className="kaizen-footer-mobile">
                     <div
                         className="register-slider-new mobile p-2 registration-closed"
                         ref={mobileSliderRef}
@@ -294,7 +292,7 @@ const KaizenSection = () => {
                             <span>REGISTRATION CLOSED</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );
