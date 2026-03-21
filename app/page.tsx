@@ -1,9 +1,9 @@
 "use client";
 
+import FooterModern from "@/components/FooterModern/FooterModern";
 import Background from "@/components/home/Background";
 import DesktopLayout from "@/components/home/desktop/DesktopLayout";
 import MobileLayout from "@/components/home/mobile/MobileLayout";
-import FooterSecondary from "@/components/FooterSecondary/FooterSecondary";
 import "@/app/styles/home.css";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
         <DesktopLayout />
       </main>
 
-      <FooterSecondary />
+      <FooterModern />
     </div>
   );
 }
