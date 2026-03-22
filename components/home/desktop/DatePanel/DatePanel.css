@@ -3,10 +3,10 @@
   position: relative;
   z-index: 50;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 5rem;
-
   /* pb-20 */
 }
 
@@ -180,4 +180,15 @@
   .dp-dot {
     display: none;
   }
+}
+
+
+.hf-image-credits {
+  position: absolute;
+  bottom: 1rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #b7b7b7FF;
+  font-size: 12px;
+  text-align: right;
+  width:100%;
 }

@@ -16,7 +16,7 @@ type NavLink = {
 const DESKTOP_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Schedule", href: "/schedule" },
-  { label: "Contact", href: "/contact" },
+  { label: "Gallery", href: "/gallery" },
 ];
 
 const isActivePath = (pathname: string, href: string) => {

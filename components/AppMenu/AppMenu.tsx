@@ -24,7 +24,6 @@ const MENU_ITEMS: MenuItem[] = [
   { label: "Workshops", href: "/workshops" },
   { label: "Schedule", href: "/schedule" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
 ];
 
 const INSTAGRAM_URL = "https://www.instagram.com/sathwa_cem";

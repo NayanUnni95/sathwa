@@ -50,6 +50,17 @@ export default function DatePanel() {
             </div>
           </div>
         </div>
+        <span className="hf-image-credits">
+          {" "}
+          Photo by{" "}
+          <a href="https://unsplash.com/@susannschuster?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Susann Schuster
+          </a>{" "}
+          on{" "}
+          <a href="https://unsplash.com/photos/gold-and-red-dragon-figurine-nxBfBDDqjjc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Unsplash
+          </a>
+        </span>
       </div>
 
       <VideoPlayer isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
