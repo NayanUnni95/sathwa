@@ -16,22 +16,29 @@ const PAGE_SIZE = 10;
 export default async function GalleryPage() {
     let items: any[] = [];
     let totalCount = 0;
+    const fetchFromDb = process.env.FETCH_FROM_DB === "true";
 
-    try {
-        [items, totalCount] = await Promise.all([
-            prisma.festMedia.findMany({
-                where: { isVisible: true },
-                orderBy: { imageRank: "asc" },
-                take: PAGE_SIZE,
-            }),
-            prisma.festMedia.count({
-                where: { isVisible: true },
-            }),
-        ]);
-    } catch (error) {
-        console.error("Database connection failed:", error);
-        items = [];
-        totalCount = 0;
+    if (fetchFromDb) {
+        try {
+            [items, totalCount] = await Promise.all([
+                prisma.festMedia.findMany({
+                    where: { isVisible: true },
+                    orderBy: { imageRank: "asc" },
+                    take: PAGE_SIZE,
+                }),
+                prisma.festMedia.count({
+                    where: { isVisible: true },
+                }),
+            ]);
+        } catch (error) {
+            console.error("Database connection failed:", error);
+            items = [];
+            totalCount = 0;
+        }
+    } else {
+        const { galleryData } = await import("@/data/gallery");
+        totalCount = galleryData.length;
+        items = galleryData.slice(0, PAGE_SIZE);
     }
 
     const hasMore = items.length < totalCount;

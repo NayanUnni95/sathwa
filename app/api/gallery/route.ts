@@ -17,27 +17,35 @@ export async function GET(request: NextRequest) {
     const page = Number(searchParams.get("page") ?? "1");
 
     const skip = (page - 1) * PAGE_SIZE;
+    const fetchFromDb = process.env.FETCH_FROM_DB === "true";
 
     try {
         let items: FestMedia[] = [];
         let totalCount = 0;
 
-        try {
-            [items, totalCount] = await Promise.all([
-                prisma.festMedia.findMany({
-                    where: { isVisible: true },
-                    orderBy: { imageRank: "asc" },
-                    skip,
-                    take: PAGE_SIZE,
-                }),
-                prisma.festMedia.count({
-                    where: { isVisible: true },
-                }),
-            ]);
-        } catch (dbError) {
-            console.error("Database connection failed in API:", dbError);
-            items = [];
-            totalCount = 0;
+        if (fetchFromDb) {
+            try {
+                [items, totalCount] = await Promise.all([
+                    prisma.festMedia.findMany({
+                        where: { isVisible: true },
+                        orderBy: { imageRank: "asc" },
+                        skip,
+                        take: PAGE_SIZE,
+                    }),
+                    prisma.festMedia.count({
+                        where: { isVisible: true },
+                    }),
+                ]);
+            } catch (dbError) {
+                console.error("Database connection failed in API:", dbError);
+                items = [];
+                totalCount = 0;
+            }
+        } else {
+            // Fetch from local data/gallery.ts
+            const { galleryData } = await import("@/data/gallery");
+            totalCount = galleryData.length;
+            items = galleryData.slice(skip, skip + PAGE_SIZE) as FestMedia[];
         }
 
         const nextPage = skip + items.length < totalCount ? page + 1 : null;

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "fetch:gallery": "tsx --env-file .env scripts/fetch_gallery_data.ts"
   },
   "dependencies": {
     "@leenguyen/react-flip-clock-countdown": "^1.7.2",
@@ -31,6 +32,7 @@
     "prisma": "^6.19.2",
     "tailwindcss": "^4",
     "turbo": "^2.7.5",
+    "tsx": "^4.19.4",
     "typescript": "^5"
   },
   "packageManager": "pnpm@9.0.0"
